@@ -9,8 +9,7 @@ public class Solution {
 		int a = scan.nextInt();
 		int b = scan.nextInt();
 		int c = scan.nextInt();
-		//rootsOfQuadraticEquation(a, b, c);
-		System.out.println(a + " " + b);
+		// rootsOfQuadraticEquation(a, b, c);
 	}
 	/*
 	Need to write the rootsOfQuadraticEquation function and print the output.
