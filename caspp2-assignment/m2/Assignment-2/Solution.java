@@ -23,15 +23,15 @@ public final class Solution {
     Need to write the rootsOfQuadraticEquation function and print the output.
     */
     /**
-    *@param a int
+    *@param d int
     *@param b int
     *@param c int
     */
-    public static void rootsOfQuadraticEquation(final int a, final int b, final int c) {
-        double disc = (b * b) - (4 * a * c);
+    public static void rootsOfQuadraticEquation(final int d, final int e, final int f) {
+        double disc = (e * e) - (4 * d* f);
         double quad = Math.sqrt(disc);
-        double root1 = (( c + quad) / (2 * a));
-        double root2 = (( c - quad) / (2 * a));
+        double root1 = (( f + quad) / (2 * d));
+        double root2 = (( f - quad) / (2 * d));
         System.out.println(root1 + " " + root2);
     }
 }
