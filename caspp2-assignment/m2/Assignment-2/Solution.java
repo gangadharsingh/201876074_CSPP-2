@@ -28,8 +28,8 @@ public final class Solution {
     *@param c int
     */
     public static void rootsOfQuadraticEquation(final int a, final int b, final int c) {
-        double n = (b * b) - (4 * a * c);
-        double quad = Math.sqrt(n);
+        double disc = (b * b) - (4 * a * c);
+        double quad = Math.sqrt(disc);
         double root1 = (( c + quad) / (2 * a));
         double root2 = (( c - quad) / (2 * a));
         System.out.println(root1 + " " + root2);
