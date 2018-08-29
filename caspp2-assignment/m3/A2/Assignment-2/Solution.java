@@ -14,7 +14,10 @@ public final class Solution {
     *{main function}
     */
     private static final int NUM = 7;
-    private static final int NUM2 = 7;
+    /**.
+    *to remove magic number error.
+    */
+    private static final int NUM2 = 10;
     /**.
     *creating NUM variable
     */
