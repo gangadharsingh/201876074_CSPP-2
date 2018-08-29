@@ -27,8 +27,8 @@ public final class Solution {
     *@param e int
     *@param f int
     */
-    public static void rootsOfQuadraticEquation
-    (final int d, final int e, final int f) {
+    public static void rootsOfQuadraticEquation(final int d,
+        final int e, final int f) {
         double disc = (e * e) - (2 * 2 * d * f);
         double quad = Math.sqrt(disc);
         double root1 = ((-e + quad) / (2 * d));
