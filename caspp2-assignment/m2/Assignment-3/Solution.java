@@ -5,8 +5,8 @@ import java.util.Scanner;
     *power function.
 */
 public final class Solution {
-    /*
-    Do not modify this main function.
+    /**.
+    *Do not modify this main function.
     */
     private Solution() {
     /**
@@ -16,8 +16,8 @@ public final class Solution {
     /**.
     *@param args is argument
     */
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);      
+    public static void main(final String[] args) {
+        Scanner s = new Scanner(System.in);
         int base = s.nextInt();
         int exponent = s.nextInt();
         long result = power(base, exponent);
