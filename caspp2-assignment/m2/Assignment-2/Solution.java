@@ -30,8 +30,8 @@ public final class Solution {
     public static void rootsOfQuadraticEquation(final int d, final int e, final int f) {
         double disc = (e * e) - (2 * 2 * d * f);
         double quad = Math.sqrt(disc);
-        double root1 = (( -f + quad) / (2 * d));
-        double root2 = (( -f - quad) / (2 * d));
+        double root1 = (( -e + quad) / (2 * d));
+        double root2 = (( -e - quad) / (2 * d));
         System.out.println(root1 + " " + root2);
     }
 }
