@@ -9,15 +9,18 @@ public final class Solution {
     Do not modify this main function.
     */
     private Solution() {
+    /**
+    *empty constructor
+    */
     }
     /**.
     *@param args is argument
     */
     public static void main(String[] args) {
-        Scanner s=new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);      
         int base = s.nextInt();
         int exponent = s.nextInt();
-        long result=power(base,exponent);
+        long result = power(base, exponent);
         System.out.println(result);
     }
     /**
@@ -26,6 +29,7 @@ public final class Solution {
     /**
     *@param base base
     *@param exp exponential
+    *@return long
     */
     public static long power(final int base, final int exp) {
         if (exp != 0) {
