@@ -36,8 +36,8 @@ public class Solution {
      * @return     { description_of_the_return_value }
      */
     public static int[][] takingInput(final int[][] matrix, final Scanner scan) {
-        for (int i = 0; i < getRowSize(matrix) ;i++ ) {
-            for (int j = 0; j < getColumnSize(matrix);j++ ) {
+        for (int i = 0; i < getRowSize(matrix); i++ ) {
+            for (int j = 0; j < getColumnSize(matrix); j++ ) {
                 matrix[i][j] = scan.nextInt();
             }
         }
@@ -54,8 +54,8 @@ public class Solution {
         if (getRowSize(matrix1) == getRowSize(matrix2) && 
                 getColumnSize(matrix1) == getColumnSize(matrix2)) {
             int[][] sumMatrix = createMatrix(getRowSize(matrix1), getColumnSize(matrix1));
-            for (int i = 0; i < getRowSize(sumMatrix) ;i++ ) {
-                for (int j = 0;j < getColumnSize(sumMatrix) ;j++ ) {
+            for (int i = 0; i < getRowSize(sumMatrix); i++ ) {
+                for (int j = 0; j < getColumnSize(sumMatrix); j++ ) {
                     sumMatrix[i][j] += matrix2[i][j] + matrix1[i][j];
                 }
             }
@@ -96,8 +96,8 @@ public class Solution {
      */
     public static String printMatrix(final int[][] matrix) {
         String temp = "";
-        for (int i = 0;i < getRowSize(matrix) ;i++ ) {
-            for (int j = 0;j < getColumnSize(matrix) ;j++ ) {
+        for (int i = 0; i < getRowSize(matrix); i++ ) {
+            for (int j = 0; j < getColumnSize(matrix); j++ ) {
                 temp += matrix[i][j] + " ";
             }
             temp = temp.trim();
