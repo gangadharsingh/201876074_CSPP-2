@@ -15,13 +15,7 @@ public final class Solution {
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
-        int a = scan.nextInt();
-        int b = scan.nextInt();
-        int[][] matrix1 = takingInput(createMatrix(a, b), scan);
-        a = scan.nextInt();
-        b = scan.nextInt();
-        int[][] matrix2 = takingInput(createMatrix(a, b), scan);
-        addMatrix(matrix1, matrix2);
+        addMatrix(takingInput(scan), takingInput(scan));
     }
 
     /**
@@ -44,10 +38,12 @@ public final class Solution {
      *
      * @return     { description_of_the_return_value }
      */
-    public static int[][] takingInput(final int[][] matrix,
-                                        final Scanner scan) {
-        for (int i = 0; i < getRowSize(matrix); i++) {
-            for (int j = 0; j < getColumnSize(matrix); j++) {
+    public static int[][] takingInput(final Scanner scan) {
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int[][] matrix = createMatrix(a, b);
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
                 matrix[i][j] = scan.nextInt();
             }
         }
