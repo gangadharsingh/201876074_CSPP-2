@@ -45,6 +45,7 @@ public final class Solution {
                 matrix[i][j] = scan.nextInt();
             }
         }
+        scan.close();
         return matrix;
     }
 
