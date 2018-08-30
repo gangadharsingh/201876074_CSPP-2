@@ -25,10 +25,10 @@ public class Solution {
      */
     public static int[][] createMatrix(final int a, final int b) {
         return new int[a][b];
-    } 
+    }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      matrix  The matrix
      * @param      scan    The scan
@@ -36,8 +36,8 @@ public class Solution {
      * @return     { description_of_the_return_value }
      */
     public static int[][] takingInput(final int[][] matrix, final Scanner scan) {
-        for (int i = 0; i < getRowSize(matrix); i++ ) {
-            for (int j = 0; j < getColumnSize(matrix); j++ ) {
+        for (int i = 0; i < getRowSize(matrix); i++) {
+            for (int j = 0; j < getColumnSize(matrix); j++) {
                 matrix[i][j] = scan.nextInt();
             }
         }
@@ -51,11 +51,12 @@ public class Solution {
      * @param      matrix2  The matrix 2
      */
     public static void addMatrix(final int[][] matrix1, final int[][] matrix2) {
-        if (getRowSize(matrix1) == getRowSize(matrix2) && 
+        if (getRowSize(matrix1) == getRowSize(matrix2) &&
                 getColumnSize(matrix1) == getColumnSize(matrix2)) {
-            int[][] sumMatrix = createMatrix(getRowSize(matrix1), getColumnSize(matrix1));
-            for (int i = 0; i < getRowSize(sumMatrix); i++ ) {
-                for (int j = 0; j < getColumnSize(sumMatrix); j++ ) {
+            int[][] sumMatrix = createMatrix(getRowSize(matrix1),
+                                            getColumnSize(matrix1));
+            for (int i = 0; i < getRowSize(sumMatrix); i++) {
+                for (int j = 0; j < getColumnSize(sumMatrix); j++) {
                     sumMatrix[i][j] += matrix2[i][j] + matrix1[i][j];
                 }
             }
@@ -88,7 +89,7 @@ public class Solution {
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      matrix  The matrix
      *
@@ -96,8 +97,8 @@ public class Solution {
      */
     public static String printMatrix(final int[][] matrix) {
         String temp = "";
-        for (int i = 0; i < getRowSize(matrix); i++ ) {
-            for (int j = 0; j < getColumnSize(matrix); j++ ) {
+        for (int i = 0; i < getRowSize(matrix); i++) {
+            for (int j = 0; j < getColumnSize(matrix); j++) {
                 temp += matrix[i][j] + " ";
             }
             temp = temp.trim();
