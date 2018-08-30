@@ -1,9 +1,13 @@
 import java.util.Scanner;
-
 /**
  * Class for solution.
  */
 public class Solution {
+    /**
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
@@ -51,8 +55,8 @@ public class Solution {
      * @param      matrix2  The matrix 2
      */
     public static void addMatrix(final int[][] matrix1, final int[][] matrix2) {
-        if (getRowSize(matrix1) == getRowSize(matrix2) &&
-                getColumnSize(matrix1) == getColumnSize(matrix2)) {
+        if (getRowSize(matrix1) == getRowSize(matrix2)
+                    && getColumnSize(matrix1) == getColumnSize(matrix2)) {
             int[][] sumMatrix = createMatrix(getRowSize(matrix1),
                                             getColumnSize(matrix1));
             for (int i = 0; i < getRowSize(sumMatrix); i++) {
