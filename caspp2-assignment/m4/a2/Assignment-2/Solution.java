@@ -14,8 +14,7 @@ public final class Solution {
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-        Scanner scan = new Scanner(System.in);
-        addMatrix(takingInput(scan), takingInput(scan));
+        addMatrix(takingInput(), takingInput());
     }
 
     /**
@@ -30,14 +29,14 @@ public final class Solution {
         return new int[a][b];
     }
 
+
     /**
      * { function_description }.
      *
-     * @param      scan  The scan
-     *
      * @return     { description_of_the_return_value }
      */
-    public static int[][] takingInput(final Scanner scan) {
+    public static int[][] takingInput() {
+        Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
         int b = scan.nextInt();
         int[][] matrix = createMatrix(a, b);
