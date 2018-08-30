@@ -33,8 +33,7 @@ public final class Solution {
     /**
      * { function_description }.
      *
-     * @param      matrix  The matrix
-     * @param      scan    The scan
+     * @param      scan  The scan
      *
      * @return     { description_of_the_return_value }
      */
