@@ -1,10 +1,15 @@
 import java.util.Scanner;
 /**
  * Class for solution.
+ * @author Gsingh
  */
 public class Solution {
     /**
-     * { function_description }
+     * Constructs the object.
+     */
+    private Solution() {}
+    /**
+     * { function_description }.
      *
      * @param      args  The arguments
      */
@@ -39,7 +44,8 @@ public class Solution {
      *
      * @return     { description_of_the_return_value }
      */
-    public static int[][] takingInput(final int[][] matrix, final Scanner scan) {
+    public static int[][] takingInput(final int[][] matrix,
+                                        final Scanner scan) {
         for (int i = 0; i < getRowSize(matrix); i++) {
             for (int j = 0; j < getColumnSize(matrix); j++) {
                 matrix[i][j] = scan.nextInt();
