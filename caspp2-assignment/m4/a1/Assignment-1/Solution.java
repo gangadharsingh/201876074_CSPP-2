@@ -1,7 +1,6 @@
-/**.
-*@author: Gangadhar.
-*print maximum of given array.
-*/
+/** .
+ * @author     : Gangadhar. print maximum of given array.
+ */
 import java.util.Scanner;
 public final class Solution {
     /**.
@@ -17,7 +16,7 @@ public final class Solution {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int temp = 0;
-        int[] matrix = new int [a];
+        int[] matrix = new int[a];
         for (int i = 0; i < a; i++) {
             matrix[i] = sc.nextInt();
             if (temp < matrix[i]) {
