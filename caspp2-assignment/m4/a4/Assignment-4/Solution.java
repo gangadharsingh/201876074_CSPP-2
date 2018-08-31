@@ -31,10 +31,9 @@ public final class Solution {
      */
     public static String reverseString(final String s) {
         String rev = "";
-        for (int i = s.length() - 1; i > 0; i--) {
+        for (int i = s.length() - 1; i >= 0; i--) {
             rev += s.charAt(i);
         }
-        rev += s.charAt(0);
         return rev;
     }
 }
