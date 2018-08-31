@@ -22,10 +22,9 @@ public class Solution {
         int num = 0;
         String l = "";
         for (int i = arr.length - 1; i >= 0; i--) {
-            System.out.println(arr[i]);
-/*            if (arr[i] == '1') {
+            if (arr[i] == '1') {
                 num += Math.pow(2, i);
-            }*/
+            }
         }
         l += num;
         return l;
