@@ -2,6 +2,9 @@
  * @author     : Gangadhar. print maximum of given array.
  */
 import java.util.Scanner;
+/**.
+ * {declaring class}.
+ */
 public final class Solution {
     /**.
     *Fill this main function to print maximum of given array.
