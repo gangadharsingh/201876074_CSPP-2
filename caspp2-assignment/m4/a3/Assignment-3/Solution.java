@@ -27,7 +27,7 @@ public class Solution
             num += Math.pow(2, i);
         }
     }
-    l+=num;
+    l += num;
     return l;
   }
 }
