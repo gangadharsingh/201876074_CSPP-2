@@ -14,7 +14,7 @@ public final class Solution {
     /**.
      * {main function}
      */
-    public final static void main(final String[] args) {
+    public static void main(final String[] args) {
         /**.
          * {main function}
          * @param args argument
@@ -24,7 +24,7 @@ public final class Solution {
         sc.nextLine();
         for (int i = 0; i < n; i++) {
             String s = sc.nextLine();
-            String res = binaryToDecimal(s);//Write binaryToDecimal function
+            String res = binaryToDecimal(s); //Write binaryToDecimal function
             System.out.println(res);
         }
     }
