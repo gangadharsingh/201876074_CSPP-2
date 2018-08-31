@@ -21,10 +21,12 @@ public class Solution {
         int num = 0;
         String l = "";
         char[] arr = s.toCharArray();
-        for (int i = s.length() - 1; i >= 0; i--) {
+        int k = arr.length-1;
+        for (int i = 0; i <s.length(); i++) {
             if (arr[i] == '1') {
-                num += Math.pow(2, i);
+                num += Math.pow(2, k);
             }
+            k--;
         }
         l += num;
         return l;
