@@ -36,7 +36,7 @@ public final class Solution {
      *
      * @return     { description_of_the_return_value }
      */
-    public static String binaryToDecimal(String s) {
+    public static String binaryToDecimal(final String s) {
         int num = 0;
         String l = "";
         char[] arr = s.toCharArray();
