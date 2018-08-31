@@ -21,6 +21,7 @@ public final class Solution
 		for (int i = s.length()-1; i > 0; i--) {
 			rev += s.charAt(i);
 		}
+		rev += s.charAt(1);
 		return rev;
 	}
 }
