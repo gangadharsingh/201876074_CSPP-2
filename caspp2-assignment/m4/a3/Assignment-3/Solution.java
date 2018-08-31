@@ -22,7 +22,7 @@ public class Solution
     char[] arr = s.toCharArray();
     int num = 0;
     String l = "";
-    for (int i = arr.length - 1; i > 0; i--) {
+    for (int i = arr.length; i > 1; i--) {
         if (arr[i] == '1') {
             num += Math.pow(2, i);
         }
