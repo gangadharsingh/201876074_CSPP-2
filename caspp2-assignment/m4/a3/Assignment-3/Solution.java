@@ -23,7 +23,7 @@ public class Solution
     int num = 0;
     String l = "";
     for (int i = arr.length; i > 0; i--) {
-        if (i == '1') {
+        if (arr[i] == '1') {
             num += Math.pow(2, i);
         }
     }
