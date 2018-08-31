@@ -13,8 +13,7 @@ public final class Solution {
          * {empty constructor}.
          */
     }
-    public static void main(final String[] args)
-    {
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int temp = 0;
@@ -22,7 +21,7 @@ public final class Solution {
         for (int i = 0; i < a; i++) {
             matrix[i] = sc.nextInt();
             if (temp < matrix[i]) {
-              temp = matrix[i];
+                temp = matrix[i];
             }
         }
         System.out.println(temp);
