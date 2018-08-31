@@ -20,7 +20,14 @@ public class Solution
     
   public static String binaryToDecimal(String s) {  
     char[] arr = s.toCharArray();
-    System.out.println(arr);
-    return "000";
+    int num = 0;
+    String l = "";
+    for (int i = arr.length; i > 0; i--) {
+        if (i == '1') {
+            num += Math.pow(2, i);
+        }
+    }
+    l+=num;
+    return l;
   }
 }
