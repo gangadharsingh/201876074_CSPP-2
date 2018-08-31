@@ -17,6 +17,7 @@ public final class Solution {
     public final static void main(final String[] args) {
         /**.
          * {main function}
+         * @param args argument
          */
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -28,7 +29,7 @@ public final class Solution {
         }
     }
 
-    /**
+    /**.
      * { function_description }
      *
      * @param      s     { parameter_description }
