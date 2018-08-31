@@ -12,7 +12,7 @@ public final class Solution {/*
     {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        int temp = sc.nextInt();
+        int temp = 0;
         int[] matrix = new int [a];
         for (int i = 0; i < a; i++) {
             matrix[i] = sc.nextInt();
