@@ -17,10 +17,10 @@ public class Solution {
     }
 
     public static String binaryToDecimal(String s) {
-        char[] arr = s.toCharArray();
         int num = 0;
         String l = "";
-        for (int i = arr.length - 1; i >= 0; i--) {
+        char[] arr = s.toCharArray();
+        for (int i = s.length(); i >= 0; i--) {
             if (arr[i] == '1') {
                 num += Math.pow(2, i);
             }
