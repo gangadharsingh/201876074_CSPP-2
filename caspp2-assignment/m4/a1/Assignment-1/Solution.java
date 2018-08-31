@@ -1,10 +1,8 @@
-import java.util.Scanner;
 /**.
-*@author: Gangadhar
+*@author: Gangadhar.
 *print maximum of given array.
 */
-
-import java.util.*;
+import java.util.Scanner;
 public final class Solution {
     /**.
     *Fill this main function to print maximum of given array.
