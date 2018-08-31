@@ -20,6 +20,6 @@ public final class Solution {/*
               temp = matrix[i];  
             } 
         }
-        System.out.println(matrix[a-1]);
+        System.out.println(temp);
     }
 }
