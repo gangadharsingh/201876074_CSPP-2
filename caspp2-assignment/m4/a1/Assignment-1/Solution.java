@@ -12,9 +12,13 @@ public final class Solution {/*
     {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
+        int temp = sc.nextInt();
         int[] matrix = new int [a];
         for (int i = 0; i < a; i++) {
             matrix[i] = sc.nextInt();
+            if (temp < matrix[i]) {
+              temp = matrix[i];  
+            } 
         }
         System.out.println(matrix[a-1]);
     }
