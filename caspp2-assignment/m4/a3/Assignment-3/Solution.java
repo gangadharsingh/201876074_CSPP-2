@@ -13,11 +13,11 @@ public final class Solution {
     }
     /**.
      * {main function}
+     *@param      args  The arguments
      */
     public static void main(final String[] args) {
         /**.
          * {main function}
-         * @param args argument
          */
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
