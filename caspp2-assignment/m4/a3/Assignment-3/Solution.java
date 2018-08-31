@@ -20,7 +20,7 @@ public class Solution {
         int num = 0;
         String l = "";
         char[] arr = s.toCharArray();
-        for (int i = s.length(); i >= 0; i--) {
+        for (int i = s.length() - 1; i >= 0; i--) {
             if (arr[i] == '1') {
                 num += Math.pow(2, i);
             }
