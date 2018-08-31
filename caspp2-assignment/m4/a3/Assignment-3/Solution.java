@@ -12,6 +12,9 @@ public class Solution {
     private Solution() {
     }
     public final static void main(final String[] args) {
+        /**.
+         * {main function}
+         */
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         sc.nextLine();
