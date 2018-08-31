@@ -14,10 +14,9 @@ public final class Solution {
     }
     /**.
      *{main function}.
-     *@param      args  The arguments
+     *@param args  The arguments
      */
     public static void main(final String[] args) {
-        
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int temp = 0;
