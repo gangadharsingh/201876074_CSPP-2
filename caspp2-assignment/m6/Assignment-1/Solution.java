@@ -18,20 +18,22 @@ public final class Solution {
      * @param      n     n value
      */
     static void oddComposites(final int n) {
-	// write your code here
-        for (int i = 2; i <= n; i++) {
-            if (i % 2 != 0 || i % 3 == 0) {
-                System.out.println(i);
-            } else if (i % 2 != 0){
-            for (int j = 5; j * j <= i; j = j + 6) {
-                if (i % j == 0 || i % (j + 2) == 0) {
-                    System.out.println(i);
+    // write your code here
+        int[] arr = new int[n/2];
+        int cnt = 0;
+        for (int num = 2; num <= n; num++) {
+            for (int div = 2; div < num; div++) {
+                if (num % div == 0) {
+                    cnt++;
+                }
+            }
+            if (cnt > 1) {
+                if (num % 2 != 0) {
+                    System.out.println(num);
                 }
             }
         }
-        }
-
-}
+    }
     /**
     * main method as driver program.
     * @param args is the parameter for this method
