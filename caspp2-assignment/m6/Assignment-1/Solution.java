@@ -20,14 +20,11 @@ public final class Solution {
     static void oddComposites(final int n) {
 	// write your code here
         int cnt = 0;
-        for (int i = 2; i <= n; i++) {
-            for (int num = 2; num <= i; num++) {
-                if (i % num == 0) {
-                    cnt++;
+        for (int i = 2; i < n; i++) {
+            for (int num = 2; num < i; num++) {
+                if (i % num == 0 && i % 2 != 0) {
+                    System.out.println(i);
                 }
-            }
-            if (cnt > 2) {
-                System.out.println(i);
             }
     }
 }
