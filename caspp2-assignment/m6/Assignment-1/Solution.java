@@ -24,9 +24,20 @@ public final class Solution {
         for (int i = 5; i <= n; i++) {
             for (int j = 2; j < i; j++) {
                 if (i % 2 != 0 && i % j == 0) {
-                    System.out.println(i);
+                    arr[cnt] = i;
+                    cnt++; 
                 }
             }
+        }
+        int cntelem = 1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != arr[cntelem]) {
+                System.out.println(arr[i]);
+            }
+            if (cntelem == arr.length || i == (arr.length - 1)) {
+                break;
+            }
+            cntelem++;
         }
     }
     /**
