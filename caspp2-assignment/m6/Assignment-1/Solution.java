@@ -26,7 +26,7 @@ public final class Solution {
         long[] arr = new long[n];
         int cnt = 0;
         for (long i = NUM; i <= n; i++) {
-            for (long j = 2; j <= i; j++) {
+            for (long j = 2; j < i; j++) {
                 if (i % 2 != 0 && i % j == 0) {
                     arr[cnt] = i;
                     cnt++;
