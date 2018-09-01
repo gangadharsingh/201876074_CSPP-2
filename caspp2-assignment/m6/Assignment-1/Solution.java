@@ -27,7 +27,7 @@ public final class Solution {
                     cnt++;
                 }
             }
-            if (cnt > 1) {
+            if (cnt > 2) {
                 if (num % 2 != 0) {
                     System.out.println(num);
                 }
