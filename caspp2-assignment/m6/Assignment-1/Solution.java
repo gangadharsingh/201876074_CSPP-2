@@ -10,6 +10,9 @@ public final class Solution {
     * Empty constructor.
     */
     public static final int NUM = 5;
+    /**
+     * Constructs the object.
+     */
     private Solution() {
         //not used
     }
