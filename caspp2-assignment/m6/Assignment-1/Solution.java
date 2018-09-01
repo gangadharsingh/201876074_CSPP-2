@@ -21,8 +21,8 @@ public final class Solution {
     // write your code here
         long[] arr = new long[n];
         int cnt = 0;
-        for (int i = 5; i <= n; i++) {
-            for (int j = 2; j < i; j++) {
+        for (long i = 5; i <= n; i++) {
+            for (long j = 2; j < i; j++) {
                 if (i % 2 != 0 && i % j == 0) {
                     arr[cnt] = i;
                     cnt++; 
