@@ -23,7 +23,7 @@ public final class Solution {
      */
     static void oddComposites(final int n) {
         // write your code here
-        long[] arr = new long[n];
+        long[] arr = new long[n*2];
         int cnt = 0;
         for (long i = NUM; i <= n; i++) {
             for (long j = 2; j < i; j++) {
