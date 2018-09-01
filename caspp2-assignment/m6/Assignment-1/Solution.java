@@ -19,17 +19,12 @@ public final class Solution {
      */
     static void oddComposites(final int n) {
     // write your code here
-        int[] arr = new int[n/2];
+        int[] arr = new int[n];
         int cnt = 0;
-        for (int num = 2; num <= n; num++) {
-            for (int div = 2; div < num; div++) {
-                if (num % div == 0) {
-                    cnt++;
-                }
-            }
-            if (cnt > 2) {
-                if (num % 2 != 0) {
-                    System.out.println(num);
+        for (int i = 5; i <= n; i++) {
+            for (int j = 2; j < i; j++) {
+                if (i % 2 != 0 && i % j == 0) {
+                    System.out.println(i);
                 }
             }
         }
