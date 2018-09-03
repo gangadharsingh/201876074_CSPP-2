@@ -8,6 +8,9 @@ class InputValidator {
      *Write the atrributes and methods for InputValidator.
      */
     public static final int NUM = 6;
+    /**
+     * defining empty constructor.
+     */
     private String str;
     /**
      * Constructs the object.
@@ -32,7 +35,15 @@ class InputValidator {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        /**
+         * empty constructor.
+         */
+    }
     /**
      * main class.
      * @param args arguement of main function.
