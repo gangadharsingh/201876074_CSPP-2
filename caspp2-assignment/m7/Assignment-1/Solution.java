@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 class InputValidator {
     /**
-     *Write the atrributes and methods for InputValidator
+     *Write the atrributes and methods for InputValidator.
      */
     private String str;
     /**
@@ -35,7 +35,7 @@ public class Solution {
     /**
      * Constructs the object.
      */
-    public Solution() {
+    Solution() {
         /**
          * empty constructor.
          */
