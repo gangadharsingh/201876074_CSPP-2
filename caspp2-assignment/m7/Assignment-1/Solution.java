@@ -4,7 +4,9 @@ import java.util.Scanner;
  * Class for input validator.
  */
 class InputValidator {
-    /*Write the atrributes and methods for InputValidator*/
+    /**
+     *Write the atrributes and methods for InputValidator
+     */
     private String str;
     /**
      * Constructs the object.
@@ -33,7 +35,7 @@ public class Solution {
     /**
      * Constructs the object.
      */
-    Solution() {
+    public Solution() {
         /**
          * empty constructor.
          */
@@ -42,7 +44,7 @@ public class Solution {
      * main class.
      * @param args arguement of main function.
      */
-    public static void main(final String args[]) {
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         String input = s.next();
         InputValidator i = new InputValidator(input);
