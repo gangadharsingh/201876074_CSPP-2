@@ -31,6 +31,14 @@ class InputValidator {
  */
 public class Solution {
     /**
+     * Constructs the object.
+     */
+    Solution() {
+        /**
+         * empty constructor.
+         */
+    }
+    /**
      * main class.
      * @param args arguement of main function.
      */
