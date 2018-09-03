@@ -7,6 +7,7 @@ class InputValidator {
     /**
      *Write the atrributes and methods for InputValidator.
      */
+    public static final int NUM = 6;
     private String str;
     /**
      * Constructs the object.
@@ -22,7 +23,7 @@ class InputValidator {
      * @return     {boolean value}.
      */
     public boolean validateData() {
-        if (str.length() >= 6) {
+        if (str.length() >= NUM) {
             return true;
         }
         return false;
