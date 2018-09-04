@@ -69,7 +69,7 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        this.newinp = new int[20];
+        this.newinp = new int[13];
         this.size = 0;
     }
 
@@ -184,9 +184,9 @@ public class List {
     public String toString() {
         // Replace the code below
         String listitem = "";
-        for (int i = 0; i < newinp.length; i++) {
-            if (i != 0) {
-                listitem += i;
+        for (int i = 0; i < size; i++) {
+            if (newinp[i] != 0) {
+                listitem += newinp[i];
             }
         }
         return '[' + listitem + ']';
