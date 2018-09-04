@@ -185,8 +185,8 @@ public class List {
         // Replace the code below
         String listitem = "[";
         int cnt = 0;
-        for (int i = 0; i < size+1; i++) {
-            if (i == size - 1) {
+        for (int i = 0; i < size + 1; i++) {
+            if (i == size) {
                 listitem += newinp[i] + "]";
             } else {
             listitem += newinp[i] + ",";                
