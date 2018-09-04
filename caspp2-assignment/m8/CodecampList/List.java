@@ -128,6 +128,7 @@ public class List {
         for (int i = index; i < size - 1; i++) {
                 newinp[i] = newinp[i+1];
             }
+        size-=1;
         }
 
     /*
