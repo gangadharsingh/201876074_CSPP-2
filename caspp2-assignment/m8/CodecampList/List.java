@@ -183,13 +183,15 @@ public class List {
      */
     public String toString() {
         // Replace the code below
-        String listitem = "";
+        String listitem = "[";
+        int cnt = 0;
         for (int i = 0; i < size; i++) {
-            if (newinp[i] != 0) {
-                listitem += newinp[i] + ",";
+            listitem += newinp[i] + ",";
+            if (i == size - 1) {
+                listitem += "]";
             }
         }
-        return '[' + listitem + ']';
+        return listitem;
     }
 
     /*
