@@ -187,7 +187,7 @@ public class List {
         int cnt = 0;
         for (int i = 0; i < size; i++) {
             if (i == size - 1) {
-                listitem += "]";
+                listitem += newinp[i] + "]";
             } else {
             listitem += newinp[i] + ",";                
             }
