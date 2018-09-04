@@ -31,6 +31,10 @@ public class List {
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
+    /**
+    * private object.
+    */
+    public static final int NUM = 10;
     private int[] newinp;
 
     /*
@@ -55,10 +59,16 @@ public class List {
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
+    /**
+    *creating an object.
+    */
     private int size;
     /*
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
+     */
+    /**
+     * Constructs the object.
      */
     public List() {
 
@@ -68,11 +78,10 @@ public class List {
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
 
-        // Think about the initial value for size.
-        // How many items do we have in the list when you create it?
-        // An empty list has how many items?
-        // That is the initial value to use for size.
-        this.newinp = new int[10];
+        // Think about the initial value for size. How many items do we have in
+        // the list when you create it? An empty list has how many items? That
+        // is the initial value to use for size.
+        this.newinp = new int[NUM];
         this.size = 0;
     }
 
@@ -190,12 +199,13 @@ public class List {
      * Contains return true if the list has the item passed as an argument to
      * the method So, iterate through the list and return true if the item
      * exists and otherwise false
-     *
+     */
+    /**
      * @param      item  The item.
      *
      * @return     {boolean value}.
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < newinp.length; i++) {
             if (newinp[i] == item) {
@@ -208,7 +218,8 @@ public class List {
     /*
      * Returns the index of the first occurrence of the specified element in
      * this list, or -1 if this list does not contain the element.
-     *
+     */
+    /**
      * @param      item  The item.
      *
      * @return     {integer value}.
