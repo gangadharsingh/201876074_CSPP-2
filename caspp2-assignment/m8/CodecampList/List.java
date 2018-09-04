@@ -86,7 +86,8 @@ public class List {
      */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
-        newinp[size++] = item;
+        newinp[size] = item;
+        size++;
     }
 
     /*
