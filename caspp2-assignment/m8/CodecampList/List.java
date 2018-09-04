@@ -69,8 +69,8 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        int[] newinp = new int[10];
-        int size = 0;
+        this.newinp = new int[10];
+        this.size = 0;
     }
 
     /*
