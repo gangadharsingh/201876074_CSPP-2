@@ -69,8 +69,8 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        this.newinp = new int[13];
-        this.size = 0;
+        int[] newinp = new int[10];
+        int size = 0;
     }
 
     /*
@@ -86,8 +86,7 @@ public class List {
      */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
-        newinp[size] = item;
-        size++;
+        newinp[size++] = item;
     }
 
     /*
@@ -99,11 +98,6 @@ public class List {
      */
     public int size() {
         // replace the code below to implement the size method
-        /*for (int i = 0; i < newinp.length; i++) {
-            if (i != 0) {
-                size++;
-            }
-        }*/
         return size;
     }
 
@@ -130,16 +124,11 @@ public class List {
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        int[] newarr = new int[size];
-        for (int i = 0; i < newinp.length; i++) {
-            if (i != index) {
-                newarr[i] = newinp[index];
-            } else if (i == index) {
-                newarr[i] = newinp[i+1];
+        for (int i = index; i < size - 1; i++) {
+                newinp[i] = newinp[i+1];
             }
-        System.out.println(newarr[i]);
+        System.out.println(newinp);
         }
-    }
 
     /*
      * Get method has to return the items that is
@@ -155,6 +144,7 @@ public class List {
     public int get(int index) {
         // Replace the code below to write the code for get
         if (index > size) {
+        System.out.println("Index Out of Bounds Exception");
         return -1;            
         } else {
             return newinp[index];
@@ -185,9 +175,9 @@ public class List {
         // Replace the code below
         String listitem = "[";
         int cnt = 0;
-        for (int i = 0; i < size + 1; i++) {
+        for (int i = 0; i < size - 1; i++) {
             if (i == size) {
-                listitem += newinp[i + 1] + "]";
+                listitem += newinp[i] + "]";
             } else {
             listitem += newinp[i] + ",";                
             }
@@ -226,7 +216,7 @@ public class List {
         return -1;
     }
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -240,34 +230,34 @@ public class List {
             String[] tokens = line.split(" ");
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
-            case "add":
+                case "add":
                 l.add(Integer.parseInt(tokens[1]));
                 break;
-            case "size":
+                case "size":
                 // invoke size method and print the list size
                 // BTW, list size is not the array size
                 // it is the number of items in the list
                 System.out.println(l.size());
                 break;
-            case "print":
+                case "print":
                 // print the list (implement toString for this to work)
                 // expected format is [item-1,item-2,...,item-n]
                 // review the output testcase file
                 System.out.println(l);
                 break;
-            case "remove":
+                case "remove":
                 l.remove(Integer.parseInt(tokens[1]));
                 break;
-            case "indexOf":
+                case "indexOf":
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
-            case "get":
+                case "get":
                 System.out.println(l.get(Integer.parseInt(tokens[1])));
                 break;
-            case "contains":
+                case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
             }
         }
-    }
+	}
 }
