@@ -175,14 +175,11 @@ public class List {
     public String toString() {
         // Replace the code below
         String listitem = "[";
-        int cnt = 0;
+        /*int cnt = 0;*/
         for (int i = 0; i < size - 1; i++) {
-            if (i == size) {
-                listitem += newinp[i] + "]";
-            } else {
-            listitem += newinp[i] + ",";                
-            }
+            listitem += newinp[i] + ",";
         }
+        listitem += newinp[size] + "]";
         return listitem;
     }
 
