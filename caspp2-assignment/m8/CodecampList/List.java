@@ -1,6 +1,9 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-
+/**
+ *@author gangadharsingh.
+ * List of .
+ */
 public class List {
     //Implement all the methods mentioned to build a ListADT
 
@@ -54,8 +57,8 @@ public class List {
     // variable initialization should be done in the constructor
     private int size;
     /*
-     * The purpose of the constructor is to initialize the
-     * class variables with some default values.
+     * The purpose of the constructor is to initialize the class variables with
+     * some default values.
      */
     public List() {
 
@@ -84,18 +87,19 @@ public class List {
      *
      * The method returns void (nothing)
      */
-    public void add(int item) {
-        //Inserts the specified element at the end of the list.
+    public void add(final int item) {
+        // Inserts the specified element at the end of the list.
         newinp[size] = item;
         size++;
     }
 
     /*
-     * The size method returns the value of the size.
-     * The purpose of the method is to announce the size of the list
-     * to the objects outside the list
+     * The size method returns the value of the size. The purpose of the method
+     * is to announce the size of the list to the objects outside the list
      *
      * The method returns an int. Empty list should return 0.
+     *
+     * @return     int value.
      */
     public int size() {
         // replace the code below to implement the size method
@@ -103,26 +107,21 @@ public class List {
     }
 
     /*
-     * The remove method does what the name suggests.
-     * Removes an int item, specified by the index argument, from the list
-     * It also does an additional step.
-     * Think about what happens when
-     * an item is removed from the middle of the list
-     * It creates a hole in the list, right?
-     * This would mean, all the items that are
-     * to the right side of the removed item should be
-     * moved to the left by one position.
-     * Here is an example:
-     * array = [1,2,3,0,0,0,0,0,0,0]
-     * remove(2) would remove the item 2
-     * But how do you remove the item from an array?
-     * Well, the way to remove it is to move all
-     * the items, that are to the right of the removed item, to the left
-     * So, the new array looks like this.
-     * array = [1,3,0,0,0,0,0,0,0,0]
-     * The method returns void (nothing)
+     * The remove method does what the name suggests. Removes an int item,
+     * specified by the index argument, from the list It also does an additional
+     * step. Think about what happens when an item is removed from the middle of
+     * the list It creates a hole in the list, right? This would mean, all the
+     * items that are to the right side of the removed item should be moved to
+     * the left by one position. Here is an example: array =
+     * [1,2,3,0,0,0,0,0,0,0] remove(2) would remove the item 2 But how do you
+     * remove the item from an array? Well, the way to remove it is to move all
+     * the items, that are to the right of the removed item, to the left So, the
+     * new array looks like this. array = [1,3,0,0,0,0,0,0,0,0] The method
+     * returns void (nothing)
+     *
+     * @param      index  The index.
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index > size) {
@@ -130,26 +129,28 @@ public class List {
             return;
         }
         for (int i = index; i < size - 1; i++) {
-                newinp[i] = newinp[i+1];
-            }
-        size-=1;
+            newinp[i] = newinp[i + 1];
         }
+        size -= 1;
+    }
 
     /*
-     * Get method has to return the items that is
-     * at the index position passed as an argument to the method.
-     * If the item doesn't exist then return a -1 to indicate that
-     * there is no element at that index.
-     * How can an element not be there at a given position?
-     * Well, if the position is greater than the number of items
-     * in the list then that would mean the item doesn't exist.
-     * How do we check if the position is greater than the
-     * number of items in the list? Would size variable be useful?
+     * Get method has to return the items that is at the index position passed
+     * as an argument to the method. If the item doesn't exist then return a -1
+     * to indicate that there is no element at that index. How can an element
+     * not be there at a given position? Well, if the position is greater than
+     * the number of items in the list then that would mean the item doesn't
+     * exist. How do we check if the position is greater than the number of
+     * items in the list? Would size variable be useful?
+     *
+     * @param      index  The index.
+     *
+     * @return     integer value.
      */
     public int get(int index) {
         // Replace the code below to write the code for get
         if (index > size) {
-        return -1;            
+            return -1;
         } else {
             return newinp[index];
         }
@@ -182,7 +183,7 @@ public class List {
         for (int i = 0; i < size - 1; i++) {
             listitem += newinp[i] + ",";
         }
-        listitem += newinp[size-1] + "]";
+        listitem += newinp[size - 1] + "]";
         return listitem;
     }
 
@@ -210,7 +211,7 @@ public class List {
     public int indexOf(int item) {
         // Replace the code below
 
-        for (int i =0; i < newinp.length; i++) {
+        for (int i = 0; i < newinp.length; i++) {
             if (newinp[i] == item) {
                 return i;
             }
@@ -218,7 +219,7 @@ public class List {
         return -1;
     }
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -232,36 +233,36 @@ public class List {
             String[] tokens = line.split(" ");
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
-                case "add":
+            case "add":
                 l.add(Integer.parseInt(tokens[1]));
                 break;
-                case "size":
+            case "size":
                 // invoke size method and print the list size
                 // BTW, list size is not the array size
                 // it is the number of items in the list
                 System.out.println(l.size());
                 break;
-                case "print":
+            case "print":
                 // print the list (implement toString for this to work)
                 // expected format is [item-1,item-2,...,item-n]
                 // review the output testcase file
                 System.out.println(l);
                 break;
-                case "remove":
+            case "remove":
                 l.remove(Integer.parseInt(tokens[1]));
                 break;
-                case "indexOf":
+            case "indexOf":
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
-                case "get":
-                if (l.get(Integer.parseInt(tokens[1]))!=-1) {
+            case "get":
+                if (l.get(Integer.parseInt(tokens[1])) != -1) {
                     System.out.println(l.get(Integer.parseInt(tokens[1])));
                 }
                 break;
-                case "contains":
+            case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
             }
         }
-	}
+    }
 }
