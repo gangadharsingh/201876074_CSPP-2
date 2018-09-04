@@ -87,7 +87,6 @@ public class List {
     public void add(int item) {
         //Inserts the specified element at the end of the list.
         newinp[size] = item;
-        System.out.println(newinp);
         size++;
     }
 
@@ -100,11 +99,11 @@ public class List {
      */
     public int size() {
         // replace the code below to implement the size method
-        for (int i = 0; i < newinp.length; i++) {
+        /*for (int i = 0; i < newinp.length; i++) {
             if (i != 0) {
                 size++;
             }
-        }
+        }*/
         return size;
     }
 
