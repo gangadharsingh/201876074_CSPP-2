@@ -186,9 +186,10 @@ public class List {
         String listitem = "[";
         int cnt = 0;
         for (int i = 0; i < size; i++) {
-            listitem += newinp[i] + ",";
             if (i == size - 1) {
                 listitem += "]";
+            } else {
+            listitem += newinp[i] + ",";                
             }
         }
         return listitem;
