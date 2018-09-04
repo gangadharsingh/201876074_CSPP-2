@@ -35,6 +35,9 @@ public class List {
     * private object.
     */
     public static final int NUM = 10;
+    /**
+     * new variable for size of array.
+     */
     private int[] newinp;
 
     /*
