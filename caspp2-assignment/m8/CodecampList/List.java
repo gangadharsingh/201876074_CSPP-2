@@ -127,7 +127,6 @@ public class List {
         // Think about what to do to the size variable.
         for (int i = index; i < size - 1; i++) {
                 newinp[i] = newinp[i+1];
-                System.out.println(newinp[i]);
             }
         }
 
