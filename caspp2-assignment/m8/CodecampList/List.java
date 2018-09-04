@@ -149,7 +149,6 @@ public class List {
     public int get(int index) {
         // Replace the code below to write the code for get
         if (index > size) {
-        System.out.println("Index Out of Bounds Exception");
         return -1;            
         } else {
             return newinp[index];
@@ -210,6 +209,7 @@ public class List {
      */
     public int indexOf(int item) {
         // Replace the code below
+
         for (int i =0; i < newinp.length; i++) {
             if (newinp[i] == item) {
                 return i;
@@ -254,7 +254,9 @@ public class List {
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
                 case "get":
-                System.out.println(l.get(Integer.parseInt(tokens[1])));
+                if (l.get(Integer.parseInt(tokens[1]))!=-1) {
+                    System.out.println(l.get(Integer.parseInt(tokens[1])));
+                }
                 break;
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
