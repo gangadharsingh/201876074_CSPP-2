@@ -179,7 +179,7 @@ public class List {
         for (int i = 0; i < size - 1; i++) {
             listitem += newinp[i] + ",";
         }
-        listitem += newinp[size] + "]";
+        listitem += newinp[size-1] + "]";
         return listitem;
     }
 
