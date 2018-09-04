@@ -77,15 +77,15 @@ public class List {
     }
 
     /*
-     * The add method does what the name suggests.
-     * Add an int item to the list.
-     * The assumption is to store the item at the end of the list
-     * What is the end of the list?
-     * Is it the same as the end of the array?
-     * Think about how you can use the size variable to add item
-     * to the list.
+     * The add method does what the name suggests. Add an int item to the list.
+     * The assumption is to store the item at the end of the list What is the
+     * end of the list? Is it the same as the end of the array? Think about how
+     * you can use the size variable to add item to the list.
+     */
+    /**
+     * The method returns void (nothing).
      *
-     * The method returns void (nothing)
+     * @param      item  The item.
      */
     public void add(final int item) {
         // Inserts the specified element at the end of the list.
@@ -98,7 +98,8 @@ public class List {
      * is to announce the size of the list to the objects outside the list
      *
      * The method returns an int. Empty list should return 0.
-     *
+     */
+    /**
      * @return     int value.
      */
     public int size() {
@@ -118,7 +119,8 @@ public class List {
      * the items, that are to the right of the removed item, to the left So, the
      * new array looks like this. array = [1,3,0,0,0,0,0,0,0,0] The method
      * returns void (nothing)
-     *
+     */
+    /**
      * @param      index  The index.
      */
     public void remove(final int index) {
@@ -142,12 +144,13 @@ public class List {
      * the number of items in the list then that would mean the item doesn't
      * exist. How do we check if the position is greater than the number of
      * items in the list? Would size variable be useful?
-     *
+     */
+    /**
      * @param      index  The index.
      *
      * @return     integer value.
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index > size) {
             return -1;
@@ -157,24 +160,20 @@ public class List {
     }
 
     /*
-     * What happens when you print an object using println?
-     * Java provides a method named toString that is internally
-     * invoked when an object variable is used in println.
-     * For example:
-     * List l = new List();
-     * System.out.println(l);
-     * This statement is a shortcut for
+     * What happens when you print an object using println? Java provides a
+     * method named toString that is internally invoked when an object variable
+     * is used in println. For example: List l = new List();
+     * System.out.println(l); This statement is a shortcut for
      * System.out.println(l.toString());
      *
-     * So, implement the toString method to display the items
-     * in the list in the square brackets notation.
-     * i.e., if the list has numbers 1, 2, 3
-     * return the string [1,2,3]
-     * Caution: The array may be having other elements
-     * Example: [1,2,3,0,0,0,0,0,0,0]
-     * toString should only return the items in the list and
-     * not all the elements of the array.
-     *
+     * So, implement the toString method to display the items in the list in the
+     * square brackets notation. i.e., if the list has numbers 1, 2, 3 return
+     * the string [1,2,3] Caution: The array may be having other elements
+     * Example: [1,2,3,0,0,0,0,0,0,0] toString should only return the items in
+     * the list and not all the elements of the array.
+     */
+    /**
+     * @return     String representation of the object.
      */
     public String toString() {
         // Replace the code below
@@ -188,10 +187,13 @@ public class List {
     }
 
     /*
-     * Contains return true if the list has
-     * the item passed as an argument to the method
-     * So, iterate through the list and return true if
-     * the item exists and otherwise false
+     * Contains return true if the list has the item passed as an argument to
+     * the method So, iterate through the list and return true if the item
+     * exists and otherwise false
+     *
+     * @param      item  The item.
+     *
+     * @return     {boolean value}.
      */
     public boolean contains(int item) {
         // Replace the code below
@@ -204,11 +206,14 @@ public class List {
     }
 
     /*
-     * Returns the index of the first occurrence
-     * of the specified element in this list,
-     * or -1 if this list does not contain the element.
+     * Returns the index of the first occurrence of the specified element in
+     * this list, or -1 if this list does not contain the element.
+     *
+     * @param      item  The item.
+     *
+     * @return     {integer value}.
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
 
         for (int i = 0; i < newinp.length; i++) {
@@ -219,7 +224,12 @@ public class List {
         return -1;
     }
 
-    public static void main(String[] args) {
+    /**
+     * main function.
+     *
+     * @param      args  The arguments.
+     */
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
