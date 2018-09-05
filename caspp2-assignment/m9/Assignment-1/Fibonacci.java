@@ -29,10 +29,12 @@ public class Fibonacci
         List fibonacci = new List();
         int a=0;
         int b = 1;
+        fibonacci.add(a);
+        fibonacci.add(b);
         for (int i = 0; i < n; i++) {
-            fibonacci.add(a+b);
-            a= b;
-            b=a+b;
+        fibonacci.add(a + b);
+            a = b;
+            b = a + b;
         }
         /*fibonacci.add();*/
         return fibonacci;
