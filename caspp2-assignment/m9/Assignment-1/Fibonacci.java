@@ -33,11 +33,12 @@ public class Fibonacci
         fibonacci.add(a);
         fibonacci.add(b);
         for (int i = 0; i < n; i++) {
+            if(a + b < n) {
             c = a + b;
             fibonacci.add(c);
             a = b;
             b = c;
-            
+        }            
         }
         /*while (a + b < n) {
         }*/
