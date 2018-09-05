@@ -32,7 +32,6 @@ public class Fibonacci
         int c = 1;
         fibonacci.add(a);
         fibonacci.add(b);
-        fibonacci.add(c);
         while (a + b < n) {
             c = a + b;
             fibonacci.add(c);
