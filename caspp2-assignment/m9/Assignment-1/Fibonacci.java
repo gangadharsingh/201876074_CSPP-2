@@ -1,11 +1,7 @@
 import java.util.Scanner;
- /**
-  *code to print fibonacci number.
- */
 /**
+  *code to print fibonacci number.
  * @author gangadharsingh.
- */
-/*
  * In the previous module you have created List ADT.
  * ADTs are developed as reusable libraries
  * i.e., anyone who needs the ADT can use it in their program
@@ -22,11 +18,10 @@ import java.util.Scanner;
  *
  */
 public final class Fibonacci {
-    /*
-     * fib is a static method takes a argument n n is the count of the fibonacci
-     * numbers to be generated. The method returns a List with the n fibonacci
+    /**
+     * fib is a static method takes a argument n n is the count of the fibonacci.
+     * numbers to be generated. The method returns a List with the n fibonacci.
      * numbers.
-     *
      * Look for the hint.txt if some of the testcases fail.
      */
     /**
