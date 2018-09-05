@@ -95,7 +95,10 @@ public class List {
      */
 
     // todo - add an overloaded constructor here
-    
+    public List(int n) {
+    	this.size = 0;
+    	this.list = new int[n];
+    }
     
     /*
      * The add method does what the name suggests.
