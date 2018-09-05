@@ -1,6 +1,8 @@
 import java.util.Scanner;
+ /**
+  *code to print fibonacci number.
+ */
 /**
- *code to print fibonacci number.
  * @author gangadharsingh.
  */
 /*
