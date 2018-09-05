@@ -27,13 +27,17 @@ public class Fibonacci
      */
     public static List fib(int n) {
         List fibonacci = new List();
-        int a=0;
+        int a = 0;
         int b = 1;
         int c = 1;
-        for (int i = 0; i < n-2; i++) {
+        fibonacci.add(a);
+        fibonacci.add(b);
+        fibonacci.add(c);
+        while (a + b < n) {
+            c = a + b;
             fibonacci.add(c);
-            c = b;
-            b = a;
+            a = b;
+            b = c;
         }
         /*fibonacci.add();*/
         return fibonacci;
