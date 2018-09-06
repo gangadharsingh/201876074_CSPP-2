@@ -245,6 +245,10 @@ public class List {
         if (size == 0) {
             return "[]";
         }
+        if(list[0] == 0 && size == 0) {
+            String str = "[0]";
+            return str;
+        }
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
@@ -346,11 +350,7 @@ public class List {
                 if((tokens.length)==2){
                 String[] t = tokens[1].split(",");
                 if(t.length==1){
-                    if(Integer.parseInt(tokens[1]) != 0) {
                     l.add(Integer.parseInt(tokens[1]));
-                } else {
-                    System.out.println("[0]");
-                }
                 }
                 else{
                     if(t.length>1)
