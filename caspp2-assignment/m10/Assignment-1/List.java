@@ -242,10 +242,10 @@ public class List {
      *
      */
     public String toString() {
-        if (size == 0 && list[0] != 0) {
+        if (size == 0 && list[0] != 999) {
             return "[]";
         }
-        if(list[0] == 0 && size == 0) {
+        if(list[0] == 999 && size == 0) {
             String str = "[0]";
             return str;
         }
@@ -313,8 +313,8 @@ public class List {
             size++;
         } else if (index < 0){
             System.out.println("Negative Index Exception");
-        } else if (index == 0 && size == 0) {
-            list[0] = item;
+        } else if (index == 0 && size == 0 && item == 0) {
+            list[0] = 999;
         }
     }
     
