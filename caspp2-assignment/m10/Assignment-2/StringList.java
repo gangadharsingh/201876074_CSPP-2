@@ -1,19 +1,22 @@
 //An interface for ListADT of strings
 import java.util.Arrays;
-interface StringListInterface
-{
-	 public void add(String item);
-	 public void addAll(String items[]);
-	 public String get(int index);
-	 public int size();
-	 public void remove(int index);
-	 public boolean contains(String item);
-	 public int indexOf(String item);
+interface StringListInterface {
+    public void add(String item);
+    public void addAll(String items[]);
+    public String get(int index);
+    public int size();
+    public void remove(int index);
+    public boolean contains(String item);
+    public int indexOf(String item);
 }
-//Write a StringList class which implements StringListInterface 
+//Write a StringList class which implements StringListInterface
 
-public class StringList implements StringListInterface{
-	//Implement all the methods mentioned to build a ListADT
+/**
+ * List of strings.
+ * @author gangadharsingh.
+ */
+public class StringList implements StringListInterface {
+    //Implement all the methods mentioned to build a ListADT
 
     /*
      * The goal for the list is to store items.
@@ -36,10 +39,12 @@ public class StringList implements StringListInterface{
      * This is a hard concept to understand. Discuss with your mentor.
      *
     */
-    
     // declare a private String[]
     // don't create the array yet using new
     // that's the job of the List constructor
+    /**
+    *initializing String array.
+    */
     private String[] list;
     /*
      * What are the other class variables needed for creating a list?
@@ -58,27 +63,25 @@ public class StringList implements StringListInterface{
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
+     *
      */
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
+    /**
+    *initializing size.
+    */
     private int size;
-
     /*
-     * The purpose of the constructor is to initialize the
-     * class variables with some default values.
+     * The purpose of the constructor is to initialize the class variables with
+     * some default values.
      */
-    
-    
-
     public StringList() {
 
-        // what are the two variables to be initialized here?
-        // think about the private variables described above.
-        // What should be the default values?
-        // In the case of the list, it should be empty but
-        // it should be initialized with an array size like 10
+        // what are the two variables to be initialized here? think about the
+        // private variables described above. What should be the default values?
+        // In the case of the list, it should be empty but it should be
+        // initialized with an array size like 10
         list = new String[10];
 
         // Think about the initial value for size.
@@ -96,11 +99,11 @@ public class StringList implements StringListInterface{
      * There will be some clients of the ADT that will require
      * the list to contain n elements which is known
      * at the time of creating the list.
-     * 
+     *
      * The overloaded constructor is a way to initialize a list with
      * a list capacity of n items where n is given as an argument to
      * constructor.
-     * 
+     *
      */
 
     /**
@@ -113,8 +116,6 @@ public class StringList implements StringListInterface{
         list = new String[capacity];
     }
     // todo - add an overloaded constructor here
-    
-    
     /**
      * The add method does what the name suggests. Add an String item to the
      * list. The assumption is to store the item at the end of the list What is
@@ -132,26 +133,27 @@ public class StringList implements StringListInterface{
         }
         list[size++] = item;
     }
-    /*Inserts all the elements of specified int 
+    /*Inserts all the elements of specified int
     array to the end of list*/
-   
     /**
      * Adds all.
      *
      * @param      items  The items.
      */
     public void addAll(final String[] items) {
-		int cnt = 0;
+        int cnt = 0;
         if (items.length - 1 > list.length - 1) {
             list = resize();
         }
         for (int i = 0; i < items.length; i++) {
             list[size++] = items[i];
         }
-	}
+    }
     /**
-    *@return     resized array.
-    */
+     * resizing array.
+     *
+     * @return     resized array.
+     */
     public String[] resize() {
         String[] copy = Arrays.copyOf(list, list.length * 2);
         return copy;
@@ -167,12 +169,11 @@ public class StringList implements StringListInterface{
     public int size() {
         return size;
     }
-
     /*
      * The remove method does what the name suggests.
      * Removes a String item, specified by the index argument, from the list
      * It also does an additional step.
-     * Think about what happens when 
+     * Think about what happens when
      * an item is removed from the middle of the list
      * It creates a hole in the list, right?
      * This would mean, all the items that are
@@ -192,7 +193,7 @@ public class StringList implements StringListInterface{
     /**
      * removing item at index.
      *
-     * @param      index  The index
+     * @param      index  The index.
      */
     public void remove(final int index) {
         // write the logic for remove here.
@@ -206,17 +207,18 @@ public class StringList implements StringListInterface{
             System.out.println("Invalid Position Exception");
         }
     }
-
-    /*
-     * Get method has to return the items that is
-     * at the index position passed as an argument to the method.
-     * If the item doesn't exist then return a -1 to indicate that
-     * there is no element at that index.
-     * How can an element not be there at a given position?
-     * Well, if the position is greater than the number of items
-     * in the list then that would mean the item doesn't exist.
-     * How do we check if the position is greater than the 
-     * number of items in the list? Would size variable be useful?
+    /**
+     * Get method has to return the items that is at the index position passed
+     * as an argument to the method. If the item doesn't exist then return a -1
+     * to indicate that there is no element at that index. How can an element
+     * not be there at a given position? Well, if the position is greater than
+     * the number of items in the list then that would mean the item doesn't
+     * exist. How do we check if the position is greater than the number of
+     * items in the list? Would size variable be useful?
+     *
+     * @param      index  The index.
+     *
+     * @return     {String array}.
      */
     public String get(final int index) {
         if (index < 0 || index >= size) {
@@ -253,13 +255,13 @@ public class StringList implements StringListInterface{
         str = str + list[i] + "]";
         return str;
     }
-    
+
     /**
      * Contains return true if the list has the item passed as an argument to.
      * the method So, iterate through the list and return true if the item
      * exists and otherwise false
      *
-     * @param      item  The item
+     * @param      item  The item.
      *
      * @return     boolean value.
      */
