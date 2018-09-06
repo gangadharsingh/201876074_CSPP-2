@@ -242,7 +242,7 @@ public class List {
      *
      */
     public String toString() {
-        if (size == 0) {
+        if (size == 0 && list[0] != 0) {
             return "[]";
         }
         if(list[0] == 0 && size == 0) {
