@@ -56,7 +56,7 @@ public class List<E> {
     public void addAll(final E[] items) {
         //Write logic for addAll method
         for (int i = 0; i < items.length; i++) {
-            if (size > list.length) {
+            if (size > list.length/2) {
                 resize();
             }
             list[size++] = items[i];
