@@ -200,9 +200,9 @@ public class List {
         } else {
             System.out.println("Invalid Position Exception");
         }
-        /*if (list[0] == 999) {
+        if (list[0] == 999) {
             list[0] = 0;
-        }*/
+        }
     }
 
     /*
@@ -248,10 +248,10 @@ public class List {
         if (size == 0 && list[0] != 999) {
             return "[]";
         }
-        /*if(list[0] == 999 && size == 0) {
+        if(list[0] == 999 && size == 0) {
             String st = "[0]";
             return st;
-        }*/
+        }
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
@@ -317,7 +317,7 @@ public class List {
         } else if (index < 0){
             System.out.println("Negative Index Exception");
         } else if (index == 0 && size == 0 && item == 0) {
-            list[0] = 0; //to control special
+            list[0] = 999; //to control special
                            //case of index and item both are 0
         }
     }
