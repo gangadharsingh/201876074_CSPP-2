@@ -55,10 +55,10 @@ public class List<E> {
     array to the end of list*/
     public void addAll(final E[] items) {
         //Write logic for addAll method
-        if (items.length - 1 > list.length - 1) {
-            resize();
-        }
         for (int i = 0; i < items.length; i++) {
+            if (size > list.length) {
+                resize();
+            }
             list[size++] = items[i];
         }
     }
