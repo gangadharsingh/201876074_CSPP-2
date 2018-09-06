@@ -309,7 +309,7 @@ public class List {
             size++;
         } else if (index < 0){
             System.out.println("Negative Index Exception");
-        } else {
+        } else if (index == 0 && size == 0) {
             list[0] = item;
         }
     }
@@ -346,7 +346,11 @@ public class List {
                 if((tokens.length)==2){
                 String[] t = tokens[1].split(",");
                 if(t.length==1){
+                    if(Integer.parseInt(tokens[1]) != 0) {
                     l.add(Integer.parseInt(tokens[1]));
+                } else {
+                    System.out.println("[0]");
+                }
                 }
                 else{
                     if(t.length>1)
