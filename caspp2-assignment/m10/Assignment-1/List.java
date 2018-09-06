@@ -296,7 +296,7 @@ public class List {
      * Inserts all the elements of specified int array to the end of list.
      * @param  items items are list of items.
      */
-    public void addAll (final int[] items) {
+    public void addAll(final int[] items) {
         // write the logic
         int cnt = 0;
         if (items.length - 1 > list.length - 1) {
