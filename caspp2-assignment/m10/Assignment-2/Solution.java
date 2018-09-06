@@ -4,7 +4,7 @@ import java.util.Scanner;
  * Class for solution.
  * @author gangadharsingh.
  */
-class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
