@@ -200,6 +200,9 @@ public class List {
         } else {
             System.out.println("Invalid Position Exception");
         }
+        if (list[0] == 999) {
+            list[0] = 0;
+        }
     }
 
     /*
@@ -246,8 +249,8 @@ public class List {
             return "[]";
         }
         if(list[0] == 999 && size == 0) {
-            String str = "[0]";
-            return str;
+            String st = "[0]";
+            return st;
         }
         String str = "[";
         int i = 0;
