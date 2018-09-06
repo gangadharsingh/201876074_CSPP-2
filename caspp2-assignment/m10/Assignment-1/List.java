@@ -317,7 +317,7 @@ public class List {
         } else if (index < 0){
             System.out.println("Negative Index Exception");
         } else if (index == 0 && size == 0 && item == 0) {
-            list[0] = 999; //to control special
+            list[0] = 0; //to control special
                            //case of index and item both are 0
         }
     }
