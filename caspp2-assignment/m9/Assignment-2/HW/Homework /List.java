@@ -245,7 +245,7 @@ public class List {
      */
     public String toString() {
         if (size == 0)
-            return "";
+            return "[]";
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
@@ -298,22 +298,10 @@ public class List {
         */
     public void add(int index, int item) {
         // write the logic
-        int a = 0;
-        if (index >= size) {
-            a = list[index];
-            list[index] = item;
-            list[index+1] = a;
-        } else {
-            a = list[index];
-            list[index] = item;            
-        for (int i = index; i < list.length-1; i++) {
-            a = list[i+1];
-            list[i+1] = a;
-            if (i == list.length - 1) {
-                break;
-            }
+        for (int i = list.length - 1; i >= index; i--) {
+            list[i+1] = list[i];
         }
-    }
+        list[index - 1] = item;  
     }
 
     /* Returns the count of occurances of a given item in the list*/
