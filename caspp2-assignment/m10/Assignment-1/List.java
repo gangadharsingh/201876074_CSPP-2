@@ -149,7 +149,7 @@ public class List {
      */
 
     /**
-    * todo create resize method todo create resize method /**
+    * todo create resize method todo create resize method.
     *
     *@return     resized array.
     */
@@ -203,9 +203,6 @@ public class List {
             size--;
         } else {
             System.out.println("Invalid Position Exception");
-        }
-        if (list[0] == 999) {
-            list[0] = 0;
         }
     }
 
@@ -275,7 +272,7 @@ public class List {
         return false;
     }
     /**
-     * Returns the index of the first occurrence of the specified element in
+     * Returns the index of the first occurrence of the specified element in.
      * this list, or -1 if this list does not contain the element.
      *
      * @param      item  The item.
@@ -284,14 +281,15 @@ public class List {
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
-            if (item == list[i])
+            if (item == list[i]) {
                 return i;
+            }
         }
         return -1;
     }
     /**
-     * Inserts all the elements of specified int array to the end of list
-     * @return null.
+     * Inserts all the elements of specified int array to the end of list.
+     * @param  items items are list of items.
      */
     public void addAll(final int items[]) {
         // write the logic
@@ -366,8 +364,9 @@ public class List {
                     if (t.length == 1) {
                         l.add(Integer.parseInt(tokens[1]));
                     } else {
-                        if (t.length > 1)
+                        if (t.length > 1) {
                             l.add(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
+                        }
                     }
                 }
                 break;
@@ -378,8 +377,9 @@ public class List {
                 if (tokens.length == 2) {
                     String[] t1 = tokens[1].split(",");
                     int temp[] = new int[t1.length];
-                    for (int i = 0; i < temp.length; i++)
+                    for (int i = 0; i < temp.length; i++)  {
                         temp[i] = Integer.parseInt(t1[i]);
+                    }
                     l.addAll(temp);
                 }
                 break;
