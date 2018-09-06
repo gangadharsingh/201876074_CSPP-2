@@ -298,7 +298,7 @@ public class List {
         */
     public void add(int index, int item) {
         // write the logic
-        for (int i = list.length - 2; i >= index; i--) {
+        for (int i = list.length - 2; i >= 0; i--) {
             list[i+1] = list[i];
             if (i == index) {
                 list[i] = item;
