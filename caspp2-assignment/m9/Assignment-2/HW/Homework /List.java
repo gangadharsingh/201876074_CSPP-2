@@ -262,7 +262,13 @@ public class List {
      * the item exists and otherwise false
      */
     public boolean contains(int item) {
-        return indexOf(item) == -1;
+        for (int i = 0; i < size; i++) {
+            if (list[i] == item) {
+                return true;
+            }
+        }
+        return false;
+        //return indexOf(item) == -1;
     }
 
     /*
@@ -300,9 +306,12 @@ public class List {
         } else {
             a = list[index];
             list[index] = item;            
-        for (int i = index; i < size + 2; i++) {
+        for (int i = index; i < list.length-1; i++) {
             a = list[i+1];
             list[i+1] = a;
+            if (i == list.length - 1) {
+                break;
+            }
         }
     }
     }
@@ -310,7 +319,13 @@ public class List {
     /* Returns the count of occurances of a given item in the list*/
     public int count(int item) {
         // write the logic
-        return 0;
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (list[i] == item) {
+                count++;
+            }
+        }
+        return count;
     }
 
 
