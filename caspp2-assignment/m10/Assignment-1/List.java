@@ -307,8 +307,10 @@ public class List {
             }
             list[index] = item;
             size++;
-        } else {
+        } else if (index < 0){
             System.out.println("Negative Index Exception");
+        } else {
+            list[index] = item;
         }
     }
     
