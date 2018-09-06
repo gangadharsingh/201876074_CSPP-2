@@ -6,6 +6,14 @@ import java.util.Scanner;
  */
 class Solution {
     /**
+     * Constructs the object.
+     */
+    private Solution() {
+        /**
+         * empty constructor.
+         */
+    }
+    /**
      * {main function}.
      *
      * @param      args  The arguments
