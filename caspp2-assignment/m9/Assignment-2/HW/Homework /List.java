@@ -298,12 +298,10 @@ public class List {
         */
     public void add(int index, int item) {
         // write the logic
-        for (int i = size; i >= 0; i--) {
+        for (int i = size; i >= index; i--) {
             list[i+1] = list[i];
-            if (i == index) {
-                list[i] = item;
-            }
         }
+        list[index] = item;
     }
 
     /* Returns the count of occurances of a given item in the list*/
