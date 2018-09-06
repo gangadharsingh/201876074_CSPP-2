@@ -245,9 +245,6 @@ public class List {
         if (size == 0) {
             return "[]";
         }
-        if (list[0] == 0) {
-            System.out.println("[0]");
-        }
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
@@ -289,7 +286,7 @@ public class List {
     {
         // write the logic
         int cnt = 0;
-        if (items.length + size == list.length) {
+        if (items.length + size >= list.length) {
             resize();
         }
         for (int i = 0; i < items.length; i++) {
@@ -313,7 +310,7 @@ public class List {
         } else if (index < 0){
             System.out.println("Negative Index Exception");
         } else {
-            list[index] = item;
+            list[0] = item;
         }
     }
     
