@@ -286,6 +286,9 @@ public class List {
     {
         // write the logic
         int cnt = 0;
+        if (items.length + size == list.length) {
+            resize();
+        }
         for (int i = 0; i < items.length; i++) {
             list[size++] = items[i];
         }
