@@ -2,7 +2,10 @@ import java.io.BufferedInputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Scanner;
-
+/**
+ *@author gangadharsingh.
+ * creating Generic object for creating string or int array.
+ */
 /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -10,8 +13,8 @@ import java.util.Scanner;
      * So, when we do not what we are going to have in the list
      * We need to create a Generic list to store the items
 
-     * Here E is a type parameter, and it will be replaced with 
-        actual type when the object got created. 
+     * Here E is a type parameter, and it will be replaced with
+        actual type when the object got created.
      */
 public class List<E> {
     private E[] list;
@@ -51,12 +54,12 @@ public class List<E> {
     public void resize() {
         list = (E[])Arrays.copyOf(list, list.length * 2);
     }
-    /*Inserts all the elements of specified int 
+    /*Inserts all the elements of specified int
     array to the end of list*/
     public void addAll(final E[] items) {
         //Write logic for addAll method
         for (int i = 0; i < items.length; i++) {
-            if (size > list.length-1) {
+            if (size > list.length - 1) {
                 resize();
             }
             list[size++] = items[i];
@@ -66,7 +69,7 @@ public class List<E> {
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
-     * 
+     *
      * The method returns an int. Empty list should return 0.
      */
     public int size() {
@@ -76,7 +79,7 @@ public class List<E> {
      * The remove method does what the name suggests.
      * Removes a String item, specified by the index argument, from the list
      * It also does an additional step.
-     * Think about what happens when 
+     * Think about what happens when
      * an item is removed from the middle of the list
      * It creates a hole in the list, right?
      * This would mean, all the items that are
@@ -111,11 +114,11 @@ public class List<E> {
      * How can an element not be there at a given position?
      * Well, if the position is greater than the number of items
      * in the list then that would mean the item doesn't exist.
-     * How do we check if the position is greater than the 
+     * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
      */
     public E get(int index) {
-         //Write logic for get method
+        //Write logic for get method
         if (index < 0 || index >= size) {
             return null;
         } else {
@@ -131,7 +134,7 @@ public class List<E> {
      * System.out.println(l);
      * This statement is a shortcut for
      * System.out.println(l.toString());
-     * 
+     *
      * So, implement the toString method to display the items
      * in the list in the square brackets notation.
      * i.E., if the list has numbers 1, 2, 3
@@ -143,7 +146,7 @@ public class List<E> {
      *
      */
     public String toString() {
-       if (size == 0) {
+        if (size == 0) {
             return "[]";
         }
         String str = "[";
@@ -161,7 +164,7 @@ public class List<E> {
      * the item exists and otherwise false
      */
     public boolean contains(E item) {
-		//Write logic for contains method
+        //Write logic for contains method
         for (int i = 0; i < size; i++) {
             if (list[i].equals(item)) {
                 return true;
@@ -170,12 +173,12 @@ public class List<E> {
         return false;
     }
     /*
-     * Returns the index of the first occurrence 
+     * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
     public int indexOf(E item) {
-       //Write logic for indexOf method
+        //Write logic for indexOf method
         for (int i = 0; i < size; i++) {
             if (item == list[i]) {
                 return i;
