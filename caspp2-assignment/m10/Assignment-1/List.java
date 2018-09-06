@@ -245,6 +245,9 @@ public class List {
         if (size == 0) {
             return "[]";
         }
+        if (list[0] == 0) {
+            System.out.println("[0]");
+        }
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
