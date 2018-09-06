@@ -248,10 +248,10 @@ public class List {
         if (size == 0 && list[0] != 999) {
             return "[]";
         }
-        if(list[0] == 999 && size == 0) {
+        /*if(list[0] == 999 && size == 0) {
             String st = "[0]";
             return st;
-        }
+        }*/
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
