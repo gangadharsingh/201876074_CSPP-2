@@ -49,7 +49,7 @@ public class List<E> {
      * @return     resized array.
      */
     public void resize() {
-        list = Arrays.copyOf(list, list.length * 2);
+        list = (E[])Arrays.copyOf(list, list.length * 2);
     }
     /*Inserts all the elements of specified int 
     array to the end of list*/
