@@ -216,13 +216,14 @@ public class List<E> {
       i.e a List object is exactly matching with the given list or not.
      */
     public boolean equals(List<E> listdata)
-    {
-        int count = 0;
+    {   int count = 0;
         for (int i = 0; i < listdata.size(); i++) {
-            if (listdata.get(i) != list[i]) {
-                return false;
-            }
-        } return true;
+            for (int j = 0; j < size; j++) {
+                if (listdata.get(i) != list[j]) {
+                    count++;
+                }   
+                }    
+        } return count == listdata.size();
     }
     /*Removes all the elements from list*/
     public void clear()
