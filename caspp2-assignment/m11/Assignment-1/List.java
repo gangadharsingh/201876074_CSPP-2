@@ -36,6 +36,9 @@ public class List {
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
+    /**
+    *creating magic number.
+    */
     public static final int NUM = 10;
     /**
      * What are the other class variables needed for creating a list?
@@ -248,7 +251,7 @@ public class List {
     }
     /**
      Removes all of its elements that are contained in the specified int array.
-    
+
      @param      newArray  The new array.
     */
     public void removeAll(final int[] newArray) {
@@ -289,7 +292,7 @@ public class List {
     /**
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
-    
+
     @param      lis   The lis.
 
     @return     {boolean value}.
@@ -390,7 +393,8 @@ public class List {
                 }
                 break;
             case "subList": {
-                if (tokens.length != 2) { break;
+                if (tokens.length != 2) {
+                    break;
                 }
                 String[] arrstring3 = tokens[1].split(",");
                 List object = l.subList(Integer.parseInt(arrstring3[0]),
