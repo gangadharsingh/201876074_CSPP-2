@@ -70,8 +70,8 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        int[] list = new int[10];
-        int size = 0;
+        list = new int[10];
+        size = 0;
 
     }
     
@@ -86,7 +86,7 @@ public class List {
     public void add(int item) {
         //Inserts the specified element at the end of the list.
     	if (size == list.length) {
-    		list = resize();
+    		resize();
     	}
         list[size++] = item;
     	
@@ -108,9 +108,9 @@ public class List {
      *
      * @return     {}
      */
-    public int[] resize() {
-        int[] resize = Arrays.copyOf(list, list.length * 2);
-        return resize;
+    public void resize() {
+        list = Arrays.copyOf(list, list.length * 2);
+        // return resize;
     }
     /*
      * The remove method does what the name suggests. Removes an int item,
@@ -246,7 +246,7 @@ public class List {
     public List subList(int start, int end) 
     {
     // write the logic for subList
-    	if (start > end || start < 0 && end < 0) {
+    	if (start > end && start < 0 && end < 0) {
     		System.out.println("Index Out of Bounds Exception");
     		return null;
     	} else {
