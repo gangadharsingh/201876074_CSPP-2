@@ -218,7 +218,7 @@ public class List<E> {
     public boolean equals(List<E> listdata)
     {   int count = 0;
         for (int i = 0; i < listdata.size(); i++) {
-            if (listdata.get(i) == list[i]) {
+            if (listdata.get(i).equals(list[i])) {
                 count++;
             }
         } return count == listdata.size();
