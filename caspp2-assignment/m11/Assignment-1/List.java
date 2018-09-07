@@ -1,7 +1,7 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-
+import java.util.*;
 /**
  * List of .
  * @author gangadharsingh.
@@ -260,6 +260,7 @@ public class List {
             for (int j = 0; j < size; j++) {
                 if (newArray[i] == list[j]) {
                     remove(j);
+                    j--;
                 }
             }
         }
@@ -299,12 +300,15 @@ public class List {
     */
     public boolean equals(final List lis) {
         // Replace the code below
-        int count = 0;
+        /*int count = 0;
         for (int i = 0; i < lis.size(); i++) {
             if (lis.get(i) != list[i]) {
                 return false;
             }
-        } return true;
+        } return true;*/
+        if (Arrays.equals(lis.list, list)) {
+            return true;
+        } return false;
     }
     /**
      * Removes all the elements from list Think about this case and make the
