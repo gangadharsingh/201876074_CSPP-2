@@ -229,7 +229,7 @@ public class List {
      {
         // write the logic 
         for (int i = 0; i < newArray.length; i++) {
-	        for (int j = 0; j < list.length; j++) {
+	        for (int j = 0; j < size; j++) {
 	        	if (newArray[i] == list[j]) {
 	        		remove(j);
 	        	}
@@ -279,7 +279,7 @@ public class List {
     {
     // write the logic for clear.
     	for (int i = 0; i < size; i++) {
-    		remove(indexOf(i));
+    		remove(indexOf(list[i]));
     	}
 
     }
