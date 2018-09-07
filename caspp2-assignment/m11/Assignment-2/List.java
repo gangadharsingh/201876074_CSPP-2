@@ -157,12 +157,13 @@ public class List<E> {
      */
     public boolean contains(E item) {
         //Write logic for contains method
+        boolean check = false;
         for (int i = 0; i < size; i++) {
             if (list[i].equals(item)) {
-                return true;
+                check = true;
             }
         }
-        return false;
+        return check;
     }
     /*
      * Returns the index of the first occurrence
