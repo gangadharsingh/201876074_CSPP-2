@@ -278,9 +278,7 @@ public class List {
     public void clear()
     {
     // write the logic for clear.
-    	for (int i = 0; i < size; i++) {
-    		remove(indexOf(list[i]));
-    	}
+    	removeAll(list);
 
     }
     public static void main(String[] args) {
