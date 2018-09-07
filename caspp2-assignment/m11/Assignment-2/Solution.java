@@ -15,9 +15,9 @@ class Student {
      *
      * @param      name  The name
      */
-    Student(final String name) {//A constructor used to
+    Student(final String n) {//A constructor used to
                     //initialize the instance variables
-        this.name = name;
+        name = n;
     }
     /**
      * Gets the name.
@@ -25,7 +25,7 @@ class Student {
      * @return     The name.
      */
     public String getName() {//Getter method which returns the value of instance variable
-        return this.name;
+        return name;
     }
     /**
      * check if two students names are equal or not.
