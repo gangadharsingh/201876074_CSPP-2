@@ -63,7 +63,14 @@ class Student {
  * Class for solution.
  */
 class Solution {
-
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        /**
+         * empty constructor.
+         */
+    }
     /**
      * Solution class.
      *
