@@ -227,7 +227,6 @@ public class List<E> {
     public void clear()
     {
         // write the logic for clear.
-        int[] list = new int[10];
         size = 0;
     }
 }
