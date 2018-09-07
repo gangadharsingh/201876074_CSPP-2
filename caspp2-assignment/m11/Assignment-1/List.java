@@ -320,7 +320,7 @@ public class List {
      */
     public void clear() {
         // write the logic for clear.
-        removeAll(list);
+        size = 0;
     }
     /**
      * main function.
