@@ -279,7 +279,11 @@ public class List {
     */
     public List subList(final int start, final int end) {
         // write the logic for subList
-        if (start > end || start < 0 || end < 0) {
+        if (start + 1 == end) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if (start > end || start <= 0 || end <= 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         } else {
