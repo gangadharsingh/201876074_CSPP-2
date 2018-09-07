@@ -85,8 +85,8 @@ public class List {
      */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
-    	if (size == (list.length - 1)) {
-    		resize();
+    	if (size == list.length) {
+    		list = resize();
     	} else {
         list[size++] = item;
     	}
@@ -108,8 +108,9 @@ public class List {
      *
      * @return     {}
      */
-    public void resize() {
-        list = Arrays.copyOf(list, list.length * 2);
+    public int[] resize() {
+        int[] resize = Arrays.copyOf(list, list.length * 2);
+        return resize;
     }
     /*
      * The remove method does what the name suggests. Removes an int item,
