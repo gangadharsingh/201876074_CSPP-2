@@ -53,7 +53,7 @@ public class List<E> {
     /**
      * { function_description }
      */
-    private void resize(){
+    private void resize() {
         list = (E[])Arrays.copyOf(list, list.length * 2);
     }
 
@@ -65,7 +65,7 @@ public class List<E> {
      * The method returns an int. Empty list should return 0.
      */
     public int size() {
-    	return size;
+        return size;
     }
     /*
      * The remove method does what the name suggests.
@@ -110,7 +110,7 @@ public class List<E> {
      * number of items in the list? Would size variable be useful?
      */
     public E get(int index) {
-         //Write logic for get method
+        //Write logic for get method
         // return list[index];
         if (index > size || index < 0) {
             return null;
@@ -138,7 +138,7 @@ public class List<E> {
      *
      */
     public String toString() {
-       if (size == 0) {
+        if (size == 0) {
             return "[]";
         }
         String str = "[";
@@ -156,7 +156,7 @@ public class List<E> {
      * the item exists and otherwise false
      */
     public boolean contains(E item) {
-		//Write logic for contains method
+        //Write logic for contains method
         for (int i = 0; i < size; i++) {
             if (list[i] == item) {
                 return true;
@@ -171,7 +171,7 @@ public class List<E> {
      */
 
     public int indexOf(E item) {
-       //Write logic for indexOf method
+        //Write logic for indexOf method
         for (int i = 0; i < size; i++) {
             if (list[i] == item) {
                 return i;
@@ -183,8 +183,7 @@ public class List<E> {
     /* Removes all of its elements that
      * are contained in the specified int array.
      */
-    public void removeAll(E[] items)
-    {
+    public void removeAll(E[] items) {
         // write the logic
         for (int i = 0; i < items.length; i++) {
             for (int j = 0; j < size; j++) {
@@ -215,17 +214,16 @@ public class List<E> {
     /*Returns a boolean indicating whether the parameter
       i.e a List object is exactly matching with the given list or not.
      */
-    public boolean equals(List<E> listdata)
-    {   int count = 0;
+    public boolean equals(List<E> listdata) {
+        int count = 0;
         for (int i = 0; i < listdata.size(); i++) {
-            if (listdata.get(i).equals(list[i])) {
+            if (listdata.get(i).equals(this.list[i])) {
                 count++;
             }
         } return count == listdata.size();
     }
     /*Removes all the elements from list*/
-    public void clear()
-    {
+    public void clear() {
         // write the logic for clear.
         size = 0;
     }
