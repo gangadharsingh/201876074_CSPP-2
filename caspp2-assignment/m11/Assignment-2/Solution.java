@@ -15,7 +15,7 @@ class Student {
      *
      * @param      n     { parameter_description }
      */
-    Student(final String n) {//A constructor used to
+    Student(final String n) { //A constructor used to
                     //initialize the instance variables
         name = n;
     }
@@ -24,7 +24,8 @@ class Student {
      *
      * @return     The name.
      */
-    public String getName() {//Getter method which returns the value of instance variable
+    public String getName() { //Getter method which
+                //returns the value of instance variable
         return name;
     }
     /**
@@ -35,7 +36,8 @@ class Student {
      * @return     { description_of_the_return_value }
      */
     @Override
-    public boolean equals(final Object other) { //This method is to check if two students names are equal or not
+    public boolean equals(final Object other) { //This method is to check if
+            //two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
         }
@@ -127,8 +129,9 @@ public class Solution {
                 if (tokens.length == 2) {
                     String[] t2 = tokens[1].split(",");
                     Integer[] a = new Integer[t2.length];
-                    for (int i = 0; i < t2.length; i++)
+                    for (int i = 0; i < t2.length; i++) {
                         a[i] = Integer.parseInt(t2[i]);
+                    }
                     l.removeAll(a);
                 }
                 break;
@@ -240,8 +243,9 @@ public class Solution {
                 String[] arrstring3 = tokens[1].split(",");
                 List object = l.subList(Integer.parseInt(
                     arrstring3[0]), Integer.parseInt(arrstring3[1]));
-                if (object != null)
+                if (object != null) {
                     System.out.println(object);
+                }
                 break;
             case "equals":
                 if (tokens.length == 2) {
