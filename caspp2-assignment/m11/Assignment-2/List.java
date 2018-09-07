@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.*;
 /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -216,12 +217,9 @@ public class List<E> {
       i.e a List object is exactly matching with the given list or not.
      */
     public boolean equals(List<E> listdata) {
-        int count = 0;
-        for (int i = 0; i < size; i++) {
-            if (list[i].equals(listdata.get(i))) {
-                count++;
-            }
-        } return count == listdata.size();
+        if (Arrays.equals(listdata.list, list)) {
+            return true;
+        } return false;
     }
     /*Removes all the elements from list*/
     public void clear() {
