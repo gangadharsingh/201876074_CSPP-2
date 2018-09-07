@@ -13,7 +13,7 @@ class Student {
     /**
      * Constructs the object.
      *
-     * @param      name  The name
+     * @param      n     { parameter_description }
      */
     Student(final String n) {//A constructor used to
                     //initialize the instance variables
