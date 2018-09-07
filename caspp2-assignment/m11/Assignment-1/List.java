@@ -1,7 +1,6 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.*;
 /**
  * List of .
  * @author gangadharsingh.
@@ -312,7 +311,8 @@ public class List {
         } return true;*/
         if (Arrays.equals(lis.list, list)) {
             return true;
-        } return false;
+        }
+        return false;
     }
     /**
      * Removes all the elements from list Think about this case and make the
