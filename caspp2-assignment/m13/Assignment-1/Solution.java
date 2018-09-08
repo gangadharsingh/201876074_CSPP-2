@@ -163,7 +163,7 @@ class Set {
 	 * @return     { description_of_the_return_value }
 	 */
 	public int[][] cartesianProduct(final Set set2) {
-		if (size == 0 || set2.size == 0) {
+		if (size == 0 || set2.size() == 0) {
 			return null;
 		} else {
 			int[][] product = new int[size * set2.size()][2];
