@@ -163,16 +163,21 @@ class Set {
 	 * @return     { description_of_the_return_value }
 	 */
 	public int[][] cartesianProduct(final Set set2) {
-		int[][] product = new int[size * set2.size()][2];
-		int iterate = 0;
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < set2.size(); j++) {
-				product[iterate][0] = set[i];
-				product[iterate][1] = set2.get(j);
-				iterate++;
+		if (size == 0 || set2.size == 0) {
+			return null;
+		} else {
+			int[][] product = new int[size * set2.size()][2];
+			int iterate = 0;
+			for (int i = 0; i < size; i++) {
+				for (int j = 0; j < set2.size(); j++) {
+					product[iterate][0] = set[i];
+					product[iterate][1] = set2.get(j);
+					iterate++;
+				}
 			}
+			return product;
+			
 		}
-		return product;
 	}
 
 }
