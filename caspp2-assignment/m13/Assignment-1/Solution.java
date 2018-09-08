@@ -47,7 +47,7 @@ class Set {
 			resize();
 		}
 		for (int i = 0; i < size; i++) {
-			if (item != set[i]) {
+			if (set[i] != item) {
 				set[size++] = item;
 			}
 		}
