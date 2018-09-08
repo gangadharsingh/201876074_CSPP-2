@@ -46,10 +46,10 @@ class Set {
 		if (size == set.length) {
 			resize();
 		}
-		for (int i = 0; i < size; i++) {
-			if (set[i] != item) {
-				set[size++] = item;
-			}
+		if (!contains(item) && size > 0) {
+			set[size++] = item;
+		} else if (size == 0) {
+			set[size++] = item;
 		}
 	}
 	public void add(final int[] array) {
