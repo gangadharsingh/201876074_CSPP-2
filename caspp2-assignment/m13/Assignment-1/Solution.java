@@ -32,7 +32,7 @@ class Set {
 	}
 	public String toString() {
 		if (size == 0) {
-			return "[]";
+			return "{}";
 		}
 		String str = "{";
 		int i = 0;
