@@ -1,24 +1,46 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-
 /**
  * Class for set.
- * @author :
+ * @author :gangadharsingh
  */
 class Set {
-	//your code goes here...
-	//Good luck :-)
+	//
+	// your code goes here... Good luck :-)
+	//
+	/**
+	*initializing integer.
+	*/
 	private int[] set;
+	/**
+	 *initializing integer. 
+	 */
 	private int size;
+	/**
+	 * Constructs the object.
+	 */
 	Set() {
 		set = new int[10];
 		size = 0;
 	}
+	/**
+	 * 
+	 * description.
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public int size() {
 		return size;
 	}
 
+	/**
+	 * { function_description }
+	 *
+	 * @param      item  The item
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public boolean contains(final int item) {
 		for (int i = 0; i < size; i++) {
 			if (set[i] == item) {
@@ -27,9 +49,17 @@ class Set {
 		}
 		return false;
 	}
+	/**
+	 * { function_description }
+	 */
 	public void resize() {
 		set = Arrays.copyOf(set, size * 2);
 	}
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		if (size == 0) {
 			return "{}";
@@ -42,6 +72,11 @@ class Set {
 		str = str + set[i] + "}";
 		return str;
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      item  The item
+	 */
 	public void add(final int item) {
 		if (size == set.length) {
 			resize();
@@ -52,6 +87,11 @@ class Set {
 			set[size++] = item;
 		}
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      array  The array
+	 */
 	public void add(final int[] array) {
 		if (array.length + size > set.length) {
 			resize();
@@ -67,6 +107,13 @@ class Set {
 			return set[index];
 		}
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      set2  The set 2
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public Set intersection(final Set set2) {
 		Set setIntersection = new Set();
 		int[] array = new int[set2.size()];
@@ -78,14 +125,15 @@ class Set {
 				setIntersection.add(a);
 			}
 		}
-		/*for (int i: set) {
-			for (int j: array) {
-				if (contains(j)) {
-					setIntersection.add(j);				}
-			}
-		}*/
 		return setIntersection;
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      array  The array
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public Set retainAll(final int[] array) {
 		Set setIntersection = new Set();
 		for (int i = 0; i < size; i++) {
@@ -97,6 +145,13 @@ class Set {
 		}
 		return setIntersection;
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      set2  The set 2
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public int[][] cartesianProduct(Set set2) {
 		int[][] product = new int[size * set2.size()][size];
 		for (int i = 0; i < size; i++) {
@@ -143,7 +198,9 @@ public final class Solution {
 	 * @param      args  The arguments
 	 */
 	public static void main(final String[] args) {
+		//
 		// instantiate this set
+		//
 		Set s = new Set();
 		// code to read the test cases input file
 		Scanner stdin = new Scanner(new BufferedInputStream(System.in));
