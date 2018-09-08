@@ -46,7 +46,7 @@ class Set {
 		if (size == set.length) {
 			resize();
 		}
-		for (int i = 0; i < size+1; i++) {
+		for (int i = 0; i < size; i++) {
 			if (item != set[i]) {
 				set[size++] = item;
 			}
