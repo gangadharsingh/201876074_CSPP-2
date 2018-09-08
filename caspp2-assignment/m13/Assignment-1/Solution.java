@@ -60,7 +60,7 @@ class Set {
 			add(array[i]);
 		}
 	}
-	public int get(final int index) {
+	public int get(final int index, Set set2) {
 		if (index < 0 || index >= size) {
 			return -1;
 		} else {
@@ -69,13 +69,17 @@ class Set {
 	}
 	public Set intersection(final Set set2) {
 		Set setIntersection = new Set();
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < set2.size(); j++) {
-				if (!contains(set2.get(j))) {
-					setIntersection.add(set[j]);
-				}
-			}
+		int[] array = new int[set2.size()];
+		for (int i = 0; i < set2.size(); i++) {
+			array[i] = set2.get(i, set2);
 		}
+		setIntersection.add(array);
+		/*for (int i: set) {
+			for (int j: array) {
+				if (contains(j)) {
+					setIntersection.add(j);				}
+			}
+		}*/
 		return setIntersection;
 	}
 	public Set retainAll(final int[] array) {
@@ -93,7 +97,7 @@ class Set {
 		int[][] product = new int[size * set2.size()][size];
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < set2.size(); j++) {
-				product[i][j] = set[i] * set2.get(j);
+				product[i][j] = set[i] * set2.get(j, set2);
 			}
 		}
 		return product;
