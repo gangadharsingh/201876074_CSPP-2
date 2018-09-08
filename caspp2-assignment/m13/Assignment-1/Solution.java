@@ -100,7 +100,7 @@ class Set {
 			add(array[i]);
 		}
 	}
-	public int get(final int index, Set set2) {
+	public int get(final int index) {
 		if (index < 0 || index >= size) {
 			return -1;
 		} else {
@@ -120,7 +120,7 @@ class Set {
 		int[] array = new int[set2.size()];
 
 		for (int i = 0; i < set2.size(); i++) {
-			array[i] = set2.get(i, set2);
+			array[i] = set2.get(i);
 		}
 		
 		for (int a: set) {
@@ -163,10 +163,13 @@ class Set {
 	 * @return     { description_of_the_return_value }
 	 */
 	public int[][] cartesianProduct(final Set set2) {
-		int[][] product = new int[size * set2.size()][size];
+		int[][] product = new int[size * set2.size()][2];
+		int iterate = 0;
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < set2.size(); j++) {
-				product[i][j] = set[i] * set2.get(j, set2);
+				product[iterate][0] = set[i];
+				product[iterate][1] = set2.get(j);
+				iterate++;
 			}
 		}
 		return product;
