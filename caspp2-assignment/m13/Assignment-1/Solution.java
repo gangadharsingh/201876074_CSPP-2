@@ -71,8 +71,8 @@ class Set {
 		Set setIntersection = new Set();
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < set2.size(); j++) {
-				if (contains(set2.get(i))) {
-					setIntersection.add(set[i]);
+				if (!contains(set2.get(j))) {
+					setIntersection.add(set[j]);
 				}
 			}
 		}
