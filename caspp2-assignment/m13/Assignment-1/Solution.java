@@ -116,16 +116,22 @@ class Set {
 	 */
 	public Set intersection(final Set set2) {
 		Set setIntersection = new Set();
+
 		int[] array = new int[set2.size()];
+
 		for (int i = 0; i < set2.size(); i++) {
 			array[i] = set2.get(i, set2);
 		}
-		for (int a: array) {
-			if (contains(a)) {
-				setIntersection.add(a);
+		
+		for (int a: set) {
+			for (int b: array) {
+				if (a == b) {
+					setIntersection.add(a);
+					}
 			}
-		}
-		return setIntersection;
+			}
+		return setIntersection;                                                                    
+
 	}
 	/**
 	 * { function_description }
