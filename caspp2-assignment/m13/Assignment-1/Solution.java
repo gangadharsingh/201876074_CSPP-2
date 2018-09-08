@@ -152,7 +152,7 @@ class Set {
 	 *
 	 * @return     { description_of_the_return_value }
 	 */
-	public int[][] cartesianProduct(Set set2) {
+	public int[][] cartesianProduct(final Set set2) {
 		int[][] product = new int[size * set2.size()][size];
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < set2.size(); j++) {
