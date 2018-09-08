@@ -75,7 +75,7 @@ class Set {
 		}
 		for (int a: array) {
 			if (contains(a)) {
-				setIntersection.add(array);
+				setIntersection.add(a);
 			}
 		}
 		/*for (int i: set) {
