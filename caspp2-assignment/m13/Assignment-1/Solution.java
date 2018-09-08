@@ -73,19 +73,9 @@ class Set {
 		for (int i = 0; i < set2.size(); i++) {
 			array[i] = set2.get(i, set2);
 		}
-		int[] empty = new int[set2.size()];
-		int count = 0;
 		for (int a: array) {
 			if (contains(a)) {
-				empty[count] = a;
-				count++;
-			}
-		}
-		if (count == set2.size()) {
-			setIntersection.add(array);
-		} else {
-			for (int i: empty) {
-			setIntersection.add(i);
+				setIntersection.add(array);
 			}
 		}
 		/*for (int i: set) {
