@@ -46,7 +46,11 @@ class Set {
 		if (size == set.length) {
 			resize();
 		}
-		set[size++] = item;
+		for (int i = 0; i < size+1; i++) {
+			if (item != set[i]) {
+				set[size++] = item;
+			}
+		}
 	}
 	public void add(final int[] array) {
 		if (array.length + size > set.length) {
