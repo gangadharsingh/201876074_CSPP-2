@@ -84,7 +84,7 @@ class SortedSet extends Set {
 			System.out.println("Set​ ​ Empty​ ​ Exception");
 			return -1;
 		} else {
-			return set[size];
+			return set[size -1];
 		}
 	}
 	public void addAll(int[] array) {
