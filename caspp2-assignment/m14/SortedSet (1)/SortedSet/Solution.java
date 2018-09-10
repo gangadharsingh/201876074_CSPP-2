@@ -70,7 +70,8 @@ public final class Solution {
                 break;
             case "subSet":
                 String[] t = tokens[1].split(",");
-                int[] n = s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
+                int[] n = s.subSet(Integer.parseInt(
+                    t[0]), Integer.parseInt(t[1]));
                 if (n.length != 1) {
                     System.out.println(Arrays.toString(s.subSet(
                         Integer.parseInt(t[0]), Integer.parseInt(
