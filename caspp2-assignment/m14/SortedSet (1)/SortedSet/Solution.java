@@ -109,6 +109,7 @@ class SortedSet extends Set {
         if (size == 0) {
             return "{}";
         }
+        Arrays.sort(set);
         String str = "{";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
