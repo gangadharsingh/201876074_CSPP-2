@@ -59,6 +59,7 @@ public class Solution {
 	}
 }
 class SortedSet extends Set {
+
 	public int[] subSet(int fromElement, int toElement) {
 		if (fromElement > toElement) {
 			System.out.println("Invalid Arguments to Subset Exception");
@@ -104,7 +105,9 @@ class SortedSet extends Set {
             add(array[i]);
         }
 		Arrays.sort(set);
+		super.toString();
 	}
+
 	public String toString() {
         if (size == 0) {
             return "{}";
