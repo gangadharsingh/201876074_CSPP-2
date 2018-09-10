@@ -70,7 +70,7 @@ class SortedSet extends Set {
 		int count = 0;
 		for (int i = 0; i < size; i++) {
 			if (set[i] < toElement) {
-				headset[count] = set[i];
+				headset[count++] = set[i];
 			}
 		}
 		return headset;
