@@ -66,12 +66,16 @@ class SortedSet extends Set {
 		return subset;
 	}
 	public int[] headSet(int toElement) {
-		int[] headset = new int[size];
 		int count = 0;
+		int[] temp = new int[size];
 		for (int i = 0; i < size; i++) {
 			if (set[i] < toElement) {
-				headset[count++] = set[i];
+				temp[count++] = set[i];
 			}
+		}
+		int[] headset = new int[count];
+		for (int i = 0; i < count ;i++ ) {
+			headset[i] = temp[i];
 		}
 		return headset;
 	}
