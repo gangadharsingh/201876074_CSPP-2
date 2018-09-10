@@ -60,7 +60,7 @@ public class Solution {
 class SortedSet extends Set {
 	public int[] subSet(int fromElement, int toElement) {
 		if (fromElement > toElement) {
-			System.out.println("Invalid​ ​Arguments​ ​to​ Subset​ ​Exception");
+			System.out.println("Invalid Arguments to Subset Exception");
 			return new int[]{-1};
 		}
 		int[] temp = new int[size];
@@ -92,7 +92,7 @@ class SortedSet extends Set {
 	}
 	public int last() {
 		if (size == 0) {
-			System.out.println("Set​ ​Empty​ ​Exception");
+			System.out.println("Set Empty Exception");
 			return -1;
 		} else {
 			return set[size -1];
