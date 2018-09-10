@@ -48,7 +48,8 @@ public class Solution {
 /*                intArray = intArray(tokens[0]);
                 intArray = intArray(tokens[1]);*/
                 String[] t = tokens[1].split(",");
-                if (s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1])).length != 1) {
+                int[] n = s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
+                if (n.length != 1 && n[0] == -1) {
                 	System.out.println(Arrays.toString(s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]))).replace("[", "{").replace("]", "}"));
                 }
                 break;
@@ -60,7 +61,7 @@ class SortedSet extends Set {
 	public int[] subSet(int fromElement, int toElement) {
 		if (fromElement > toElement) {
 			System.out.println("Invalid​ ​Arguments​ ​to​ Subset​ ​Exception");
-			return new int[0];
+			return new int[]{-1};
 		}
 		int[] temp = new int[size];
 		int count = 0;
@@ -91,7 +92,7 @@ class SortedSet extends Set {
 	}
 	public int last() {
 		if (size == 0) {
-			System.out.println("Set​ ​ Empty​ ​ Exception");
+			System.out.println("Set​ ​Empty​ ​Exception");
 			return -1;
 		} else {
 			return set[size -1];
