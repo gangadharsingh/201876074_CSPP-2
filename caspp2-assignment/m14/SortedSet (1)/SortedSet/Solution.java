@@ -100,7 +100,7 @@ class SortedSet extends Set {
 		}
 	}
 	public void addAll(int[] array) {
-		Arrays.sort(array);
+		Arrays.sort(set);
 		for (int i = 0; i < array.length; i++) {
             add(array[i]);
         }
