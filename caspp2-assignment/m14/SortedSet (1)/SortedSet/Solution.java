@@ -45,7 +45,7 @@ public class Solution {
                 }
                 break;
             case "subSet":
-/*                intArray = intArray(tokens[0]);
+				/*intArray = intArray(tokens[0]);
                 intArray = intArray(tokens[1]);*/
                 String[] t = tokens[1].split(",");
                 int[] n = s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
@@ -61,7 +61,7 @@ class SortedSet extends Set {
 	public int[] subSet(int fromElement, int toElement) {
 		if (fromElement > toElement) {
 			System.out.println("Invalid Arguments to Subset Exception");
-			return new int[]{0};
+			return new int[]{};
 		}
 		int[] temp = new int[size];
 		int count = 0;
