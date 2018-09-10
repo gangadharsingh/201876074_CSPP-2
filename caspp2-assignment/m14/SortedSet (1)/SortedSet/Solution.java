@@ -26,14 +26,13 @@ public class Solution {
             String line = stdin.nextLine();
             // split the line using space
             String[] tokens = line.split(" ");
-            System.out.println(tokens[0]+"tokens[0]");
+            //System.out.println(tokens[0]+"tokens[0]");
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
             case "last":
                 System.out.println(s.last());
                 break;
             case "addAll":
-            	System.out.println(tokens[1]+"tokens[1]");
             	int[] intArray = intArray(tokens[1]);
                 s.addAll(intArray);
                 break;
@@ -41,7 +40,6 @@ public class Solution {
                 System.out.println(s);
                 break;
             case "headSet":
-            	System.out.println(tokens[1]+"tokens[1]");
                 intArray = intArray(tokens[1]);
                 if (intArray.length == 1) {
                     System.out.println(Arrays.toString(s.headSet(intArray[0])).replace("[", "{").replace("]", "}"));
@@ -51,7 +49,6 @@ public class Solution {
 				/*intArray = intArray(tokens[0]);
                 intArray = intArray(tokens[1]);*/
                 String[] t = tokens[1].split(",");
-                System.out.println(t[0]+"t[0] & t[1]"+t[1]);
                 int[] n = s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
                 if (n.length != 1) {
                 	System.out.println(Arrays.toString(s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]))).replace("[", "{").replace("]", "}"));
@@ -64,7 +61,7 @@ public class Solution {
 class SortedSet extends Set {
 	public int[] subSet(int fromElement, int toElement) {
 		if (fromElement > toElement) {
-			System.out.println("Invalid Arguments to Subset Exception");
+			//System.out.println("Invalid Arguments to Subset Exception");
 			return new int[]{0};
 		}
 		int[] temp = new int[size];
@@ -96,7 +93,7 @@ class SortedSet extends Set {
 	}
 	public int last() {
 		if (size == 0) {
-			System.out.println("Set Empty Exception");
+			//System.out.println("Set Empty Exception");
 			return -1;
 		} else {
 			return set[size -1];
