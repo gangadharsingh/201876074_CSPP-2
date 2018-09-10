@@ -5,7 +5,7 @@ import java.util.Arrays;
  *@author : gangadharsingh.
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -64,14 +64,17 @@ public class Solution {
             case "headSet":
                 intArray = intArray(tokens[1]);
                 if (intArray.length == 1) {
-                    System.out.println(Arrays.toString(s.headSet(intArray[0])).replace("[", "{").replace("]", "}"));
+                    System.out.println(Arrays.toString(s.headSet(
+                        intArray[0])).replace("[", "{").replace("]", "}"));
                 }
                 break;
             case "subSet":
                 String[] t = tokens[1].split(",");
                 int[] n = s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
                 if (n.length != 1) {
-                    System.out.println(Arrays.toString(s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]))).replace("[", "{").replace("]", "}"));
+                    System.out.println(Arrays.toString(s.subSet(
+                        Integer.parseInt(t[0]), Integer.parseInt(
+                            t[1]))).replace("[", "{").replace("]", "}"));
                 }
                 break;
                 default:
@@ -79,6 +82,9 @@ public class Solution {
         }
     }
 }
+/**
+ * Class for sorted set.
+ */
 class SortedSet extends Set {
 
     /**
@@ -89,10 +95,10 @@ class SortedSet extends Set {
      *
      * @return     { return integer array }.
      */
-    public int[] subSet(int fromElement, int toElement) {
+    public int[] subSet(final int fromElement, final int toElement) {
         if (fromElement > toElement) {
             System.out.println("Invalid Arguments to Subset Exception");
-            return new int[] { -1};
+            return new int[] {-1};
         }
         int[] temp = new int[size];
         int count = 0;
@@ -102,7 +108,7 @@ class SortedSet extends Set {
             }
         }
         int[] subset = new int[count];
-        for (int i = 0; i < count; i++ ) {
+        for (int i = 0; i < count; i++) {
             subset[i] = temp[i];
         }
         return subset;
@@ -114,7 +120,7 @@ class SortedSet extends Set {
      *
      * @return     { int array }.
      */
-    public int[] headSet(int toElement) {
+    public int[] headSet(final int toElement) {
         int count = 0;
         int[] temp = new int[size];
         for (int i = 0; i < size; i++) {
@@ -123,7 +129,7 @@ class SortedSet extends Set {
             }
         }
         int[] headset = new int[count];
-        for (int i = 0; i < count ; i++ ) {
+        for (int i = 0; i < count; i++) {
             headset[i] = temp[i];
         }
         return headset;
@@ -145,7 +151,7 @@ class SortedSet extends Set {
      *
      * @param      array  The array
      */
-    public void addAll(int[] array) {
+    public void addAll(final int[] array) {
         for (int i = 0; i < array.length; i++) {
             add(array[i]);
         }
