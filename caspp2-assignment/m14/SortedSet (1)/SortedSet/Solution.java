@@ -48,7 +48,9 @@ public class Solution {
 /*                intArray = intArray(tokens[0]);
                 intArray = intArray(tokens[1]);*/
                 String[] t = tokens[1].split(",");
-                s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
+                if (s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1])).length != 1) {
+                	System.out.println(Arrays.toString(s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]))).replace("[", "{").replace("]", "}"));
+                }
                 break;
 			}
 		}
@@ -56,12 +58,20 @@ public class Solution {
 }
 class SortedSet extends Set {
 	public int[] subSet(int fromElement, int toElement) {
-		int[] subset = new int[size];
+		if (fromElement > toElement) {
+			System.out.println("Invalid​ ​Arguments​ ​to​ Subset​ ​Exception");
+			return new int[0];
+		}
+		int[] temp = new int[size];
 		int count = 0;
 		for (int i = 0; i < size; i++) {
 			if (set[i] >= fromElement && set[i] < toElement) {
-				subset[count] = set[i];
+				temp[count++] = set[i];
 			}
+		}
+		int[] subset = new int[count];
+		for (int i = 0; i < count;i++ ) {
+			subset[i] = temp[i];
 		}
 		return subset;
 	}
