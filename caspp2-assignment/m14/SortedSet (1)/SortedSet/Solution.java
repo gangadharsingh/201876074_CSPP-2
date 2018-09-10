@@ -101,12 +101,12 @@ class SortedSet extends Set {
 		}
 	}
 	public void addAll(int[] array) {
-		Arrays.sort(array);
-
 		for (int i = 0; i < array.length; i++) {
             add(array[i]);
         }
-		// super.toString();
+        set = Arrays.copyOf(set, size);
+		Arrays.sort(set);
+		// super.toString()
 	}
 
 	public String toString() {
