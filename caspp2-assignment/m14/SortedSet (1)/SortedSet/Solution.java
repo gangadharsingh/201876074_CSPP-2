@@ -49,7 +49,7 @@ public class Solution {
                 intArray = intArray(tokens[1]);*/
                 String[] t = tokens[1].split(",");
                 int[] n = s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
-                if (n.length != 1 && n[0] == -1) {
+                if (n[0] == -1) {
                 	System.out.println(Arrays.toString(s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]))).replace("[", "{").replace("]", "}"));
                 }
                 break;
