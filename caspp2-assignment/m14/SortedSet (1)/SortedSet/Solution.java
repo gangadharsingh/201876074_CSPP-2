@@ -41,7 +41,7 @@ public class Solution {
             case "headSet":
                 intArray = intArray(tokens[1]);
                 if (intArray.length == 1) {
-                    s.headSet(intArray[0]);
+                    System.out.println(s.headSet(intArray[0]));
                 }
                 break;
             case "subSet":
