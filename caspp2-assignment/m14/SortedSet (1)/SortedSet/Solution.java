@@ -103,7 +103,7 @@ class SortedSet extends Set {
 		for (int i = 0; i < array.length; i++) {
             add(array[i]);
         }
-		Arrays.sort(array);
+		Arrays.sort(set);
 	}
 	public String toString() {
         if (size == 0) {
