@@ -103,8 +103,8 @@ public class Set {
         }
         for (int i = 0; i < this.size(); i++) {
             for (int j = 0; j < other.size(); j++) {
-                result[++k][0] = this.get(i);
-                result[k][1] = other.get(j);
+                result[++k][0] = this.set[i];
+                result[k][1] = other.set[j];
             }
         }
         return result;
