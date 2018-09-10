@@ -141,7 +141,6 @@ public class StringList implements StringListInterface {
      * @param      items  The items.
      */
     public void addAll(final String[] items) {
-        int cnt = 0;
         if (items.length - 1 > list.length - 1) {
             list = resize();
         }

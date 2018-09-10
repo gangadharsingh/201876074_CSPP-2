@@ -3,7 +3,7 @@ import java.util.Scanner;
  *@author gangadharsingh.
  * Class for average.
  */
-class Average {
+final class Average {
 	/**
 	 *class Average.
 	 */

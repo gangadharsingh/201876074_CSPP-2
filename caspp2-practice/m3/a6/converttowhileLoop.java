@@ -3,11 +3,11 @@
     *Date:29/08/18
     *while loop.
 */
-public final class ConvertToWhileLoop {
+public final class converttowhileLoop {
     /**.
     *{using while loop}
     */
-    private ConvertToWhileLoop() {
+    private converttowhileLoop() {
     }
     /**.
     *{Do not modify this main function}.

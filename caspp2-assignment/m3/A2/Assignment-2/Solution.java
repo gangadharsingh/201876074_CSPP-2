@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**.
     *@author: Gangadhar
     *Date:29/08/18
-    *wnumber of 7's in between 1 to n.
+    *number of 7's in between 1 to n.
 */
 public final class Solution {
     /** Fill the main function to print the number of 7's between 1 to n.

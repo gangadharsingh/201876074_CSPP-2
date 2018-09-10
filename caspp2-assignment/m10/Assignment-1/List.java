@@ -251,14 +251,13 @@ public class List {
         if (size == 0) {
             return "[]";
         }
-        /*String str = "[";
+        String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
             str = str + list[i] + ",";
         }
         str = str + list[i] + "]";
-        return str;*/
-        return Arrays.toString(list);
+        return str;
     }
     /**
      * Contains return true if the list has the item passed as an argument to.
