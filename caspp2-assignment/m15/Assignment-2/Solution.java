@@ -30,7 +30,7 @@ public final class Solution {
             input = s.substring(1, s.length() - 1);
         }
         return Arrays.stream(input.split(",")).mapToInt(
-            Integer::parseInt).toArray();
+                   Integer::parseInt).toArray();
     }
 
     /**
@@ -53,8 +53,7 @@ public final class Solution {
             case "last":
                 try {
                     System.out.println(s.last());
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
@@ -70,10 +69,9 @@ public final class Solution {
                     intArray = intArray(tokens[1]);
                     if (intArray.length == 1) {
                         System.out.println(Arrays.toString(s.headSet(
-                        intArray[0])).replace("[", "{").replace("]", "}"));
+                                                               intArray[0])).replace("[", "{").replace("]", "}"));
                     }
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
@@ -100,10 +98,9 @@ public final class Solution {
                                            t[0]), Integer.parseInt(t[1]));
                     if (n.length != 1) {
                         System.out.println(Arrays.toString(
-                            n).replace("[", "{").replace("]", "}"));
+                                               n).replace("[", "{").replace("]", "}"));
                     }
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
@@ -128,7 +125,7 @@ class SortedSet extends Set {
      * @throws     Exception    invalid argument to index.
      */
     public int[] subSet(final int fromElement,
-        final int toElement) throws Exception {
+                        final int toElement) throws Exception {
         if (fromElement > toElement) {
             throw new Exception("Invalid Arguments to Subset Exception");
         } else {
