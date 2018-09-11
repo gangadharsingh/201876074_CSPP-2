@@ -153,10 +153,9 @@ class SortedSet extends Set {
      * the funciton will return last element of sorted set.
      * @return     { }
      */
-    public int last() {
+    public int last() throws Exception{
         if (size == 0) {
-            System.out.println("Set Empty Exception");
-            return -1;
+            throw new Exception("Set Empty Exception");
         } else {
             return set[size - 1];
         }
