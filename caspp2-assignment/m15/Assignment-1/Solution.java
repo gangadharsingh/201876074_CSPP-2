@@ -136,7 +136,9 @@ public class Solution {
      * removed item, to the left So, the new array looks like this. array =
      * [1,3,0,0,0,0,0,0,0,0] The method returns void (nothing)
      *
-     * @param      index  The index.
+     * @param      index      The index.
+     *
+     * @throws     Exception  invalid position exception.
      */
     public void remove(final int index) throws Exception {
         // write the logic for remove here. Think about what to do to the size
@@ -253,8 +255,10 @@ public class Solution {
     }
     /**
      Removes all of its elements that are contained in the specified int array.
-
-     @param      newArray  The new array.
+    
+     @param      newArray   The new array.
+    
+     @throws     Exception  { invalid position exception }.
     */
     public void removeAll(final int[] newArray)throws Exception {
         // write the logic
@@ -277,11 +281,13 @@ public class Solution {
     second parameter indicates the endIndex. Returns null and print
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
-
-    @param      start  The start.
-    @param      end    The end.
-
+    
+    @param      start      The start.
+    @param      end        The end.
+    
     @return     {sublist of orginal list}.
+    
+    @throws     Exception  index out of bounds.
     */
     public Solution subList(final int start, final int end) throws Exception {
         // write the logic for subList
@@ -337,6 +343,7 @@ public class Solution {
      * main function.
      *
      * @param      args  The arguments.
+     * @throws Exception exception.
      */
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
