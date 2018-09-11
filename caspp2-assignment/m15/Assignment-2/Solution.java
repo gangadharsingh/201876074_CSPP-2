@@ -50,7 +50,11 @@ public final class Solution {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
             case "last":
+            try {
                 System.out.println(s.last());
+            } catch(Exception e) {
+                System.out.println(e.getMessage());
+            }
                 break;
             case "addAll":
                 int[] intArray = intArray(tokens[1]);
@@ -60,13 +64,18 @@ public final class Solution {
                 System.out.println(s);
                 break;
             case "headSet":
+                try {
                 intArray = intArray(tokens[1]);
                 if (intArray.length == 1) {
                     System.out.println(Arrays.toString(s.headSet(
                         intArray[0])).replace("[", "{").replace("]", "}"));
+                    }
+                } catch(Exception e) {
+                    System.out.println(e.getMessage());
                 }
                 break;
             case "subSet":
+                try {
                 String[] t = tokens[1].split(",");
                 int[] n = s.subSet(Integer.parseInt(
                     t[0]), Integer.parseInt(t[1]));
@@ -74,6 +83,9 @@ public final class Solution {
                     System.out.println(Arrays.toString(s.subSet(
                         Integer.parseInt(t[0]), Integer.parseInt(
                             t[1]))).replace("[", "{").replace("]", "}"));
+                    }
+                } catch(Exception e) {
+                    System.out.println(e.getMessage());
                 }
                 break;
                 default:
@@ -94,21 +106,21 @@ class SortedSet extends Set {
      *
      * @return     { return integer array }.
      */
-    public int[] subSet(final int fromElement, final int toElement) {
-        if (fromElement > toElement) {
-            System.out.println("Invalid Arguments to Subset Exception");
-            return new int[] {-1};
-        }
-        int[] temp = new int[size];
+    public int[] subSet(final int fromElement, final int toElement) throws Exception {
         int count = 0;
+        int[] subset = new int[count];
+        if (fromElement > toElement) {
+            throw new Exception("Invalid Arguments to Subset Exception");
+        } else {
+        int[] temp = new int[size];
         for (int i = 0; i < size; i++) {
             if (set[i] >= fromElement && set[i] < toElement) {
                 temp[count++] = set[i];
             }
         }
-        int[] subset = new int[count];
         for (int i = 0; i < count; i++) {
             subset[i] = temp[i];
+            }
         }
         return subset;
     }
@@ -119,9 +131,12 @@ class SortedSet extends Set {
      *
      * @return     { int array }.
      */
-    public int[] headSet(final int toElement) {
+    public int[] headSet(final int toElement)throws Exception {
         int count = 0;
         int[] temp = new int[size];
+        if (size == 0 || toElement <= 0) {
+            throw new Exception("Set Empty Exception");
+        } else {
         for (int i = 0; i < size; i++) {
             if (set[i] < toElement) {
                 temp[count++] = set[i];
@@ -132,6 +147,7 @@ class SortedSet extends Set {
             headset[i] = temp[i];
         }
         return headset;
+        }
     }
     /**
      * the funciton will return last element of sorted set.
