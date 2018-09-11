@@ -81,8 +81,8 @@ public final class Solution {
                 set.add(intArray);
                 intArray = intArray(tokens[2]);
                 set2.add(intArray);
-                System.out.println(set);
-                System.out.println(set2);
+                System.out.println("1: "+set);
+                System.out.println("2: "+set2);
                 System.out.println(set.intersection(set2));
                 break;
             case "retainAll":
