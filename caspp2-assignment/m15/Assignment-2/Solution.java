@@ -188,7 +188,16 @@ class SortedSet extends Set {
         set = Arrays.copyOf(set, size);
         Arrays.sort(set);
     }
+    /*public Set intersection(SortedSet set2) {
+        Set result = new Set();
+        for (int i = 0; i < this.size; i++) {
+            if (other.contains(this.get(i))) {
+                result.add(this.get(i));
+            }
+        }
+        return result;                                                                   
 
+    }*/
     /**
      * Returns a string representation of the object.
      *
