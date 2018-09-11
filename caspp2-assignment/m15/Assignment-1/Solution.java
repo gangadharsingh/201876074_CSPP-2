@@ -283,19 +283,27 @@ public class Solution {
         // write the logic for subList
         Solution sublist = new Solution();
         try {
+            try{
             for (int i = start; i < end; i++) {
                 sublist.add(list[i]);
+                }
             }
-        }
-        catch(Exception e) {
+            catch(Exception e) {
             if (start + 1 == end) {
                 System.out.println("Index Out of Bounds Exception");
                 return null;
+                }
             }
+        }
+        catch(Exception e) {
+            /*if (start + 1 == end) {
+                System.out.println("Index Out of Bounds Exception");
+                return null;
+            }*/
             if (start > end || start <= 0 || end <= 0) {
                 System.out.println("Index Out of Bounds Exception");
                 return null;
-        }
+            }
         }
             return sublist;
          /*else {
