@@ -96,9 +96,7 @@ public final class Solution {
                 int[] n = s.subSet(Integer.parseInt(
                     t[0]), Integer.parseInt(t[1]));
                 if (n.length != 1) {
-                    System.out.println(Arrays.toString(s.subSet(
-                        Integer.parseInt(t[0]), Integer.parseInt(
-                            t[1]))).replace("[", "{").replace("]", "}"));
+                    System.out.println(Arrays.toString(n).replace("[", "{").replace("]", "}"));
                     }
                 } catch(Exception e) {
                     System.out.println(e.getMessage());

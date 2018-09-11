@@ -73,6 +73,7 @@ public class Set {
                 result.add(this.get(i));
             }
         }
+        
         return result;
     }
 
