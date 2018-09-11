@@ -134,7 +134,7 @@ class SortedSet extends Set {
     public int[] headSet(final int toElement)throws Exception {
         int count = 0;
         int[] temp = new int[size];
-        if (size == 0 || toElement <= 0) {
+        if (size == 0) {
             throw new Exception("Set Empty Exception");
         } else {
         for (int i = 0; i < size; i++) {
