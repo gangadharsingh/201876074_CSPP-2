@@ -12,7 +12,7 @@ public final class Solution {
     private Solution() {
         /**
          * empty constructor.
-         */ 
+         */
     }
     /**
      * creating Solution function.
@@ -29,7 +29,8 @@ public final class Solution {
         if (s.contains("[")) {
             input = s.substring(1, s.length() - 1);
         }
-        return Arrays.stream(input.split(",")).mapToInt(Integer::parseInt).toArray();
+        return Arrays.stream(input.split(",")).mapToInt(
+            Integer::parseInt).toArray();
     }
 
     /**
@@ -50,11 +51,11 @@ public final class Solution {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
             case "last":
-            try {
-                System.out.println(s.last());
-            } catch(Exception e) {
-                System.out.println(e.getMessage());
-            }
+                try {
+                    System.out.println(s.last());
+                } catch(Exception e) {
+                    System.out.println(e.getMessage());
+                }
                 break;
             case "addAll":
                 int[] intArray = intArray(tokens[1]);
@@ -65,12 +66,12 @@ public final class Solution {
                 break;
             case "headSet":
                 try {
-                intArray = intArray(tokens[1]);
-                if (intArray.length == 1) {
-                    System.out.println(Arrays.toString(s.headSet(
-                        intArray[0])).replace("[", "{").replace("]", "}"));
+                    intArray = intArray(tokens[1]);
+                    if (intArray.length == 1) {
+                        System.out.println(Arrays.toString(s.headSet(
+                                                               intArray[0])).replace("[", "{").replace("]", "}"));
                     }
-                } catch(Exception e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
@@ -92,17 +93,18 @@ public final class Solution {
                 break;
             case "subSet":
                 try {
-                String[] t = tokens[1].split(",");
-                int[] n = s.subSet(Integer.parseInt(
-                    t[0]), Integer.parseInt(t[1]));
-                if (n.length != 1) {
-                    System.out.println(Arrays.toString(n).replace("[", "{").replace("]", "}"));
+                    String[] t = tokens[1].split(",");
+                    int[] n = s.subSet(Integer.parseInt(
+                                           t[0]), Integer.parseInt(t[1]));
+                    if (n.length != 1) {
+                        System.out.println(Arrays.toString(
+                            n).replace("[", "{").replace("]", "}"));
                     }
                 } catch(Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
-                default:
+            default:
             }
         }
     }
@@ -122,22 +124,23 @@ class SortedSet extends Set {
      *
      * @throws     Exception    invalid argument to index.
      */
-    public int[] subSet(final int fromElement, final int toElement) throws Exception {
+    public int[] subSet(final int fromElement,
+        final int toElement) throws Exception {
         if (fromElement > toElement) {
             throw new Exception("Invalid Arguments to Subset Exception");
         } else {
-        int count = 0;
-        int[] temp = new int[size];
-        for (int i = 0; i < size; i++) {
-            if (set[i] >= fromElement && set[i] < toElement) {
-                temp[count++] = set[i];
+            int count = 0;
+            int[] temp = new int[size];
+            for (int i = 0; i < size; i++) {
+                if (set[i] >= fromElement && set[i] < toElement) {
+                    temp[count++] = set[i];
+                }
             }
-        }
-        int[] subset = new int[count];
-        for (int i = 0; i < count; i++) {
-            subset[i] = temp[i];
+            int[] subset = new int[count];
+            for (int i = 0; i < count; i++) {
+                subset[i] = temp[i];
             }
-        return subset;
+            return subset;
         }
     }
 
@@ -156,16 +159,16 @@ class SortedSet extends Set {
         if (size == 0 || toElement <= set[0]) {
             throw new Exception("Set Empty Exception");
         } else {
-        for (int i = 0; i < size; i++) {
-            if (set[i] < toElement) {
-                temp[count++] = set[i];
+            for (int i = 0; i < size; i++) {
+                if (set[i] < toElement) {
+                    temp[count++] = set[i];
+                }
             }
-        }
-        int[] headset = new int[count];
-        for (int i = 0; i < count; i++) {
-            headset[i] = temp[i];
-        }
-        return headset;
+            int[] headset = new int[count];
+            for (int i = 0; i < count; i++) {
+                headset[i] = temp[i];
+            }
+            return headset;
         }
     }
     /**
@@ -175,7 +178,7 @@ class SortedSet extends Set {
      *
      * @throws     Exception  empty set exception.
      */
-    public int last() throws Exception{
+    public int last() throws Exception {
         if (size <= 0) {
             throw new  Exception("Set Empty Exception");
         } else {
