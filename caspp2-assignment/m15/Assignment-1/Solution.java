@@ -284,7 +284,7 @@ public class Solution {
         Solution sublist = new Solution();
         try {
             try{
-                if (start + 1 == end || start > end || start <= 0 || end <= 0) {
+                if (start + 1 != end || start <= end || start > 0 || end > 0) {
                     for (int i = start; i < end; i++) {
                         sublist.add(list[i]);
                     }
