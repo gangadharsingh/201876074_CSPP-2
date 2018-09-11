@@ -88,7 +88,7 @@ public final class Solution {
                 intArray = intArray(tokens[1]);
                 set.add(intArray);
                 intArray = intArray(tokens[2]);
-                System.out.println(s.retainAll(intArray));
+                System.out.println(set.retainAll(intArray));
                 break;
             case "subSet":
                 try {
