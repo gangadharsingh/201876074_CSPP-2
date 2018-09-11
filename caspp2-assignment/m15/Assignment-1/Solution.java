@@ -138,18 +138,18 @@ public class Solution {
      *
      * @param      index  The index.
      */
-    public void remove(final int index) throws Exception{
+    public void remove(final int index) throws Exception {
         // write the logic for remove here. Think about what to do to the size
         // variable.
 
-            if (index >= 0 && index < size) {
-                for (int i = index; i < size - 1; i++) {
-                    list[i] = list[i + 1];
-                }
-                size--;
-            } else {
-                throw new Exception("Invalid Position Exception");
+        if (index >= 0 && index < size) {
+            for (int i = index; i < size - 1; i++) {
+                list[i] = list[i + 1];
             }
+            size--;
+        } else {
+            throw new Exception("Invalid Position Exception");
+        }
 
 
     }
@@ -266,11 +266,11 @@ public class Solution {
                         j--;
                     }
                 }
-            }   
+            }
         } else {
             throw new Exception("Invalid Position Exception");
-            }
         }
+    }
     /**
     Returns a list object containing elements, including startIndex and
     excluding endIndex. The first parameter indicates the startIndex and the
@@ -283,24 +283,17 @@ public class Solution {
 
     @return     {sublist of orginal list}.
     */
-    public Solution subList(final int start, final int end) throws Exception{
+    public Solution subList(final int start, final int end) throws Exception {
         // write the logic for subList
         Solution sublist = new Solution();
-                if (start + 1 == end || start >= end || start <= 0 || end <= 0) {
-                    throw new Exception("Index Out of Bounds Exception");
-                } else {
-                    for (int i = start; i < end; i++) {
-                        sublist.add(list[i]);
-                    }
-                }
-            return sublist;
-         /*else {
-            Solution sublist = new Solution();
+        if (start + 1 == end || start >= end || start <= 0 || end <= 0) {
+            throw new Exception("Index Out of Bounds Exception");
+        } else {
             for (int i = start; i < end; i++) {
                 sublist.add(list[i]);
             }
-            return sublist;
-        }*/
+        }
+        return sublist;
     }
     /**
     Returns a boolean indicating whether the parameter i.e a List object is
@@ -377,10 +370,10 @@ public class Solution {
                 break;
             case "remove":
                 try {
-                if (tokens.length == 2) {
-                    l.remove(Integer.parseInt(tokens[1]));
-                }
-                } catch(Exception e) {
+                    if (tokens.length == 2) {
+                        l.remove(Integer.parseInt(tokens[1]));
+                    }
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
@@ -420,32 +413,31 @@ public class Solution {
                 break;
             case "removeAll":
                 try {
-                if (tokens.length == 2) {
-                    String[] t2 = tokens[1].split(",");
-                    int[] a = new int[t2.length];
-                    for (int i = 0; i < t2.length; i++) {
-                        a[i] = Integer.parseInt(t2[i]);
+                    if (tokens.length == 2) {
+                        String[] t2 = tokens[1].split(",");
+                        int[] a = new int[t2.length];
+                        for (int i = 0; i < t2.length; i++) {
+                            a[i] = Integer.parseInt(t2[i]);
+                        }
+                        l.removeAll(a);
                     }
-                    l.removeAll(a);
-                    }
-                } catch(Exception e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
             case "subList":
                 try {
-                if (tokens.length != 2) {
-                    break;
-                }
-                String[] arrstring3 = tokens[1].split(",");
-                Solution object = l.subList(Integer.parseInt(arrstring3[0]),
-                                        Integer.parseInt(arrstring3[1]));
-                
-                if (object != null) {
-                    System.out.println(object);
+                    if (tokens.length != 2) {
+                        break;
                     }
-                }
-                catch(Exception e) {
+                    String[] arrstring3 = tokens[1].split(",");
+                    Solution object = l.subList(Integer.parseInt(arrstring3[0]),
+                                                Integer.parseInt(arrstring3[1]));
+
+                    if (object != null) {
+                        System.out.println(object);
+                    }
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
