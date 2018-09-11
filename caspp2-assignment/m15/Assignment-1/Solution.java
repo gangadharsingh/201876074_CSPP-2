@@ -295,7 +295,7 @@ public class Solution {
                 }
 
             }
-        catch(Exception e) {
+        catch(ListExcpetion e) {
             /*if (start + 1 == end) {
                 System.out.println("Index Out of Bounds Exception");
                 return null;
