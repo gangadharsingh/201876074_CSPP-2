@@ -132,11 +132,11 @@ class SortedSet extends Set {
      * @return     { int array }.
      */
     public int[] headSet(final int toElement)throws Exception {
-        int count = 0;
-        int[] temp = new int[size];
         if (size == 0 || toElement < 0) {
             throw new Exception("Set Empty Exception");
         } else {
+        int count = 0;
+        int[] temp = new int[size];
         for (int i = 0; i < size; i++) {
             if (set[i] < toElement) {
                 temp[count++] = set[i];
