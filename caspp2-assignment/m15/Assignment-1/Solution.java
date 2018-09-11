@@ -255,9 +255,9 @@ public class Solution {
     }
     /**
      Removes all of its elements that are contained in the specified int array.
-    
+
      @param      newArray   The new array.
-    
+
      @throws     Exception  { invalid position exception }.
     */
     public void removeAll(final int[] newArray)throws Exception {
@@ -281,12 +281,12 @@ public class Solution {
     second parameter indicates the endIndex. Returns null and print
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
-    
+
     @param      start      The start.
     @param      end        The end.
-    
+
     @return     {sublist of orginal list}.
-    
+
     @throws     Exception  index out of bounds.
     */
     public Solution subList(final int start, final int end) throws Exception {
@@ -439,8 +439,7 @@ public class Solution {
                     }
                     String[] arrstring3 = tokens[1].split(",");
                     Solution object = l.subList(Integer.parseInt(arrstring3[0]),
-                                                Integer.parseInt(arrstring3[1]));
-
+                        Integer.parseInt(arrstring3[1]));
                     if (object != null) {
                         System.out.println(object);
                     }
