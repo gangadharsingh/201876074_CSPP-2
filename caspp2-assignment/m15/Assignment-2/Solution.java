@@ -53,7 +53,7 @@ public final class Solution {
             case "last":
                 try {
                     System.out.println(s.last());
-                } catch(Exception e) {
+                }catch(Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
@@ -69,7 +69,7 @@ public final class Solution {
                     intArray = intArray(tokens[1]);
                     if (intArray.length == 1) {
                         System.out.println(Arrays.toString(s.headSet(
-                                                               intArray[0])).replace("[", "{").replace("]", "}"));
+                        intArray[0])).replace("[", "{").replace("]", "}"));
                     }
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
@@ -100,7 +100,7 @@ public final class Solution {
                         System.out.println(Arrays.toString(
                             n).replace("[", "{").replace("]", "}"));
                     }
-                } catch(Exception e) {
+                }catch(Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
