@@ -78,9 +78,9 @@ public final class Solution {
                 SortedSet set = new SortedSet();
                 SortedSet set2 = new SortedSet();
                 intArray = intArray(tokens[1]);
-                set.add(intArray);
+                set.addAll(intArray);
                 intArray = intArray(tokens[2]);
-                set2.add(intArray);
+                set2.addAll(intArray);
                 System.out.println("1: "+set);
                 System.out.println("2: "+set2);
                 System.out.println(set.intersection(set2));
@@ -88,7 +88,7 @@ public final class Solution {
             case "retainAll":
                 set = new SortedSet();
                 intArray = intArray(tokens[1]);
-                set.add(intArray);
+                set.addAll(intArray);
                 intArray = intArray(tokens[2]);
                 System.out.println(set.retainAll(intArray));
                 break;
@@ -140,6 +140,7 @@ class SortedSet extends Set {
         return subset;
         }
     }
+
     /**
      * return element upto toelement.
      *
