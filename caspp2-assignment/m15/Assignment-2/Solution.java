@@ -107,22 +107,22 @@ class SortedSet extends Set {
      * @return     { return integer array }.
      */
     public int[] subSet(final int fromElement, final int toElement) throws Exception {
-        int count = 0;
-        int[] subset = new int[count];
         if (fromElement > toElement) {
             throw new Exception("Invalid Arguments to Subset Exception");
         } else {
+        int count = 0;
         int[] temp = new int[size];
         for (int i = 0; i < size; i++) {
             if (set[i] >= fromElement && set[i] < toElement) {
                 temp[count++] = set[i];
             }
         }
+        int[] subset = new int[count];
         for (int i = 0; i < count; i++) {
             subset[i] = temp[i];
             }
-        }
         return subset;
+        }
     }
     /**
      * return element upto toelement.
