@@ -289,14 +289,19 @@ public class Solution {
                     for (int i = start; i < end; i++) {
                         sublist.add(list[i]);
                     }
+                }
+                else {
+                    throw new ListExcpetion("Index Out of Bounds Exception");
+                }
+
             }
-        }
         catch(Exception e) {
             /*if (start + 1 == end) {
                 System.out.println("Index Out of Bounds Exception");
                 return null;
             }*/
             /*if (start > end || start <= 0 || end <= 0) {*/
+                System.out.println(e);
                 System.out.println("Index Out of Bounds Exception");
                 return null;
             /*}*/
