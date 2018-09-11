@@ -150,7 +150,9 @@ public class Solution {
             }
         }
         catch(Exception e) {
-          System.out.println("Invalid Position Exception");
+            if (size == 0) {
+                System.out.println("Invalid Position Exception");
+            }
         }
     }
     /**
