@@ -141,13 +141,16 @@ public class Solution {
     public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
-        if (index >= 0 && index < size) {
-            for (int i = index; i < size - 1; i++) {
-                list[i] = list[i + 1];
+        try {
+            if (index >= 0 && index < size) {
+                for (int i = index; i < size - 1; i++) {
+                    list[i] = list[i + 1];
+                }
+                size--;
             }
-            size--;
-        } else {
-            System.out.println("Invalid Position Exception");
+        }
+        catch(Exception e) {
+          System.out.println("Invalid Position Exception");
         }
     }
     /**
@@ -278,20 +281,30 @@ public class Solution {
     */
     public Solution subList(final int start, final int end) {
         // write the logic for subList
-        if (start + 1 == end) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
+        Solution sublist = new Solution();
+        try {
+            for (int i = start; i < end; i++) {
+                sublist.add(list[i]);
+            }
         }
-        if (start > end || start <= 0 || end <= 0) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        } else {
+        catch(Exception e) {
+            if (start + 1 == end) {
+                System.out.println("Index Out of Bounds Exception");
+                return null;
+            }
+            if (start > end || start <= 0 || end <= 0) {
+                System.out.println("Index Out of Bounds Exception");
+                return null;
+        }
+        }
+            return sublist;
+         /*else {
             Solution sublist = new Solution();
             for (int i = start; i < end; i++) {
                 sublist.add(list[i]);
             }
             return sublist;
-        }
+        }*/
     }
     /**
     Returns a boolean indicating whether the parameter i.e a List object is
