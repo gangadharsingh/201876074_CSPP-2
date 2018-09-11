@@ -285,18 +285,10 @@ public class Solution {
         // write the logic for subList
         Solution sublist = new Solution();
         try {
-            try{
-                if (start + 1 != end && start < end || start > 0 && end > 0) {
+                if ((start + 1 != end && start < end) || (start > 0 && end > 0)) {
                     for (int i = start; i < end; i++) {
                         sublist.add(list[i]);
                     }
-                }
-            }
-            catch(Exception e) {
-            /*if (start + 1 == end) {*/
-                System.out.println("Index Out of Bounds Exception");
-                return null;
-                /*}*/
             }
         }
         catch(Exception e) {
@@ -468,5 +460,14 @@ public class Solution {
                 break;
             }
         }
+    }
+}
+class ListExcpetion extends Exception {
+    String str1;
+    ListExcpetion(String str2) {
+        str1 = str2;
+    }
+    public String toString() {
+        return (str1);
     }
 }
