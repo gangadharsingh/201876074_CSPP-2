@@ -318,7 +318,7 @@ public class Solution {
         // Replace the code below
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if (list[i] != item) {
+            if (list[i] == item) {
                 count++;
             }
         } return count;
@@ -374,6 +374,12 @@ public class Solution {
             case "indexOf":
                 if (tokens.length == 2) {
                     System.out.println(l.indexOf(
+                                           Integer.parseInt(tokens[1])));
+                }
+                break;
+            case "count":
+                if (tokens.length == 2) {
+                    System.out.println(l.count(
                                            Integer.parseInt(tokens[1])));
                 }
                 break;
