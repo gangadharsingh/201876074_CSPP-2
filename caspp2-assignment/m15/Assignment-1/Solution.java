@@ -289,10 +289,10 @@ public class Solution {
                 }
             }
             catch(Exception e) {
-            if (start + 1 == end) {
+            /*if (start + 1 == end) {*/
                 System.out.println("Index Out of Bounds Exception");
                 return null;
-                }
+                /*}*/
             }
         }
         catch(Exception e) {
@@ -300,10 +300,10 @@ public class Solution {
                 System.out.println("Index Out of Bounds Exception");
                 return null;
             }*/
-            if (start > end || start <= 0 || end <= 0) {
+            /*if (start > end || start <= 0 || end <= 0) {*/
                 System.out.println("Index Out of Bounds Exception");
                 return null;
-            }
+            /*}*/
         }
             return sublist;
          /*else {
