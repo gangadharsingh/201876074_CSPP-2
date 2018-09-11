@@ -75,13 +75,20 @@ public final class Solution {
                 }
                 break;
             case "intersection":
-                Set set = new Set();
-                Set set1 = new Set();
+                SortedSet set = new SortedSet();
+                SortedSet set1 = new SortedSet();
                 intArray = intArray(tokens[1]);
                 set.add(intArray);
                 intArray = intArray(tokens[2]);
                 set1.add(intArray);
                 System.out.println(set.intersection(set1));
+                break;
+            case "retainAll":
+                set = new SortedSet();
+                intArray = intArray(tokens[1]);
+                set.add(intArray);
+                intArray = intArray(tokens[2]);
+                System.out.println(s.retainAll(intArray));
                 break;
             case "subSet":
                 try {
