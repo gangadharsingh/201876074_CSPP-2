@@ -75,8 +75,8 @@ public final class Solution {
                 }
                 break;
             case "intersection":
-                Set set = new Set();
-                Set set2 = new Set();
+                SortedSet set = new SortedSet();
+                SortedSet set2 = new SortedSet();
                 intArray = intArray(tokens[1]);
                 set.add(intArray);
                 intArray = intArray(tokens[2]);
