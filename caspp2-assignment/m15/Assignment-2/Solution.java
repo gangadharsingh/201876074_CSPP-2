@@ -154,7 +154,7 @@ class SortedSet extends Set {
      * @return     { }
      */
     public int last() throws Exception{
-        if (size == 0) {
+        if (size <= 0) {
             throw new Exception("Set Empty Exception");
         } else {
             return set[size - 1];
