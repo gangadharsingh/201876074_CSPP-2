@@ -75,13 +75,13 @@ public final class Solution {
                 }
                 break;
             case "intersection":
-                SortedSet set = new SortedSet();
-                SortedSet set1 = new SortedSet();
+                Set set = new Set();
+                Set set2 = new Set();
                 intArray = intArray(tokens[1]);
                 set.add(intArray);
                 intArray = intArray(tokens[2]);
-                set1.add(intArray);
-                System.out.println(set.intersection(set1));
+                set2.add(intArray);
+                System.out.println(set.intersection(set2));
                 break;
             case "retainAll":
                 set = new SortedSet();
