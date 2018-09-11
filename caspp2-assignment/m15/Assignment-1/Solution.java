@@ -302,18 +302,18 @@ public class Solution {
     @return     {boolean value}.
     */
     public boolean equals(final Solution lis) {
-        // Replace the code below
-        /*int count = 0;
-        for (int i = 0; i < lis.size(); i++) {
-            if (lis.get(i) != list[i]) {
-                return false;
-            }
-        } return true;*/
         if (Arrays.equals(lis.list, list)) {
             return true;
         }
         return false;
     }
+    /**
+     * count the number of times item comes.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int count(final int item) {
         // Replace the code below
         int count = 0;
