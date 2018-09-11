@@ -136,7 +136,7 @@ public class Set {
      * String version of the object.
      * @return string.
      */
-    /*public String toString() {
+    public String toString() {
         if (this.size() == 0) {
             return "{}";
         }
@@ -146,7 +146,7 @@ public class Set {
         }
         sb.append(set[size - 1] + "}");
         return sb.toString();
-    }*/
+    }
 
     /**
      * returns true if this set contains the item.

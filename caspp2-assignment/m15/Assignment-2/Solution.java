@@ -74,6 +74,15 @@ public final class Solution {
                     System.out.println(e.getMessage());
                 }
                 break;
+            case "intersection":
+                Set set = new Set();
+                Set set1 = new Set();
+                intArray = intArray(tokens[1]);
+                set.add(intArray);
+                intArray = intArray(tokens[2]);
+                set1.add(intArray);
+                System.out.println(set.intersection(set1));
+                break;
             case "subSet":
                 try {
                 String[] t = tokens[1].split(",");
