@@ -17,9 +17,9 @@ public final class Solution {
     /**
      * creating Solution function.
      *
-     * @param      s     { parameter_description }
+     * @param      s     object of String.
      *
-     * @return     { description_of_the_return_value }
+     * @return     {int array}.
      */
     public static int[] intArray(final String s) {
         String input = s;
@@ -35,7 +35,7 @@ public final class Solution {
     /**
      * main function.
      *
-     * @param      args  The arguments
+     * @param      args  The arguments.
      */
     public static void main(final String[] args) {
         SortedSet s = new SortedSet();
@@ -119,6 +119,8 @@ class SortedSet extends Set {
      * @param      toElement    To element.
      *
      * @return     { return integer array }.
+     *
+     * @throws     Exception    invalid argument to index.
      */
     public int[] subSet(final int fromElement, final int toElement) throws Exception {
         if (fromElement > toElement) {
@@ -145,6 +147,8 @@ class SortedSet extends Set {
      * @param      toElement  To element.
      *
      * @return     { int array }.
+     *
+     * @throws     Exception  empty set exception.
      */
     public int[] headSet(final int toElement)throws Exception {
         int count = 0;
@@ -166,11 +170,14 @@ class SortedSet extends Set {
     }
     /**
      * the funciton will return last element of sorted set.
-     * @return     { }
+     *
+     * @return     {last element}.
+     *
+     * @throws     Exception  empty set exception.
      */
     public int last() throws Exception{
         if (size <= 0) {
-            throw new Exception("Set Empty Exception");
+            throw new  Exception("Set Empty Exception");
         } else {
             return set[size - 1];
         }
@@ -187,17 +194,6 @@ class SortedSet extends Set {
         // set = Arrays.copyOf(set, size);
         Arrays.sort(set, 0, size());
     }
-    // public Set intersection(SortedSet set2) {
-    //     Set res = super.intersection(set2);
-    //     Set result = new Set();
-    //     for (int i = 0; i < this.size; i++) {
-    //         if (other.contains(this.get(i))) {
-    //             result.add(this.get(i));
-    //         }
-    //     }
-    //     return result;                                                                   
-
-    // }
     /**
      * Returns a string representation of the object.
      *
