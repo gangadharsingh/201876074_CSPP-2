@@ -286,12 +286,12 @@ public class Solution {
     public Solution subList(final int start, final int end) throws Exception{
         // write the logic for subList
         Solution sublist = new Solution();
-                if (start + 1 != end || start < end || start > 0 || end > 0) {
+                if (start + 1 == end || start >= end || start <= 0 || end <= 0) {
+                    throw new Exception("Index Out of Bounds Exception");
+                } else {
                     for (int i = start; i < end; i++) {
                         sublist.add(list[i]);
                     }
-                } else {
-                    throw new Exception("Index Out of Bounds Exception");
                 }
             return sublist;
          /*else {
