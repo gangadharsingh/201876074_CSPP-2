@@ -49,10 +49,10 @@ class Solution {
 		String[] tokens = line.split(" ");
 		switch (tokens[0]) {
 			case "add":
-				System.out.println("add");
+				System.out.println("add"+tokens[1]);
 				break;
 			case "book":
-				System.out.println("book");
+				System.out.println("book"+tokens[1]);
 				break;
 			case "get":
 				System.out.println("get");
