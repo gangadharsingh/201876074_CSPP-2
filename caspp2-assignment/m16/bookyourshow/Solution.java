@@ -49,8 +49,8 @@ class Solution {
 		String[] tokens = line.split(" ");
 		switch (tokens[0]) {
 			case "add":
-				for (String a: tokens) {
-					System.out.println(a);
+				for (int i = 0; i < tokens.length - 1; i++) {
+					System.out.println(tokens[i]);
 				}
 				System.out.println("add");
 				break;
