@@ -50,9 +50,8 @@ class Solution {
 		switch (tokens[0]) {
 			case "add":
 				for (int i = 0; i < tokens.length - 1; i++) {
-					System.out.println(tokens[i]);
+					System.out.println(tokens[i]+"add");
 				}
-				System.out.println("add");
 				break;
 			case "book":
 				System.out.println("book");
