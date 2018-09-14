@@ -65,20 +65,12 @@ class ShopppingCart {
     }
 
     void showCart() {
-        if (cartsize == 0) {
-            System.out.println("null");
-
-        }
         for (int i = 0; i < itmsize; i++) {
             System.out.println(cartitem[i].getItem() + cartitem[i].getQuantity());
         }
     }
 
     void showCatalog() {
-        if (itmsize == 0) {
-            System.out.println("null");
-
-        }
         for (int i = 0; i < itmsize; i++) {
             System.out.println(shoppingitem[i].getItem() + shoppingitem[i].getQuantity() + shoppingitem[i].getPrice());
         }
