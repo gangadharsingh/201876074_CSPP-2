@@ -1,9 +1,9 @@
 import java.util.Scanner;
 import java.util.Arrays;
 class Item {
-    public String productname;
-    public int quantity;
-    public Double price;
+    private String productname;
+    private int quantity;
+    private Double price;
     Item(String pn, int qnt) {
         productname = pn;
         quantity = qnt;
@@ -21,8 +21,8 @@ class Item {
     }
     Double getPrice() {
         return price;
-   }
-   void setItem(String prodnm) {
+    }
+    void setItem(String prodnm) {
         productname = prodnm;
     }
     void setQuantity(int qtty) {
@@ -43,11 +43,21 @@ class ShopppingCart {
     }
 
     void addToCart(Item crtitem) {
-        cartitem[cartsize++] = crtitem;
+        for (Item itm : cartitem) {
+            if (itm.getItem().equals(crtitem.getItem())) {
+                for (Item shopitm : shoppingitem) {
+                    if (shopitm.getItem().equals(crtitem.getItem())) {
+                        itm.setQuantity(itm.getQuantity() - crtitem.getQuantity());
+                    } else {
+                        itm.setQuantity(crtitem.getQuantity());
+                    }
+                }
+            }
+            cartitem[cartsize++] = crtitem;
+        }
     }
-
     void removeFromCart(Item remitem) {
-        for (Item crtitem: cartitem) {
+        for (Item crtitem : cartitem) {
             if (crtitem.getItem().equals(remitem.getItem())) {
 
             }
@@ -76,14 +86,14 @@ class ShopppingCart {
 
     void getTotalAmount() {
         Double totalamnt = 0.0;
-        for (Item crtitm: cartitem) {
-            for (Item shopitm: shoppingitem) {
+        for (Item crtitm : cartitem) {
+            for (Item shopitm : shoppingitem) {
                 if ((shopitm.getItem()).equals(crtitm.getItem())) {
                     totalamnt += crtitm.getQuantity() * shopitm.getPrice();
                 }
             }
         }
-        System.out.println("totalAmount:"+totalamnt);
+        System.out.println("totalAmount:" + totalamnt);
     }
 
     /*Double getPayableAmount() {
@@ -105,24 +115,24 @@ class Solution {
         Scanner scan  = new Scanner(System.in);
         int testcase = scan.nextInt();
         for (int i = 0; i < testcase; i++) {
-            String[] tokens = scan.nextLine().split(" ");
-            for(String j: tokens) {
-                System.out.println(j);}
-            String[] itemdtl = tokens[1].split(",");
+            String line = scan.next();
+            String[] tokens = line.split(" ");
             switch (tokens[0]) {
             case "Item":
-            if (itemdtl.length == 3) {
-                Item itm = new Item(itemdtl[0], Integer.parseInt(itemdtl[1]), Double.parseDouble(itemdtl[2]));
-                shopcart.addToCatalog(itm);                
-            }
+                if (tokens.length > 1) {
+                    String[] itemdtl = tokens[1].split(",");
+                    Item itm = new Item(itemdtl[0], Integer.parseInt(itemdtl[1]), Double.parseDouble(itemdtl[2]));
+                    shopcart.addToCatalog(itm);
+                }
                 break;
             case "catalog":
                 shopcart.showCatalog();
                 break;
             case "Add":
-            if (itemdtl.length == 2) {
-                Item itm1 = new Item(itemdtl[0], Integer.parseInt(itemdtl[1]));
-                shopcart.addToCart(itm1);
+                if (tokens.length > 1) {
+                    String[] itemdtl = tokens[1].split(",");
+                    Item itm1 = new Item(itemdtl[0], Integer.parseInt(itemdtl[1]));
+                    shopcart.addToCart(itm1);
                 }
                 break;
             case "Show":
@@ -132,7 +142,8 @@ class Solution {
                 shopcart.getTotalAmount();
                 break;
             case "Remove":
-                if (itemdtl.length == 3) {
+                    if (tokens.length > 1) {
+                    String[] itemdtl = tokens[1].split(",");
                     Item itm2 = new Item(itemdtl[0], Integer.parseInt(itemdtl[1]));
                     shopcart.removeFromCart(itm2);
                 }
