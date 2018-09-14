@@ -14,15 +14,12 @@ class Item {
         price = prc;
     }
     String getItem() {
-        System.out.println("getItem"+productname);
         return productname;
     }
     int getQuantity() {
-        System.out.println("getQuantity"+productname);
         return quantity;
     }
     Double getPrice() {
-        System.out.println("getPrice"+productname);
         return price;
     }
     void setItem(String prodnm) {
@@ -46,6 +43,7 @@ class ShopppingCart {
     }
 
     void addToCart(Item crtitem) {
+        System.out.println("addToCart");
         for (Item itm : cartitem) {
             if (itm.getItem().equals(crtitem.getItem())) {
                 for (Item shopitm : shoppingitem) {
