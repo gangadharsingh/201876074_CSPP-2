@@ -3,12 +3,12 @@ import java.util.Arrays;
 class Item {
     public String productname;
     public int quantity;
-    public float price;
+    public Double price;
     Item(String pn, int qnt) {
         productname = pn;
         quantity = qnt;
     }
-    Item(String pn, int qnt, float prc) {
+    Item(String pn, int qnt, Double prc) {
         productname = pn;
         quantity = qnt;
         price = prc;
@@ -19,7 +19,7 @@ class Item {
     int getQuantity() {
         return quantity;
     }
-    Float getPrice() {
+    Double getPrice() {
         return price;
    }
    void setItem(String prodnm) {
@@ -28,7 +28,7 @@ class Item {
     void setQuantity(int qtty) {
         quantity = qtty;
     }
-    void setPrice(float prc) {
+    void setPrice(Double prc) {
         price = prc;
     }
 }
@@ -86,7 +86,7 @@ class ShopppingCart {
         System.out.println("totalAmount:"+totalamnt);
     }
 
-    /*float getPayableAmount() {
+    /*Double getPayableAmount() {
 
     }
 
@@ -106,11 +106,13 @@ class Solution {
         int testcase = scan.nextInt();
         for (int i = 0; i < testcase; i++) {
             String[] tokens = scan.nextLine().split(" ");
+            for(String j: tokens) {
+                System.out.println(j);}
             String[] itemdtl = tokens[1].split(",");
             switch (tokens[0]) {
             case "Item":
             if (itemdtl.length == 3) {
-                Item itm = new Item(itemdtl[0], Integer.parseInt(itemdtl[1]), Float.parseFloat(itemdtl[2]));
+                Item itm = new Item(itemdtl[0], Integer.parseInt(itemdtl[1]), Double.parseDouble(itemdtl[2]));
                 shopcart.addToCatalog(itm);                
             }
                 break;
