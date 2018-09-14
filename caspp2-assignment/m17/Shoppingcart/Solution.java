@@ -109,15 +109,19 @@ class Solution {
             String[] itemdtl = tokens[1].split(",");
             switch (tokens[0]) {
             case "Item":
+            if (itemdtl.length == 3) {
                 Item itm = new Item(itemdtl[0], Integer.parseInt(itemdtl[1]), Float.parseFloat(itemdtl[2]));
-                shopcart.addToCatalog(itm);
+                shopcart.addToCatalog(itm);                
+            }
                 break;
             case "catalog":
                 shopcart.showCatalog();
                 break;
             case "Add":
+            if (itemdtl.length == 2) {
                 Item itm1 = new Item(itemdtl[0], Integer.parseInt(itemdtl[1]));
                 shopcart.addToCart(itm1);
+                }
                 break;
             case "Show":
                 shopcart.showCart();
@@ -126,8 +130,10 @@ class Solution {
                 shopcart.getTotalAmount();
                 break;
             case "Remove":
-                Item itm2 = new Item(itemdtl[0], Integer.parseInt(itemdtl[1]));
-                shopcart.removeFromCart(itm2);
+                if (itemdtl.length == 3) {
+                    Item itm2 = new Item(itemdtl[0], Integer.parseInt(itemdtl[1]));
+                    shopcart.removeFromCart(itm2);
+                }
                 break;
             /*case "Coupon":
 
