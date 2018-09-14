@@ -81,7 +81,7 @@ class ShopppingCart {
         for (Item crtitm : cartitem) {
             for (Item shopitm : shoppingitem) {
                 if ((shopitm.getItem()).equals(crtitm.getItem())) {
-                    totalamnt += crtitm.getQuantity() * shopitm.getPrice();
+                    totalamnt += shopitm.getQuantity() * shopitm.getPrice();
                 }
             }
         }
@@ -130,9 +130,9 @@ class Solution {
             case "Show":
                 shopcart.showCart();
                 break;
-            case "totalAmount":
+            /*case "totalAmount":
                 shopcart.getTotalAmount();
-                break;
+                break;*/
             case "Remove":
                     if (tokens.length > 1) {
                     String[] itemdtl = tokens[1].split(",");
