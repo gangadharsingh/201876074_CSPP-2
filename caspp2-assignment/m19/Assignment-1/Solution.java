@@ -102,12 +102,16 @@ public final class Solution {
 */        }
         int userans = 0;
         String[] userchoice = new String[answerCount];
-        for (int i = 0; i < answerCount; i++) {
+       /* for (int i = 0; i < answerCount; i++) {
             String inp = s.nextLine();
             if (inp != null) {
                 userchoice[userans++] += s.nextLine();
             }
+        }*/
+        if (answerCount == 1) {
+            return;
         }
+        return;
     }
 
     /**
@@ -120,9 +124,6 @@ public final class Solution {
         if (quiz.getquiz().length < 1) {
             return;
         }
-                        System.out.println("|--------------|");
-                System.out.println("| Score Report |");
-                System.out.println("|--------------|");
     }
 }
 /**
