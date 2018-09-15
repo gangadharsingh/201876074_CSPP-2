@@ -112,7 +112,7 @@ public final class Solution {
                     str += quizset[i].getchoice()[j]+"  ";
                 }
             str += quizset[i].getchoice()[quizset[i].getchoice().length-1];
-            System.out.println(str);
+            System.out.println(str+"\n");
         }
         if (answerCount == 1) {
             useresponse[0] = s.nextLine();   
