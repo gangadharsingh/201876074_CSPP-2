@@ -65,15 +65,20 @@ public final class Solution {
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
         Quiz[] quizset = new Quiz[20];
+        int quizsetsize = 0;
         String questset = "";
         for (int i = 0; i < questionCount; i++) {
             questset += s.nextLine();
             questset += ":";
         }
         String[] tokens = questset.split(":");
+        if (tokens.length != 5) {
+            System.out.println("Error! Malformed question");
+        }
         for (int i = 0; i < questionCount; i++) {
             quizset[i] = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
                                       tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
+            quizsetsize++;
         }
         System.out.println(questionCount + " are added to the quiz");
     }
@@ -89,9 +94,9 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
+        
         for (int j = 0; j < answerCount; j++) {
-            System.out.println(quiz.getquestiontext());
-            System.out.println(quiz.getchoice());
+            System.out.println(quiz.getquiz());
         }
         int userans = 0;
         String[] userchoice = new String[answerCount];
@@ -123,6 +128,8 @@ class Quiz {
     private int correctans;
     private int maxmark;
     private int penalty;
+    String[] quiz = new String[20];
+    int quizsize = 0;
     /**
      * Constructs the object.
      */
@@ -143,7 +150,16 @@ class Quiz {
         correctans = corctans;
         maxmark = mm;
         penalty = pnlty;
+        quiz[quizsize++] = qustxt + chc + corctans + mm + pnlty;
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public String[] getquiz() {
+        return quiz;
+    } 
     /**
      * { function_description }
      *
@@ -187,7 +203,6 @@ class Quiz {
     public String getquestiontext() {
         return questtext;
     }
-
     /**
      * { function_description }
      *
