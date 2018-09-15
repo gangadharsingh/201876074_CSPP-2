@@ -159,12 +159,8 @@ class Quiz {
       public String getquestiontext(){
        return questtext;
       }
-      
-      public void setquestiontxt(String questxt){
-       questtext = questxt;
-      }
 
-      public String[] getchoice(){
+    public String[] getchoice(){
         return choice;
       }
       
