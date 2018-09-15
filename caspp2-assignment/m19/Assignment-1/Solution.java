@@ -72,7 +72,7 @@ public final class Solution {
             questset += ":";
         }
         String[] tokens = questset.split(":");
-        if (tokens.length > 5) {
+        if (tokens.length < 5) {
             System.out.println("Error! Malformed question");
             return;
         }
