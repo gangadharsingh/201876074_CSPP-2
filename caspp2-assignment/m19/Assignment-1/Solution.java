@@ -62,7 +62,7 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        Quiz[] quiz = new Quiz[20];
+        Quiz[] quizset = new Quiz[20];
         String questset = "";
         for (int i = 0; i < questionCount; i++) {
             questset += s.nextLine();
@@ -70,7 +70,7 @@ public final class Solution {
         }
         for (int i = 0; i < questionCount; i++) {
             String[] tokens = questset.split(":");
-            quiz[i] = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
+            quizset[i] = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
                 tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
         }
     }
@@ -114,7 +114,7 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-        System.out.println();
+        System.out.println(quiz.getmaxmark());
     }
 }
 class Quiz {
