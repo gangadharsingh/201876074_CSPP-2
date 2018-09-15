@@ -84,7 +84,11 @@ public final class Solution {
             quizset[i] = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
                                       tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
             quizsetsize++;
-            System.out.println(quizset[i]+"quizset[i");
+            System.out.println(quizset[i].getquestiontext()+"quizset[i].getquestiontext()"+"\n"+
+                quizset[i].getchoice()+"quizset[i].getchoice()"+"\n"+
+                quizset[i].getcorrectans()+"quizset[i].getcorrectans()"+"\n"+
+                quizset[i].getmaxmark()+"quizset[i].getmaxmark()"+"\n"+
+                quizset[i].getpenalty()+"quizset[i].getpenalty()");
         }
         System.out.println(questionCount + " are added to the quiz");
         }
