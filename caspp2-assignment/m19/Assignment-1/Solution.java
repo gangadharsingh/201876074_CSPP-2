@@ -68,12 +68,18 @@ public final class Solution {
             questset += s.nextLine();
             questset += ":";
         }
+        String[] tokens = questset.split(":");
         for (int i = 0; i < questionCount; i++) {
-            String[] tokens = questset.split(":");
             quizset[i] = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
                 tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
         }
         System.out.println(questionCount+" are added to the quiz");
+        for (int i = 0; i < questionCount; i++) {
+            System.out.println(quizset[i].getquestiontext());
+            for (i = 0; i < questionCount; i++) {
+                System.out.println(tokens[1].split(","));
+            }
+        }
     }
 
     /**
