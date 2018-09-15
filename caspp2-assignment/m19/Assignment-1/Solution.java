@@ -72,11 +72,12 @@ public final class Solution {
 /*            questset += ":";
 */        }
         String[] tokens = questset.split(":");
+        int x = Integer.parseInt(tokens[4]);
         if (tokens[0].length() < 1) {
             System.out.println("Error! Malformed question");
             quizsetsize = 0;
             return;
-        } else if (Integer.parseInt(tokens[4]) > 0) {
+        } else if (x > 0) {
             System.out.println("Invalid penalty for "+tokens[0]);
             quizsetsize = 0;
         } else if (Integer.parseInt(tokens[3]) < 0) {
@@ -109,7 +110,7 @@ public final class Solution {
             System.out.println(quizset[i].getquestiontext()+"("+answerCount+")");
             String str = "";
             for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
-                    str += quizset[i].getchoice()[j]+"        ";
+                    str += quizset[i].getchoice()[j]+"\t";
                 }   
             str += quizset[i].getchoice()[quizset[i].getchoice().length-1];
             System.out.println(str+"\n");
