@@ -137,7 +137,7 @@ public final class Solution {
             System.out.println(quizset[i].getquestiontext());
             for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
                 if(quizset[i].getchoice()[j].equals(useresponse[j])){
-                    System.out.println(" Correct Answer! - Marks Awarded: "+quizset[i].getmaxmark());
+                    System.out.println("Correct Answer! - Marks Awarded: "+quizset[i].getmaxmark());
                     totalscore += quizset[i].getmaxmark();
                 } else {
                     System.out.println("Wrong Answer! - Penalty: "+quizset[i].getpenalty());
