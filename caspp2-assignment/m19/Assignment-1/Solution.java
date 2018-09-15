@@ -101,7 +101,7 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
-        System.out.println(quiz.getquiz()+"getquiz");
+        /*System.out.println(quiz.getquiz()+"getquiz");*/
         
     }
 
@@ -112,9 +112,10 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-        if (quiz.getquiz().length < 1) {
+        /*if (quiz.getquiz().length < 1) {
             return;
-        }
+        }*/
+        System.out.println(quiz.getquiz());
     }
 }
 /**
@@ -127,8 +128,7 @@ class Quiz {
     private int correctans;
     private int maxmark;
     private int penalty;
-    String[] quiz = new String[20];
-    int quizsize = 0;
+    int count = 0;
     /**
      * Constructs the object.
      */
@@ -149,15 +149,16 @@ class Quiz {
         correctans = corctans;
         maxmark = mm;
         penalty = pnlty;
-        quiz[quizsize++] = qustxt + chc + corctans + mm + pnlty;
+        count++;
     }
     /**
      * { function_description }
      *
      * @return     { description_of_the_return_value }
      */
-    public String[] getquiz() {
-        return quiz;
+    public String getquiz() {
+        System.out.println(count+"count");
+        return "getquiz";
     }
     /**
      * { function_description }
