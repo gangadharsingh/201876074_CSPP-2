@@ -74,11 +74,14 @@ public final class Solution {
         String[] tokens = questset.split(":");
         if (tokens[0].length() < 1) {
             System.out.println("Error! Malformed question");
+            quizsetsize = 0;
             return;
         } else if (Integer.parseInt(tokens[4]) > 0) {
             System.out.println("Invalid penalty for "+tokens[0]);
+            quizsetsize = 0;
         } else if (Integer.parseInt(tokens[3]) < 0) {
             System.out.println("Invalid max marks for "+tokens[0]);
+            quizsetsize = 0;
         } else {
         for (int i = 0; i < questionCount; i++) {
             q = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
@@ -101,7 +104,8 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
-        for (int i = 0; i < quizsetsize; i++) {
+        if (quizsetsize != 0) {
+            for (int i = 0; i < quizsetsize; i++) {
             System.out.println(quizset[i].getquestiontext()+"("+answerCount+")");
             String str = "";
             for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
@@ -117,7 +121,7 @@ public final class Solution {
                 useresponse[j] = s.nextLine();
             }
         }
-
+        }
     }
 
     /**
@@ -127,7 +131,8 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-        int totalscore = 0;
+        if (quizsetsize != 0) {
+            int totalscore = 0;
         for (int i = 0; i < quizsetsize; i++) {
             System.out.println(quizset[i].getquestiontext());
             for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
@@ -141,6 +146,7 @@ public final class Solution {
             }
         }
         System.out.println("Total Score: "+totalscore);
+        }
     }
 }
 /**
