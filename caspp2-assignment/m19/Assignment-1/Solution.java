@@ -117,7 +117,9 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-        System.out.println(quiz.getmaxmark());
+        if (quiz.getquiz().length < 1) {
+            return;
+        }
     }
 }
 /**
