@@ -81,6 +81,7 @@ public final class Solution {
                                       tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
             quizsetsize++;
         }
+        System.out.println(Integer.parseInt(tokens[4])+"Integer.parseInt(tokens[4])");
         System.out.println(questionCount + " are added to the quiz");
         } else {
             System.out.println("Invalid penalty for "+tokens[0]);
