@@ -52,6 +52,7 @@ public final class Solution {
             }
         }
     }
+    public static Quiz[] quizset = new Quiz[20];
     /**
      * Loads questions.
      *
@@ -60,11 +61,10 @@ public final class Solution {
      * @param      questionCount  The question count
      * @param      quiz  The quiz object
      */
-    public static void loadQuestions(final Scanner s, Quiz q, final int questionCount) {
+    static void loadQuestions(final Scanner s, Quiz q, final int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        Quiz[] quizset = new Quiz[20];
         int quizsetsize = 0;
         String questset = "";
         for (int i = 0; i < questionCount; i++) {
@@ -82,17 +82,16 @@ public final class Solution {
         } else {
         for (int i = 0; i < questionCount; i++) {
             quizset[i] = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
-                                      tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
+                        tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
             quizsetsize++;
-            System.out.println(quizset[i].getquestiontext()+"quizset[i].getquestiontext()"+"\n"+
+            /*System.out.println(quizset[i].getquestiontext()+"quizset[i].getquestiontext()"+"\n"+
                 quizset[i].getchoice()+"quizset[i].getchoice()"+"\n"+
                 quizset[i].getcorrectans()+"quizset[i].getcorrectans()"+"\n"+
                 quizset[i].getmaxmark()+"quizset[i].getmaxmark()"+"\n"+
-                quizset[i].getpenalty()+"quizset[i].getpenalty()");
+                quizset[i].getpenalty()+"quizset[i].getpenalty()");*/
         }
         System.out.println(questionCount + " are added to the quiz");
         }
-
     }
 
     /**
@@ -106,8 +105,7 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
-        /*System.out.println(quiz.getquiz()+"getquiz");*/
-        
+        System.out.println(quizset[0].getquestiontext()+" quizset[0].getquestiontext()");
     }
 
     /**
