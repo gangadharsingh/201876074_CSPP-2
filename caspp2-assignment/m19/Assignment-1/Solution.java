@@ -72,8 +72,9 @@ public final class Solution {
             questset += ":";
         }
         String[] tokens = questset.split(":");
-        if (tokens.length > 4) {
+        if (tokens.length > 5) {
             System.out.println("Error! Malformed question");
+            return;
         }
         for (int i = 0; i < questionCount; i++) {
             quizset[i] = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
@@ -94,7 +95,7 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
-        
+
         for (int j = 0; j < answerCount; j++) {
             System.out.println(quiz.getquiz());
         }
@@ -159,7 +160,7 @@ class Quiz {
      */
     public String[] getquiz() {
         return quiz;
-    } 
+    }
     /**
      * { function_description }
      *
