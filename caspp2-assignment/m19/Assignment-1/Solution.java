@@ -89,7 +89,7 @@ public final class Solution {
         }
     }
 
-    public static String[] useresponse = new String[10];
+    public static String[] useresponse = new String[100];
     /**
      * Starts a quiz.
      *
@@ -127,7 +127,16 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-        
+        for (int i = 0; i < quizsetsize; i++) {
+            System.out.println(quizset[i].getquestiontext());
+            for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
+                if(quizset[i].getchoice()[j].equals(useresponse[j])){
+                    System.out.println("Correct Answer! - Marks Awarded:"+quizset[i].getmaxmark());
+                } else {
+                    System.out.println("Wrong Answer! - Penalty:"+quizset[i].getpenalty());
+                }
+            }
+        }
     }
 }
 /**
