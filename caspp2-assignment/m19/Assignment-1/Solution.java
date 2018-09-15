@@ -102,7 +102,7 @@ public final class Solution {
         // read the user responses from the console
         // store the user respones in the quiz object
         for (int i = 0; i < quizsetsize; i++) {
-            System.out.println(quizset[i].getquestiontext());
+            System.out.println(quizset[i].getquestiontext()+"("+answerCount+")");
             String str = "";
             for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
                     str += quizset[i].getchoice()[j]+"        ";
