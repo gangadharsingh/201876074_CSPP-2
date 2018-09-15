@@ -53,6 +53,7 @@ public final class Solution {
         }
     }
     public static Quiz[] quizset = new Quiz[20];
+    public static int quizsetsize = 0;
     /**
      * Loads questions.
      *
@@ -65,7 +66,6 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        int quizsetsize = 0;
         String questset = "";
         for (int i = 0; i < questionCount; i++) {
             questset += s.nextLine();
@@ -81,19 +81,15 @@ public final class Solution {
             System.out.println("Invalid max marks for "+tokens[0]);
         } else {
         for (int i = 0; i < questionCount; i++) {
-            quizset[i] = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
+            q = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
                         tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
-            quizsetsize++;
-            /*System.out.println(quizset[i].getquestiontext()+"quizset[i].getquestiontext()"+"\n"+
-                quizset[i].getchoice()+"quizset[i].getchoice()"+"\n"+
-                quizset[i].getcorrectans()+"quizset[i].getcorrectans()"+"\n"+
-                quizset[i].getmaxmark()+"quizset[i].getmaxmark()"+"\n"+
-                quizset[i].getpenalty()+"quizset[i].getpenalty()");*/
+            quizset[quizsetsize++] = q;
         }
         System.out.println(questionCount + " are added to the quiz");
         }
     }
 
+    public static String[] useresponse = new String[10];
     /**
      * Starts a quiz.
      *
@@ -105,7 +101,23 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
-        System.out.println(quizset[0].getquestiontext()+" quizset[0].getquestiontext()");
+        for (int i = 0; i < quizsetsize; i++) {
+            System.out.println(quizset[i].getquestiontext());
+            String str = "";
+            for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
+                    str += quizset[i].getchoice()[j]+"        ";
+                }
+            str += quizset[i].getchoice()[quizset[i].getchoice().length-1];
+            System.out.println(str);
+        }
+        if (answerCount == 1) {
+            useresponse[0] = s.nextLine();   
+        } else {
+            for (int j = 0; j < answerCount; j++) {
+                useresponse[j] = s.nextLine();
+            }
+        }
+
     }
 
     /**
@@ -124,6 +136,7 @@ public final class Solution {
 class Quiz {
     private String questtext;
     private String[] choice;
+    int nochoice = 0;
     String userchoice = "";
     private int correctans;
     private int maxmark;
