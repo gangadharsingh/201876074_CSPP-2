@@ -83,6 +83,8 @@ public final class Solution {
         } else if (Integer.parseInt(tokens[3]) < 0) {
             System.out.println("Invalid max marks for "+tokens[0]);
             quizsetsize = 0;
+        } else if (tokens[1].split(",").length < 2) {
+            System.out.println(tokens[0]+" does not have enough answer choices");
         } else {
         for (int i = 0; i < questionCount; i++) {
             q = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
