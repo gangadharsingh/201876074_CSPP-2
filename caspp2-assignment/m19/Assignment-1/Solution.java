@@ -84,7 +84,7 @@ public final class Solution {
         // store the user respones in the quiz object
         for (int j = 0; j < answerCount; j++) {
             System.out.println(quiz.getquestiontext());
-            System.out.println(quiz.printchoice());
+            System.out.println(quiz.getchoice());
         }
         int userans = 0;
         String[] userchoice = new String[answerCount];
