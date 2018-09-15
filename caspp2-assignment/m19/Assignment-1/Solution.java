@@ -75,13 +75,14 @@ public final class Solution {
         if (tokens.length < 5) {
             System.out.println("Error! Malformed question");
             return;
-        }
+        } else {
         for (int i = 0; i < questionCount; i++) {
             quizset[i] = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
                                       tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
             quizsetsize++;
         }
         System.out.println(questionCount + " are added to the quiz");
+        }
     }
 
     /**
@@ -97,8 +98,8 @@ public final class Solution {
         // store the user respones in the quiz object
 
         for (int j = 0; j < answerCount; j++) {
-            System.out.println(quiz.getquiz());
-        }
+/*            System.out.println(quiz.getquiz());
+*/        }
         int userans = 0;
         String[] userchoice = new String[answerCount];
         for (int i = 0; i < answerCount; i++) {
