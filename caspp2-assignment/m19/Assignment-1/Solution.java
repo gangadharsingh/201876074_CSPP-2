@@ -69,8 +69,9 @@ public final class Solution {
         String questset = "";
         for (int i = 0; i < questionCount; i++) {
             questset += s.nextLine();
-/*            questset += ":";
-*/        }
+            /*            questset += ":";
+            */
+        }
         String[] tokens = questset.split(":");
         int x = Integer.parseInt(tokens[4]);
         if (tokens[0].length() < 1) {
@@ -78,20 +79,20 @@ public final class Solution {
             quizsetsize = 0;
             return;
         } else if (x > 0) {
-            System.out.println("Invalid penalty for "+tokens[0]);
+            System.out.println("Invalid penalty for " + tokens[0]);
             quizsetsize = 0;
         } else if (Integer.parseInt(tokens[3]) < 0) {
-            System.out.println("Invalid max marks for "+tokens[0]);
+            System.out.println("Invalid max marks for " + tokens[0]);
             quizsetsize = 0;
-        } else if (tokens[1].split(",").length < 2) {
-            System.out.println(tokens[0]+" does not have enough answer choices");
+        } else if (tokens[1].split(",").length < questionCount) {
+            System.out.println(tokens[0] + " does not have enough answer choices");
         } else {
-        for (int i = 0; i < questionCount; i++) {
-            q = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
-                        tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
-            quizset[quizsetsize++] = q;
-        }
-        System.out.println(questionCount + " are added to the quiz");
+            for (int i = 0; i < questionCount; i++) {
+                q = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
+                                 tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
+                quizset[quizsetsize++] = q;
+            }
+            System.out.println(questionCount + " are added to the quiz");
         }
     }
 
@@ -109,21 +110,21 @@ public final class Solution {
         // store the user respones in the quiz object
         if (quizsetsize != 0) {
             for (int i = 0; i < quizsetsize; i++) {
-            System.out.println(quizset[i].getquestiontext()+"("+answerCount+")");
-            String str = "";
-            for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
-                    str += quizset[i].getchoice()[j]+"\t";
-                }   
-            str += quizset[i].getchoice()[quizset[i].getchoice().length-1];
-            System.out.println(str+"\n");
-        }
-        if (answerCount == 1) {
-            useresponse[0] = s.nextLine();   
-        } else {
-            for (int j = 0; j < answerCount; j++) {
-                useresponse[j] = s.nextLine();
+                System.out.println(quizset[i].getquestiontext() + "(" + answerCount + ")");
+                String str = "";
+                for (int j = 0; j < quizset[i].getchoice().length - 1; j++) {
+                    str += quizset[i].getchoice()[j] + "\t";
+                }
+                str += quizset[i].getchoice()[quizset[i].getchoice().length - 1];
+                System.out.println(str + "\n");
             }
-        }
+            if (answerCount == 1) {
+                useresponse[0] = s.nextLine();
+            } else {
+                for (int j = 0; j < answerCount; j++) {
+                    useresponse[j] = s.nextLine();
+                }
+            }
         }
     }
 
@@ -136,19 +137,19 @@ public final class Solution {
         // write your code here to display the score report
         if (quizsetsize != 0) {
             int totalscore = 0;
-        for (int i = 0; i < quizsetsize; i++) {
-            System.out.println(quizset[i].getquestiontext());
-            for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
-                if(quizset[i].getchoice()[j].equals(useresponse[j])){
-                    System.out.println(" Correct Answer! - Marks Awarded: "+quizset[i].getmaxmark());
-                    totalscore += quizset[i].getmaxmark();
-                } else {
-                    System.out.println("Wrong Answer! - Penalty: "+quizset[i].getpenalty());
-                    totalscore += quizset[i].getpenalty();
+            for (int i = 0; i < quizsetsize; i++) {
+                System.out.println(quizset[i].getquestiontext());
+                for (int j = 0; j < quizset[i].getchoice().length - 1; j++) {
+                    if (quizset[i].getchoice()[j].equals(useresponse[j])) {
+                        System.out.println(" Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
+                        totalscore += quizset[i].getmaxmark();
+                    } else {
+                        System.out.println("Wrong Answer! - Penalty: " + quizset[i].getpenalty());
+                        totalscore += quizset[i].getpenalty();
+                    }
                 }
             }
-        }
-        System.out.println("Total Score: "+totalscore);
+            System.out.println("Total Score: " + totalscore);
         }
     }
 }
