@@ -109,7 +109,7 @@ public final class Solution {
             System.out.println(quizset[i].getquestiontext()+"("+answerCount+")");
             String str = "";
             for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
-                    str += quizset[i].getchoice()[j]+"        ";
+                    str += quizset[i].getchoice()[j]+"  ";
                 }
             str += quizset[i].getchoice()[quizset[i].getchoice().length-1];
             System.out.println(str);
@@ -137,10 +137,10 @@ public final class Solution {
             System.out.println(quizset[i].getquestiontext());
             for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
                 if(quizset[i].getchoice()[j].equals(useresponse[j])){
-                    System.out.println(" Correct Answer! - Marks Awarded:"+quizset[i].getmaxmark());
+                    System.out.println(" Correct Answer! - Marks Awarded: "+quizset[i].getmaxmark());
                     totalscore += quizset[i].getmaxmark();
                 } else {
-                    System.out.println("Wrong Answer! - Penalty:"+quizset[i].getpenalty());
+                    System.out.println("Wrong Answer! - Penalty: "+quizset[i].getpenalty());
                     totalscore += quizset[i].getpenalty();
                 }
             }
@@ -155,8 +155,6 @@ public final class Solution {
 class Quiz {
     private String questtext;
     private String[] choice;
-    int nochoice = 0;
-    String userchoice = "";
     private int correctans;
     private int maxmark;
     private int penalty;
@@ -231,15 +229,6 @@ class Quiz {
      */
     public String[] getchoice() {
         return choice;
-    }
-
-    /**
-     * { function_description }
-     *
-     * @param      chc   The chc
-     */
-    public void setchoice(String chc) {
-        userchoice = chc;
     }
 
     /**
