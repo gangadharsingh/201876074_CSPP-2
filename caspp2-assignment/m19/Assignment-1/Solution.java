@@ -101,22 +101,8 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
-
-        for (int j = 0; j < answerCount; j++) {
-/*            System.out.println(quiz.getquiz());
-*/        }
-        int userans = 0;
-        String[] userchoice = new String[answerCount];
-       /* for (int i = 0; i < answerCount; i++) {
-            String inp = s.nextLine();
-            if (inp != null) {
-                userchoice[userans++] += s.nextLine();
-            }
-        }*/
-        if (answerCount == 1) {
-            return;
-        }
-        return;
+        System.out.println(quiz.getquiz()+"getquiz");
+        
     }
 
     /**
