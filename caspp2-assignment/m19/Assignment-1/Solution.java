@@ -127,16 +127,20 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
+        int totalscore = 0;
         for (int i = 0; i < quizsetsize; i++) {
             System.out.println(quizset[i].getquestiontext());
             for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
                 if(quizset[i].getchoice()[j].equals(useresponse[j])){
                     System.out.println("Correct Answer! - Marks Awarded:"+quizset[i].getmaxmark());
+                    totalscore += quizset[i].getmaxmark();
                 } else {
                     System.out.println("Wrong Answer! - Penalty:"+quizset[i].getpenalty());
+                    totalscore += quizset[i].getpenalty();
                 }
             }
         }
+        System.out.println("Total Score: "+totalscore);
     }
 }
 /**
