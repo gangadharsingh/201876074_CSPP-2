@@ -109,7 +109,7 @@ public final class Solution {
             System.out.println(quizset[i].getquestiontext()+"("+answerCount+")");
             String str = "";
             for (int j = 0; j < quizset[i].getchoice().length-1; j++) {
-                    str += quizset[i].getchoice()[j]+"          ";
+                    str += quizset[i].getchoice()[j]+"        ";
                 }   
             str += quizset[i].getchoice()[quizset[i].getchoice().length-1];
             System.out.println(str+"\n");
