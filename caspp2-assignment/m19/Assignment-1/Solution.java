@@ -69,10 +69,14 @@ public final class Solution {
         String questset = "";
         for (int i = 0; i < questionCount; i++) {
             questset += s.nextLine();
-            questset += ":";
-        }
+/*            questset += ":";
+*/        }
+        System.out.println(questset+"questset");
         String[] tokens = questset.split(":");
-        if (tokens.length < 5) {
+        for (String a: tokens) {
+            System.out.println(a+"tokens , tokens.len"+tokens.length);
+        }
+        if (tokens[0].length() < 1) {
             System.out.println("Error! Malformed question");
             return;
         } else {
