@@ -120,6 +120,9 @@ public final class Solution {
         if (quiz.getquiz().length < 1) {
             return;
         }
+                        System.out.println("|--------------|");
+                System.out.println("| Score Report |");
+                System.out.println("|--------------|");
     }
 }
 /**
