@@ -2,11 +2,12 @@ import java.util.Scanner;
 import java.util.Arrays;
 /**
  * Solution class for code-eval.
+ * @author: gangadharsingh.
  */
 public final class Solution {
-     /**
-     * Constructs the object.
-     */
+    /**
+    * Constructs the object.
+    */
     private Solution() {
         // leave this blank
     }
@@ -16,37 +17,37 @@ public final class Solution {
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-         // instantiate this Quiz
+        // instantiate this Quiz
         Quiz q = new Quiz();
-         // code to read the test cases input file
+        // code to read the test cases input file
         Scanner s = new Scanner(System.in);
         // check if there is one more line to process
         while (s.hasNext()) {
             // read the line
             String line = s.nextLine();
-             // split the line using space
+            // split the line using space
             String[] tokens = line.split(" ");
-              // based on the list operation invoke the corresponding method
+            // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
-                case "LOAD_QUESTIONS":
+            case "LOAD_QUESTIONS":
                 System.out.println("|----------------|");
                 System.out.println("| Load Questions |");
                 System.out.println("|----------------|");
                 loadQuestions(s, q, Integer.parseInt(tokens[1]));
                 break;
-                case "START_QUIZ":
+            case "START_QUIZ":
                 System.out.println("|------------|");
                 System.out.println("| Start Quiz |");
                 System.out.println("|------------|");
                 startQuiz(s, q, Integer.parseInt(tokens[1]));
                 break;
-                case "SCORE_REPORT":
+            case "SCORE_REPORT":
                 System.out.println("|--------------|");
                 System.out.println("| Score Report |");
                 System.out.println("|--------------|");
                 displayScore(q);
                 break;
-                default:
+            default:
                 break;
             }
         }
@@ -55,8 +56,9 @@ public final class Solution {
      * Loads questions.
      *
      * @param      s              The scanner object for user input
-     * @param      quiz           The quiz object
+     * @param      q              The quarter
      * @param      questionCount  The question count
+     * @param      quiz  The quiz object
      */
     public static void loadQuestions(final Scanner s, Quiz q, final int questionCount) {
         // write your code here to read the questions from the console
@@ -71,15 +73,9 @@ public final class Solution {
         String[] tokens = questset.split(":");
         for (int i = 0; i < questionCount; i++) {
             quizset[i] = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
-                tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
+                                      tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
         }
-        System.out.println(questionCount+" are added to the quiz");
-        for (int i = 0; i < questionCount; i++) {
-            System.out.println(quizset[i].getquestiontext());
-            for (i = 0; i < questionCount; i++) {
-                System.out.println(tokens[1].split(","));
-            }
-        }
+        System.out.println(questionCount + " are added to the quiz");
     }
 
     /**
@@ -103,15 +99,8 @@ public final class Solution {
             String inp = s.nextLine();
             if (inp != null) {
                 userchoice[userans++] += s.nextLine();
-                }
             }
-        /*if (userans > 1) {
-            for (String a: userchoice) {
-                if (quiz.getchoice()) {
-                    
-                }
-            }
-        }*/
+        }
     }
 
     /**
@@ -124,6 +113,9 @@ public final class Solution {
         System.out.println(quiz.getmaxmark());
     }
 }
+/**
+ * Class for quiz.
+ */
 class Quiz {
     private String questtext;
     private String[] choice;
@@ -131,9 +123,20 @@ class Quiz {
     private int correctans;
     private int maxmark;
     private int penalty;
-    Quiz(){
-
+    /**
+     * Constructs the object.
+     */
+    Quiz() {
     }
+    /**
+     * Constructs the object.
+     *
+     * @param      qustxt    The qustxt.
+     * @param      chc       The chc.
+     * @param      corctans  The corctans.
+     * @param      mm        The millimeters.
+     * @param      pnlty     The pnlty.
+     */
     Quiz(final String qustxt, String[] chc, int corctans, int mm, int pnlty) {
         questtext = qustxt;
         choice = chc;
@@ -141,41 +144,91 @@ class Quiz {
         maxmark = mm;
         penalty = pnlty;
     }
-     public int getmaxmark(){
-      return maxmark;
-     }
-     
-     public void setmaxmark(int mm){
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int getmaxmark() {
+        return maxmark;
+    }
+
+    /**
+     * { function_description }
+     *
+     * @param      mm    The millimeters
+     */
+    public void setmaxmark(int mm) {
         maxmark = mm;
-     }
-      public int getpenalty(){
-       return penalty;
-      }
-      
-      public void setpenalty(int pnlty){
-       penalty = pnlty;
-      }
+    }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int getpenalty() {
+        return penalty;
+    }
 
-      public String getquestiontext(){
-       return questtext;
-      }
+    /**
+     * { function_description }
+     *
+     * @param      pnlty  The pnlty
+     */
+    public void setpenalty(int pnlty) {
+        penalty = pnlty;
+    }
 
-    public String[] getchoice(){
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public String getquestiontext() {
+        return questtext;
+    }
+
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public String[] getchoice() {
         return choice;
-      }
-      
-      public void setchoice(String chc){
-       userchoice= chc;
-      }
+    }
 
-      public int getcorrectans(){
-      return correctans;
-     }
-     
-     public void setcorrectans(int corans){
+    /**
+     * { function_description }
+     *
+     * @param      chc   The chc
+     */
+    public void setchoice(String chc) {
+        userchoice = chc;
+    }
+
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int getcorrectans() {
+        return correctans;
+    }
+
+    /**
+     * { function_description }
+     *
+     * @param      corans  The corans
+     */
+    public void setcorrectans(int corans) {
         correctans = corans;
-     }
-     public String printchoice() {
-        return (choice[0]+"        "+choice[1]+"        "+choice[2]+"        "+choice[3]);
-     }
+    }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public String printchoice() {
+        return (choice[0] + "        " + choice[1] + "        " + choice[2] + "        " + choice[3]);
+    }
 }
