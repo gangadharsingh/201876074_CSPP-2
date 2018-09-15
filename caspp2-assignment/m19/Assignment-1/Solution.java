@@ -169,6 +169,6 @@ class Quiz {
         correctans = corans;
      }
      public String printchoice() {
-        return (choice[0]+"        "+choice[0]+"        "+choice[0]+"        "+choice[0]+"        ");
+        return (choice[0]+"        "+choice[1]+"        "+choice[2]+"        "+choice[3]);
      }
 }
