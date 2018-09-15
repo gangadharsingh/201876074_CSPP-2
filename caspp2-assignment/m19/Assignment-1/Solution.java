@@ -84,6 +84,7 @@ public final class Solution {
             quizset[i] = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
                                       tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
             quizsetsize++;
+            System.out.println(quizset[i]+"quizset[i");
         }
         System.out.println(questionCount + " are added to the quiz");
         }
@@ -112,10 +113,7 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-        /*if (quiz.getquiz().length < 1) {
-            return;
-        }*/
-        System.out.println(quiz.getquiz());
+        
     }
 }
 /**
@@ -128,7 +126,6 @@ class Quiz {
     private int correctans;
     private int maxmark;
     private int penalty;
-    int count = 0;
     /**
      * Constructs the object.
      */
@@ -149,16 +146,6 @@ class Quiz {
         correctans = corctans;
         maxmark = mm;
         penalty = pnlty;
-        count++;
-    }
-    /**
-     * { function_description }
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public String getquiz() {
-        System.out.println(count+"count");
-        return "getquiz";
     }
     /**
      * { function_description }
