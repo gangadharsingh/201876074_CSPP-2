@@ -23,7 +23,7 @@ class Show {
      * @param      b     { parameter_description }.
      * @param      c     { parameter_description }.
      */
-    public Show(final String a, final String b, final String[] c) {
+    Show(final String a, final String b, final String[] c) {
         this.moviename = a;
         this.timedate = b;
         this.seats = c;
@@ -139,7 +139,7 @@ class BookYourShow {
     /**
      * int number.
      */
-    public static final int len = 10;
+    public static final int LEN = 10;
     /**
      * initializing variable.
      */
@@ -160,8 +160,8 @@ class BookYourShow {
      * Constructs the object.
      */
     BookYourShow() {
-        this.movielist = new Show[len];
-        this.patronlist = new Patron[len];
+        this.movielist = new Show[LEN];
+        this.patronlist = new Patron[LEN];
         this.size = 0;
     }
     /**
@@ -298,14 +298,13 @@ class BookYourShow {
                     if (b.equals(movielist[j].gettimedate()) && a.equals(
                                 movielist[j].getmoviename())) {
                         System.out.println(patronlist[
-                                               i].getmobilenumber() + " " + a + " " + b);
+                                i].getmobilenumber() + " " + a + " " + b);
                         return true;
                     }
                 }
             }
         }
         return false;
-
     }
     /**
      * Shows all.
