@@ -79,8 +79,10 @@ public final class Solution {
             System.out.println("Error! Malformed question");
             quizsetsize = 0;
             return;
-        } else if ((Integer.parseInt(tokens[3])) > questionCount) {
+        } else if ((Integer.parseInt(tokens[3])) > choiceno) {
             System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
+            quizsetsize = 0;
+            return;
         } else if (x > 0) {
             System.out.println("Invalid penalty for " + tokens[0]);
             quizsetsize = 0;
