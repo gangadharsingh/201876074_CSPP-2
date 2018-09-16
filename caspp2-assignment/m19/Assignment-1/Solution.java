@@ -144,8 +144,8 @@ public final class Solution {
             } else {
                 for (int j = 0; j < answerCount; j++) {
                     useresponse[j] = s.nextLine();
-                    System.out.println(useresponse[j]+" useresponse [j] "+j);
-                }
+/*                    System.out.println(useresponse[j]+" useresponse [j] "+j);
+*/                }
             }
         }
     }
@@ -161,7 +161,6 @@ public final class Solution {
         if (quizsetsize != 0) {
             int totalscore = 0;
             for (int i = 0; i < quizsetsize; i++) {
-                String[] choicearr = quizset[i].getchoice();
                 /*int crctans = quizset[i].getcorrectans();
                 String[] chc = quizset[i].getchoice();
                 String[] chcans = new String[chc.length];
