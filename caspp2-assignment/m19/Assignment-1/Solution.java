@@ -75,11 +75,12 @@ public final class Solution {
         String[] tokens = questset.split(":");
         int x = Integer.parseInt(tokens[4]);
         int  choiceno = tokens[1].split(",").length;
+        int choicecount = Integer.parseInt(tokens[3]);
         if (tokens[0].length() < 1) {
             System.out.println("Error! Malformed question");
             quizsetsize = 0;
             return;
-        } else if ((Integer.parseInt(tokens[3])) > choiceno) {
+        } else if (choicecount > choiceno) {
             System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
             quizsetsize = 0;
             return;
