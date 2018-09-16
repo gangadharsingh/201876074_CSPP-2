@@ -87,11 +87,11 @@ public final class Solution {
             System.out.println("Invalid max marks for " + tokens[0]);
             quizsetsize = 0;
             return;
-        } else if (choiceno < 2) {
+        } /*else if (choiceno < 2) {
             System.out.println(tokens[0] + " does not have enough answer choices");
             quizsetsize = 0;
             return;
-        } else {
+        } */else {
             for (int i = 0; i < questionCount; i++) {
                 q = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
                                  tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
