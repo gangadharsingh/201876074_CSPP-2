@@ -130,7 +130,7 @@ public final class Solution {
         // read the user responses from the console
         // store the user respones in the quiz object
         if (quizsetsize != 0) {
-            /*for (int i = 0; i < quizsetsize; i++) {
+            for (int i = 0; i < quizsetsize; i++) {
                 System.out.println(quizset[i].getquestiontext() + "(" + answerCount + ")");
                 String str = "";
                 for (int j = 0; j < quizset[i].getchoice().length - 1; j++) {
@@ -145,8 +145,7 @@ public final class Solution {
                 for (int j = 0; j < answerCount; j++) {
                     useresponse[j] = s.nextLine();
                 }
-            }*/
-            return;
+            }
         }
     }
 
@@ -161,7 +160,7 @@ public final class Solution {
         if (quizsetsize != 0) {
             int totalscore = 0;
             for (int i = 0; i < quizsetsize; i++) {
-                int crctans = quizset[i].getcorrectans();
+                /*int crctans = quizset[i].getcorrectans();
                 String[] chc = quizset[i].getchoice();
                 String[] chcans = new String[chc.length];
                 int chcanssize = 0;
@@ -169,14 +168,14 @@ public final class Solution {
                     chcans[chcanssize++] = a;
                     System.out.println(a+" chc + chcans "+chcans[chcanssize - 1]);
                 }
-                System.out.println(crctans + " getcorrectans() i " + i);
-                /*if (quizset[i].getchoice().equals(useresponse[i])) {
+                System.out.println(crctans + " getcorrectans() i " + i);*/
+                if (quizset[i].getchoice().equals(useresponse[i])) {
                     System.out.println(quizset[i].getquestiontext()+"\n"+" Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
                     totalscore += quizset[i].getmaxmark();
                 } else {
                     System.out.println(quizset[i].getquestiontext()+"\n"+" Wrong Answer! - Penalty: " + quizset[i].getpenalty());
                     totalscore += quizset[i].getpenalty();
-                }*/
+                }
             }
             System.out.println("Total Score: " + totalscore);
         }
