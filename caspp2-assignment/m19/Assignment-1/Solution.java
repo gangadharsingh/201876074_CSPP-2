@@ -72,12 +72,12 @@ public final class Solution {
                         questset += ":";
             
         }
-        System.out.println(questset+" questset");
-        String[] tokens = questset.split(":");
-        for (int i = 0; i < tokens.length; i++) {
+/*        System.out.println(questset+" questset");
+*/        String[] tokens = questset.split(":");
+        /*for (int i = 0; i < tokens.length; i++) {
                 System.out.println(tokens[i]+" tokens i= "+i);
             
-        }
+        }*/
         if (tokens[0].length() < 1 || tokens.length == 4) {
             System.out.println("Error! Malformed question");
             quizsetsize = 0;
