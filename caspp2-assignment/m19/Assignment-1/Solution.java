@@ -76,7 +76,7 @@ public final class Solution {
         int x = Integer.parseInt(tokens[4]);
         int  choiceno = tokens[1].split(",").length;
         int choicecount = Integer.parseInt(tokens[2]);
-        if (tokens[0].length() < 1) {
+        if (tokens[0].length() < 1 || tokens[4] == null) {
             System.out.println("Error! Malformed question");
             quizsetsize = 0;
             return;
