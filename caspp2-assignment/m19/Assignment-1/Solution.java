@@ -74,9 +74,8 @@ public final class Solution {
         }
         String[] tokens = questset.split(":");
         for (String a: tokens) {
-            if (Integer.parseInt(tokens[4]) < 0) {
                 System.out.println(a+" tokens ");
-            }
+            
         }/*
         if (tokens[0].length() < 1 || tokens[4] == "") {
             System.out.println("Error! Malformed question");
