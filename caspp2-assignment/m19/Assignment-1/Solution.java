@@ -157,7 +157,7 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-        String choiceans = "";
+        String[] choiceans = new String[100];
         if (quizsetsize != 0) {
             int totalscore = 0;
             for (int i = 0; i < quizsetsize; i++) {
@@ -172,16 +172,16 @@ public final class Solution {
                 }
                 System.out.println(crctans + " getcorrectans() i " + i);*/
                     /*choiceans = choicearr[i].split(" ");*/
-                    for (int j = 0; j < quizsetsize; j++) {
-                        choiceans += choicearr[j]+" choicearr[j] "+ j;
+                    choiceans = quizset[i].getchoice();
+                    for (int j = 0; j < choiceans.length; j++) {
+                        if (choiceans[j].equals(useresponse[i])) {
+                            System.out.println(quizset[i].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
+                            totalscore += quizset[i].getmaxmark();
+                        } /*else {
+                            System.out.println(quizset[i].getquestiontext() + "\n" + " Wrong Answer! - Penalty: " + quizset[i].getpenalty());
+                            totalscore += quizset[i].getpenalty();
+                        }    */
                     }
-                    if (choicearr[i].equals(useresponse[i])) {
-                        System.out.println(quizset[i].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
-                        totalscore += quizset[i].getmaxmark();
-                    } else {
-                        System.out.println(quizset[i].getquestiontext() + "\n" + " Wrong Answer! - Penalty: " + quizset[i].getpenalty());
-                        totalscore += quizset[i].getpenalty();
-                    }    
             }
             System.out.println("Total Score: " + totalscore);
         }
