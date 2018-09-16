@@ -144,6 +144,7 @@ public final class Solution {
             } else {
                 for (int j = 0; j < answerCount; j++) {
                     useresponse[j] = s.nextLine();
+                    System.out.println(useresponse[j]+" useresponse [j] "+j);
                 }
             }
         }
