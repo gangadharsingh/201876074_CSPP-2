@@ -56,23 +56,26 @@ class Patron {
  * Class for BookYourShow.
  */
 class BookYourShow {
-    public static int len = 10;
+    /**
+     * int number.
+     */
+    public static final int len = 10;
     /**
      * initializing variable.
      */
-    Show[] movielist;
+    private Show[] movielist;
     /**
      * Patron array type.
      */
-    Patron[] patronlist;
+    private Patron[] patronlist;
     /**
      * integer type size.
      */
-    int size = 0;
+    private int size = 0;
     /**
      * integer variable.
      */
-    int patronsize = 0;
+    private int patronsize = 0;
     /**
      * Constructs the object.
      */
@@ -81,7 +84,7 @@ class BookYourShow {
         this.patronlist = new Patron[len];
         this.size = 0;
     }
-     /*public int getsize(){
+     public int getsize(){
       return size;
      }
 
@@ -95,10 +98,14 @@ class BookYourShow {
      public void setpatronsize(int patronsize){
       this.patronsize = patronsize;
      }
-     public String[] getpatronlist(){
+     public Patron[] getpatronlist(){
       return patronlist;
      }
-     */
+     public void setpatronlist(Patron[] patronlist){
+        for (int i = 0; i < patronlist.length; i++) {
+            this.patronlist[patronsize++] = patronlist[i];
+            }    
+     }
     /**
      * Adds a show.
      *
