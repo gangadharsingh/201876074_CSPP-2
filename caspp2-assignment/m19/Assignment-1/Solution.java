@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.*;
 /**
  * Solution class for code-eval.
  * @author: gangadharsingh.
@@ -69,14 +70,14 @@ public final class Solution {
         String questset = "";
         for (int i = 0; i < questionCount; i++) {
             questset += s.nextLine();
-                        questset += ":";
-            
+            questset += ":";
+
         }
-/*        System.out.println(questset+" questset");
-*/        String[] tokens = questset.split(":");
+        /*        System.out.println(questset+" questset");
+        */        String[] tokens = questset.split(":");
         /*for (int i = 0; i < tokens.length; i++) {
                 System.out.println(tokens[i]+" tokens i= "+i);
-            
+
         }*/
         if (questionCount == 0) {
             System.out.println("Quiz does not have questions");
@@ -86,7 +87,7 @@ public final class Solution {
             System.out.println("Error! Malformed question");
             quizsetsize = 0;
             return;
-        } 
+        }
         int x = Integer.parseInt(tokens[4]);
         int  choiceno = tokens[1].split(",").length;
         int choicecount = Integer.parseInt(tokens[2]);
@@ -155,16 +156,26 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
+        String[] choiceans = new String[20];
         if (quizsetsize != 0) {
             int totalscore = 0;
             for (int i = 0; i < quizsetsize; i++) {
-                if (quizset[i].getchoice().equals(useresponse[i])) {
+                int crctans = quizset[i].getcorrectans();
+                String[] chc = quizset[i].getchoice();
+                String[] chcans = new String[chc.length];
+                int chcanssize = 0;
+                for (String a: chc) {
+                    chcans[chcanssize++] = a;
+                    System.out.println(a+" chc + chcans "+chcans[chcanssize - 1]);
+                }
+                System.out.println(crctans + " getcorrectans() i " + i);
+                /*if (quizset[i].getchoice().equals(useresponse[i])) {
                     System.out.println(quizset[i].getquestiontext()+"\n"+" Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
                     totalscore += quizset[i].getmaxmark();
                 } else {
                     System.out.println(quizset[i].getquestiontext()+"\n"+" Wrong Answer! - Penalty: " + quizset[i].getpenalty());
                     totalscore += quizset[i].getpenalty();
-                }
+                }*/
             }
             System.out.println("Total Score: " + totalscore);
         }
@@ -200,6 +211,25 @@ class Quiz {
         maxmark = mm;
         penalty = pnlty;
     }
+    /* public String getcorchoice(int index, Quiz[] q) {
+         String str = "";
+         String[] crctchoice = new String[choice.length];
+         for (int i = 0; i < q.length-1; i++) {
+             for (int j=0; j < q[i].getchoice().length; j++) {
+                 str += q[i].getchoice();
+               crctchoice[i] = str.split("choice ");
+               System.out.println(str+" str ");
+             }
+         }*/
+    /*for (int i = 0; i < choice.length; i++) {
+        int crctans = q.getcorrectans();
+        if () {
+            str += choice[i];
+            System.out.println(choice[i]+" choice[i]");
+        }
+    }*/
+    /*return str;
+    }*/
     /**
      * { function_description }
      *
@@ -208,7 +238,6 @@ class Quiz {
     public int getmaxmark() {
         return maxmark;
     }
-
     /**
      * { function_description }
      *
@@ -274,7 +303,4 @@ class Quiz {
      *
      * @return     { description_of_the_return_value }
      */
-    public String printchoice() {
-        return (choice[0] + "        " + choice[1] + "        " + choice[2] + "        " + choice[3]);
-    }
 }
