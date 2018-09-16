@@ -78,6 +78,9 @@ public final class Solution {
                 System.out.println(tokens[i]+" tokens i= "+i);
             
         }*/
+        if (questionCount == 0) {
+            System.out.println("Quiz does not have questions");
+        }
         if (tokens[0].length() < 1 || tokens.length == 4) {
             System.out.println("Error! Malformed question");
             quizsetsize = 0;
