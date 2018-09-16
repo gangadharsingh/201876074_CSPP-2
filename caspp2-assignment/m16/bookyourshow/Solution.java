@@ -40,7 +40,6 @@ class Show {
      * { function_description }.
      *
      * @param      mn    { parameter_description }.
-     * @param      moviename  The moviename.
      */
     public void setmoviename(final String mn) {
         moviename = mn;
@@ -57,7 +56,6 @@ class Show {
      * { function_description }.
      *
      * @param      td    { parameter_description }.
-     * @param      timedate  The timedate.
      */
     public void settimedate(final String td) {
         timedate = td;
@@ -74,7 +72,6 @@ class Show {
      * { function_description }.
      *
      * @param      st    { parameter_description }.
-     * @param      seats  The seats.
      */
     public void setseats(final String[] st) {
         seats = st;
@@ -114,7 +111,6 @@ class Patron {
      * { function_description }.
      *
      * @param      pn    { parameter_description }.
-     * @param      patronname  The patronname.
      */
     public void setpatronname(final String pn) {
         patronname = pn;
@@ -131,7 +127,6 @@ class Patron {
      * { function_description }.
      *
      * @param      mn    { parameter_description }.
-     * @param      mobilenumber  The mobilenumber.
      */
     public void setmobilenumber(final String mn) {
         mobilenumber = mn;
@@ -197,7 +192,6 @@ class BookYourShow {
      * { function_description }.
      *
      * @param      ps    { parameter_description }.
-     * @param      patronsize  The patronsize.
      */
     public void setpatronsize(final int ps) {
         patronsize = ps;
@@ -214,7 +208,6 @@ class BookYourShow {
      * { function_description }.
      *
      * @param      pl    { parameter_description }.
-     * @param      patronlist  The patronlist.
      */
     public void setpatronlist(final Patron[] pl) {
         for (int i = 0; i < pl.length; i++) {
