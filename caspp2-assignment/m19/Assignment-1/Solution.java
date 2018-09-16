@@ -73,14 +73,15 @@ public final class Solution {
             */
         }
         String[] tokens = questset.split(":");
-        int x = Integer.parseInt(tokens[4]);
-        int  choiceno = tokens[1].split(",").length;
-        int choicecount = Integer.parseInt(tokens[2]);
         if (tokens[0].length() < 1 || tokens[4] == "") {
             System.out.println("Error! Malformed question");
             quizsetsize = 0;
             return;
-        } else if (x > 0) {
+        } 
+        int x = Integer.parseInt(tokens[4]);
+        int  choiceno = tokens[1].split(",").length;
+        int choicecount = Integer.parseInt(tokens[2]);
+        if (x > 0) {
             System.out.println("Invalid penalty for " + tokens[0]);
             quizsetsize = 0;
             return;
