@@ -28,27 +28,54 @@ class Show {
         this.timedate = b;
         this.seats = c;
     }
-     public String getmoviename(){
-      return moviename;
-     }
-     
-     public void setmoviename(String moviename){
-      this.moviename = moviename;
-     }
-     public String gettimedate(){
-      return timedate;
-     }
-     
-     public void settimedate(String timedate){
-      this.timedate = timedate;
-     }
-      public String[] getseats(){
-       return seats;
-      }
-      
-      public void setseats(String[] seats){
-       this.seats = seats;
-      }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }.
+     */
+    public String getmoviename() {
+        return moviename;
+    }
+    /**
+     * { function_description }.
+     *
+     * @param      moviename  The moviename.
+     */
+    public void setmoviename(String moviename) {
+        this.moviename = moviename;
+    }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }.
+     */
+    public String gettimedate() {
+        return timedate;
+    }
+    /**
+     * { function_description }.
+     *
+     * @param      timedate  The timedate.
+     */
+    public void settimedate(String timedate) {
+        this.timedate = timedate;
+    }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }.
+     */
+    public String[] getseats() {
+        return seats;
+    }
+    /**
+     * { function_description }.
+     *
+     * @param      seats  The seats.
+     */
+    public void setseats(String[] seats) {
+        this.seats = seats;
+    }
 }
 /**
  * Class for patron.
@@ -105,28 +132,56 @@ class BookYourShow {
         this.patronlist = new Patron[len];
         this.size = 0;
     }
-     public int getsize(){
-      return size;
-     }
-
-     public void setsize(int size){
-      this.size = size;
-     }
-     public int getpatronsize(){
-      return patronsize;
-     }
-
-     public void setpatronsize(int patronsize){
-      this.patronsize = patronsize;
-     }
-     public Patron[] getpatronlist(){
-      return patronlist;
-     }
-     public void setpatronlist(Patron[] patronlist){
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }.
+     */
+    public int getsize() {
+        return size;
+    }
+    /**
+     * { function_description }.
+     *
+     * @param      size  The size.
+     */
+    public void setsize(int size) {
+        this.size = size;
+    }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }.
+     */
+    public int getpatronsize() {
+        return patronsize;
+    }
+    /**
+     * { function_description }.
+     *
+     * @param      patronsize  The patronsize.
+     */
+    public void setpatronsize(int patronsize) {
+        this.patronsize = patronsize;
+    }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }.
+     */
+    public Patron[] getpatronlist() {
+        return patronlist;
+    }
+    /**
+     * { function_description }.
+     *
+     * @param      patronlist  The patronlist.
+     */
+    public void setpatronlist(Patron[] patronlist) {
         for (int i = 0; i < patronlist.length; i++) {
             this.patronlist[patronsize++] = patronlist[i];
-            }    
-     }
+        }
+    }
     /**
      * Adds a show.
      *
@@ -162,7 +217,7 @@ class BookYourShow {
      * @param      d     { parameter_description }.
      */
     public void bookAShow(final String a,
-        final String b, final Patron c, final String[] d) {
+                          final String b, final Patron c, final String[] d) {
         int cnt = 0;
         if (size == 0) {
             System.out.println("No show");
@@ -209,9 +264,9 @@ class BookYourShow {
             if (c.equals(patronlist[i].Mobilenumber)) {
                 for (int j = 0; j < size; j++) {
                     if (b.equals(movielist[j].gettimedate()) && a.equals(
-                        movielist[j].getmoviename())) {
+                                movielist[j].getmoviename())) {
                         System.out.println(patronlist[
-                            i].Mobilenumber + " " + a + " " + b);
+                                               i].Mobilenumber + " " + a + " " + b);
                         return true;
                     }
                 }
@@ -239,7 +294,6 @@ class BookYourShow {
                 System.out.println(str);
             }
         }
-
     }
 }
 /**
