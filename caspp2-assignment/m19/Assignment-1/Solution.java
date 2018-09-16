@@ -73,6 +73,7 @@ public final class Solution {
             */
         }
         String[] tokens = questset.split(":");
+        System.out.println(tokens[4]+"tokens[4]");
         if (tokens[0].length() < 1 || tokens[4] == "") {
             System.out.println("Error! Malformed question");
             quizsetsize = 0;
