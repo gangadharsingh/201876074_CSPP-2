@@ -157,10 +157,11 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-        String[] choiceans = new String[20];
+        String choiceans = "";
         if (quizsetsize != 0) {
             int totalscore = 0;
             for (int i = 0; i < quizsetsize; i++) {
+                String[] choicearr = quizset[i].getchoice();
                 /*int crctans = quizset[i].getcorrectans();
                 String[] chc = quizset[i].getchoice();
                 String[] chcans = new String[chc.length];
@@ -170,7 +171,8 @@ public final class Solution {
                     System.out.println(a+" chc + chcans "+chcans[chcanssize - 1]);
                 }
                 System.out.println(crctans + " getcorrectans() i " + i);*/
-                String[] choicearr = quizset[i].getchoice();
+                    /*choiceans = choicearr[i].split(" ");*/
+                    System.out.println(choicearr[i]+" choicearr[i]");
                     if (choicearr[i].equals(useresponse[i])) {
                         System.out.println(quizset[i].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
                         totalscore += quizset[i].getmaxmark();
