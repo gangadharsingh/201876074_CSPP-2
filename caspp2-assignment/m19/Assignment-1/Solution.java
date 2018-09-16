@@ -1,6 +1,6 @@
+
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.*;
 /**
  * Solution class for code-eval.
  * @author: gangadharsingh.
@@ -77,7 +77,6 @@ public final class Solution {
         */        String[] tokens = questset.split(":");
         /*for (int i = 0; i < tokens.length; i++) {
                 System.out.println(tokens[i]+" tokens i= "+i);
-
         }*/
         if (questionCount == 0) {
             System.out.println("Quiz does not have questions");
@@ -161,25 +160,15 @@ public final class Solution {
         if (quizsetsize != 0) {
             int totalscore = 0;
             for (int i = 0; i < quizsetsize; i++) {
-                /*int crctans = quizset[i].getcorrectans();
-                String[] chc = quizset[i].getchoice();
-                String[] chcans = new String[chc.length];
-                int chcanssize = 0;
-                for (String a: chc) {
-                    chcans[chcanssize++] = a;
-                    System.out.println(a+" chc + chcans "+chcans[chcanssize - 1]);
-                }
-                System.out.println(crctans + " getcorrectans() i " + i);*/
-                    /*choiceans = choicearr[i].split(" ");*/
-                    choiceans = quizset[i].getchoice();
+                choiceans = quizset[i].getchoice();
                     for (int j = 0; j < choiceans.length; j++) {
                         if (choiceans[j].equals(useresponse[i])) {
                             System.out.println(quizset[j].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[j].getmaxmark());
                             totalscore += quizset[j].getmaxmark();
-                        } /*else {
+                        } else {
                             System.out.println(quizset[i].getquestiontext() + "\n" + " Wrong Answer! - Penalty: " + quizset[i].getpenalty());
                             totalscore += quizset[i].getpenalty();
-                        }    */
+                        }    
                     }
             }
             System.out.println("Total Score: " + totalscore);
