@@ -47,19 +47,17 @@ class Item {
     }
     /**
      * Sets the product name.
-     * @param      prdnm  The product name
+     * @param      prodnm1  The product name
      */
-    public void setprodnm(final String prdnm) {
-        this.prodnm = prdnm;
+    public void setprodnm(final String prodnm1) {
+        this.prodnm = prodnm1;
     }
     /**
      * Sets the quanity.
-     *
-     * @param      qtty  The qtty
      * @param      quant1  The quant
      */
-    public void setQuanity(final int qtty) {
-        this.quant = qtty;
+    public void setQuanity(final int quant1) {
+        this.quant = quant1;
 
     }
     /**
