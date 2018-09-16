@@ -174,7 +174,7 @@ public final class Solution {
                     choiceans = quizset[i].getchoice();
                     for (int j = 0; j < choiceans.length; j++) {
                         if (choiceans[j].equals(useresponse[i])) {
-                            System.out.println(quizset[i].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
+                            System.out.println(quizset[j].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[j].getmaxmark());
                             totalscore += quizset[j].getmaxmark();
                         } /*else {
                             System.out.println(quizset[i].getquestiontext() + "\n" + " Wrong Answer! - Penalty: " + quizset[i].getpenalty());
