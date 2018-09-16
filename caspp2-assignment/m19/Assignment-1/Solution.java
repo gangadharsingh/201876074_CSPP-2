@@ -162,7 +162,7 @@ public final class Solution {
                     System.out.println(" Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
                     totalscore += quizset[i].getmaxmark();
                 } else {
-                    System.out.println("Wrong Answer! - Penalty: " + quizset[i].getpenalty());
+                    System.out.println(" Wrong Answer! - Penalty: " + quizset[i].getpenalty());
                     totalscore += quizset[i].getpenalty();
                 }
             }
