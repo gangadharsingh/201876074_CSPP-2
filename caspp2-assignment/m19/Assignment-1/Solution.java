@@ -80,10 +80,6 @@ public final class Solution {
             System.out.println("Error! Malformed question");
             quizsetsize = 0;
             return;
-        } else if (choicecount > choiceno) {
-            System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
-            quizsetsize = 0;
-            return;
         } else if (x > 0) {
             System.out.println("Invalid penalty for " + tokens[0]);
             quizsetsize = 0;
@@ -94,6 +90,10 @@ public final class Solution {
             return;
         } else if (choiceno < 2) {
             System.out.println(tokens[0] + " does not have enough answer choices");
+            quizsetsize = 0;
+            return;
+        } else if (choicecount > choiceno) {
+            System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
             quizsetsize = 0;
             return;
         } else {
