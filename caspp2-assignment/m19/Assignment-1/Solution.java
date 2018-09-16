@@ -170,13 +170,14 @@ public final class Solution {
                     System.out.println(a+" chc + chcans "+chcans[chcanssize - 1]);
                 }
                 System.out.println(crctans + " getcorrectans() i " + i);*/
-                if (quizset[i].getchoice().equals(useresponse[i])) {
-                    System.out.println(quizset[i].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
-                    totalscore += quizset[i].getmaxmark();
-                } else {
-                    System.out.println(quizset[i].getquestiontext() + "\n" + " Wrong Answer! - Penalty: " + quizset[i].getpenalty());
-                    totalscore += quizset[i].getpenalty();
-                }
+                String[] choicearr = quizset[i].getchoice();
+                    if (choicearr[i].equals(useresponse[i])) {
+                        System.out.println(quizset[i].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
+                        totalscore += quizset[i].getmaxmark();
+                    } else {
+                        System.out.println(quizset[i].getquestiontext() + "\n" + " Wrong Answer! - Penalty: " + quizset[i].getpenalty());
+                        totalscore += quizset[i].getpenalty();
+                    }    
             }
             System.out.println("Total Score: " + totalscore);
         }
