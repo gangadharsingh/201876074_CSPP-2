@@ -159,8 +159,8 @@ public final class Solution {
             int totalscore = 0;
             for (int i = 0; i < quizsetsize; i++) {
                 if (quizset[i].getchoice().equals(useresponse[i])) {
-                    System.out.println(quizset[i].getquestiontext()+" getquestiontext()");
                     System.out.println(" Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
+                    System.out.println(quizset[i].getquestiontext()+" getquestiontext()");
                     totalscore += quizset[i].getmaxmark();
                 } else {
                     System.out.println(" Wrong Answer! - Penalty: " + quizset[i].getpenalty());
