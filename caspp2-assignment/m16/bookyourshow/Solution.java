@@ -4,9 +4,9 @@ import java.util.Scanner;
  * @author: gangadharsingh.
  */
 class Show {
-	/**
-	 * Show type.
-	 */
+    /**
+     * Show type.
+     */
     String moviename;
     /**
      * timedate of string type.
@@ -33,9 +33,9 @@ class Show {
  * Class for patron.
  */
 class Patron {
-	/**
-	 * String variable.
-	 */
+    /**
+     * String variable.
+     */
     String Patronname;
     /**
      * String type variable.
@@ -47,7 +47,7 @@ class Patron {
      * @param      a     {patron name}.
      * @param      b     {patron mobile no.}.
      */
-    public Patron(final String a, final String b) {
+    Patron(final String a, final String b) {
         this.Patronname = a;
         this.Mobilenumber = b;
     }
@@ -75,11 +75,29 @@ class BookYourShow {
     /**
      * Constructs the object.
      */
-    public BookYourShow() {
+    BookYourShow() {
         this.movielist = new Show[10];
         this.patronlist = new Patron[10];
         this.size = 0;
     }
+     /*public int getsize(){
+      return size;
+     }
+     
+     public void setsize(int size){
+      this.size = size;
+     }
+     public int getpatronsize(){
+      return patronsize;
+     }
+     
+     public void setpatronsize(int patronsize){
+      this.patronsize = patronsize;
+     }
+     public String[] getpatronlist(){
+      return patronlist;
+     }
+     */
     /**
      * Adds a show.
      *
@@ -107,14 +125,15 @@ class BookYourShow {
         return null;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @param      a     { parameter_description }
-     * @param      b     { parameter_description }
-     * @param      c     { parameter_description }
-     * @param      d     { parameter_description }
+     * @param      a     { parameter_description }.
+     * @param      b     { parameter_description }.
+     * @param      c     { parameter_description }.
+     * @param      d     { parameter_description }.
      */
-    public void bookAShow(final String a, final String b, final Patron c, final String[] d) {
+    public void bookAShow(final String a,
+        final String b, final Patron c, final String[] d) {
         int cnt = 0;
         if (size == 0) {
             System.out.println("No show");
@@ -148,11 +167,11 @@ class BookYourShow {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @param      a     { parameter_description }
-     * @param      b     { parameter_description }
-     * @param      c     { parameter_description }
+     * @param      a     { parameter_description }.
+     * @param      b     { parameter_description }.
+     * @param      c     { parameter_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -161,9 +180,9 @@ class BookYourShow {
             if (c.equals(patronlist[i].Mobilenumber)) {
                 for (int j = 0; j < size; j++) {
                     if (b.equals(movielist[j].timedate) && a.equals(
-                    	movielist[j].moviename)) {
+                        movielist[j].moviename)) {
                         System.out.println(patronlist[
-                        	i].Mobilenumber + " " + a + " " + b);
+                            i].Mobilenumber + " " + a + " " + b);
                         return true;
                     }
                 }
@@ -194,7 +213,18 @@ class BookYourShow {
 
     }
 }
+/**
+ * Solution class.
+ */
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        /**
+         * empty.
+         */
+    }
     /**
      * main method to drive program.
      *
