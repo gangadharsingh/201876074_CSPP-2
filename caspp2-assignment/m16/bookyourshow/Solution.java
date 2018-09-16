@@ -39,6 +39,7 @@ class Show {
     /**
      * { function_description }.
      *
+     * @param      mn    { parameter_description }.
      * @param      moviename  The moviename.
      */
     public void setmoviename(final String mn) {
@@ -55,6 +56,7 @@ class Show {
     /**
      * { function_description }.
      *
+     * @param      td    { parameter_description }.
      * @param      timedate  The timedate.
      */
     public void settimedate(final String td) {
@@ -71,6 +73,7 @@ class Show {
     /**
      * { function_description }.
      *
+     * @param      st    { parameter_description }.
      * @param      seats  The seats.
      */
     public void setseats(final String[] st) {
@@ -110,6 +113,7 @@ class Patron {
     /**
      * { function_description }.
      *
+     * @param      pn    { parameter_description }.
      * @param      patronname  The patronname.
      */
     public void setpatronname(final String pn) {
@@ -126,6 +130,7 @@ class Patron {
     /**
      * { function_description }.
      *
+     * @param      mn    { parameter_description }.
      * @param      mobilenumber  The mobilenumber.
      */
     public void setmobilenumber(final String mn) {
@@ -175,7 +180,7 @@ class BookYourShow {
     /**
      * { function_description }.
      *
-     * @param      size  The size.
+     * @param      sz    The size.
      */
     public void setsize(final int sz) {
         size = sz;
@@ -191,6 +196,7 @@ class BookYourShow {
     /**
      * { function_description }.
      *
+     * @param      ps    { parameter_description }.
      * @param      patronsize  The patronsize.
      */
     public void setpatronsize(final int ps) {
@@ -207,6 +213,7 @@ class BookYourShow {
     /**
      * { function_description }.
      *
+     * @param      pl    { parameter_description }.
      * @param      patronlist  The patronlist.
      */
     public void setpatronlist(final Patron[] pl) {
@@ -217,7 +224,7 @@ class BookYourShow {
     /**
      * Adds a show.
      *
-     * @param      k     { parameter_description }
+     * @param      k     { parameter_description }.
      */
     public void addAShow(final Show k) {
         movielist[size++] = k;
