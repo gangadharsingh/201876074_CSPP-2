@@ -56,8 +56,9 @@ class Patron {
  * Class for BookYourShow.
  */
 class BookYourShow {
+    public static int len = 10;
     /**
-     * Constructs the object.
+     * initializing variable.
      */
     Show[] movielist;
     /**
@@ -76,21 +77,21 @@ class BookYourShow {
      * Constructs the object.
      */
     BookYourShow() {
-        this.movielist = new Show[10];
-        this.patronlist = new Patron[10];
+        this.movielist = new Show[len];
+        this.patronlist = new Patron[len];
         this.size = 0;
     }
      /*public int getsize(){
       return size;
      }
-     
+
      public void setsize(int size){
       this.size = size;
      }
      public int getpatronsize(){
       return patronsize;
      }
-     
+
      public void setpatronsize(int patronsize){
       this.patronsize = patronsize;
      }
