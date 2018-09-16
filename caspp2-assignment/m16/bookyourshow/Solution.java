@@ -41,8 +41,8 @@ class Show {
      *
      * @param      moviename  The moviename.
      */
-    public void setmoviename(final String moviename) {
-        this.moviename = moviename;
+    public void setmoviename(final String mn) {
+        moviename = mn;
     }
     /**
      * { function_description }.
@@ -57,8 +57,8 @@ class Show {
      *
      * @param      timedate  The timedate.
      */
-    public void settimedate(final String timedate) {
-        this.timedate = timedate;
+    public void settimedate(final String td) {
+        timedate = td;
     }
     /**
      * { function_description }.
@@ -73,8 +73,8 @@ class Show {
      *
      * @param      seats  The seats.
      */
-    public void setseats(final String[] seats) {
-        this.seats = seats;
+    public void setseats(final String[] st) {
+        seats = st;
     }
 }
 /**
@@ -112,8 +112,8 @@ class Patron {
      *
      * @param      patronname  The patronname.
      */
-    public void setpatronname(final String patronname) {
-        this.patronname = patronname;
+    public void setpatronname(final String pn) {
+        patronname = pn;
     }
     /**
      * { function_description }.
@@ -128,8 +128,8 @@ class Patron {
      *
      * @param      mobilenumber  The mobilenumber.
      */
-    public void setmobilenumber(final String mobilenumber) {
-        this.mobilenumber = mobilenumber;
+    public void setmobilenumber(final String mn) {
+        mobilenumber = mn;
     }
 }
 /**
@@ -177,8 +177,8 @@ class BookYourShow {
      *
      * @param      size  The size.
      */
-    public void setsize(final int size) {
-        this.size = size;
+    public void setsize(final int sz) {
+        size = sz;
     }
     /**
      * { function_description }.
@@ -193,8 +193,8 @@ class BookYourShow {
      *
      * @param      patronsize  The patronsize.
      */
-    public void setpatronsize(final int patronsize) {
-        this.patronsize = patronsize;
+    public void setpatronsize(final int ps) {
+        patronsize = ps;
     }
     /**
      * { function_description }.
@@ -209,9 +209,9 @@ class BookYourShow {
      *
      * @param      patronlist  The patronlist.
      */
-    public void setpatronlist(final Patron[] patronlist) {
-        for (int i = 0; i < patronlist.length; i++) {
-            this.patronlist[patronsize++] = patronlist[i];
+    public void setpatronlist(final Patron[] pl) {
+        for (int i = 0; i < pl.length; i++) {
+            patronlist[patronsize++] = pl[i];
         }
     }
     /**
