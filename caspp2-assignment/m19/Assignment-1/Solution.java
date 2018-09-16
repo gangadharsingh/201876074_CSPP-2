@@ -58,9 +58,9 @@ public final class Solution {
     /**
      * Loads questions.
      *
-     * @param      s              The scanner object for user input
-     * @param      q              The quarter
-     * @param      questionCount  The question count
+     * @param      s              The scanner object for user input.
+     * @param      q              The quarter.
+     * @param      questionCount  The question count.
      * @param      quiz  The quiz object
      */
     static void loadQuestions(final Scanner s, Quiz q, final int questionCount) {
@@ -121,9 +121,9 @@ public final class Solution {
     /**
      * Starts a quiz.
      *
-     * @param      s            The scanner object for user input
-     * @param      quiz         The quiz object
-     * @param      answerCount  The answer count
+     * @param      s            The scanner object for user input.
+     * @param      quiz         The quiz object.
+     * @param      answerCount  The answer count.
      */
     public static void startQuiz(final Scanner s, final Quiz quiz, final int answerCount) {
         // write your code here to display the quiz questions
@@ -150,9 +150,9 @@ public final class Solution {
     }
 
     /**
-     * Displays the score report
+     * Displays the score report.
      *
-     * @param      quiz     The quiz object
+     * @param      quiz  The quiz object.
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
@@ -170,10 +170,10 @@ public final class Solution {
                 }
                 System.out.println(crctans + " getcorrectans() i " + i);*/
                 if (quizset[i].getchoice().equals(useresponse[i])) {
-                    System.out.println(quizset[i].getquestiontext()+"\n"+" Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
+                    System.out.println(quizset[i].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
                     totalscore += quizset[i].getmaxmark();
                 } else {
-                    System.out.println(quizset[i].getquestiontext()+"\n"+" Wrong Answer! - Penalty: " + quizset[i].getpenalty());
+                    System.out.println(quizset[i].getquestiontext() + "\n" + " Wrong Answer! - Penalty: " + quizset[i].getpenalty());
                     totalscore += quizset[i].getpenalty();
                 }
             }
@@ -231,76 +231,71 @@ class Quiz {
     /*return str;
     }*/
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     public int getmaxmark() {
         return maxmark;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @param      mm    The millimeters
+     * @param      mm    The millimeters.
      */
     public void setmaxmark(int mm) {
         maxmark = mm;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     public int getpenalty() {
         return penalty;
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @param      pnlty  The pnlty
+     * @param      pnlty  The pnlty.
      */
     public void setpenalty(int pnlty) {
         penalty = pnlty;
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     public String getquestiontext() {
         return questtext;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     public String[] getchoice() {
         return choice;
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     public int getcorrectans() {
         return correctans;
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @param      corans  The corans
+     * @param      corans  The corans.
      */
     public void setcorrectans(int corans) {
         correctans = corans;
     }
-    /**
-     * { function_description }
-     *
-     * @return     { description_of_the_return_value }
-     */
 }
