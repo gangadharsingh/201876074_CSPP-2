@@ -165,9 +165,11 @@ public final class Solution {
                         if (choiceans[j].equals(useresponse[i])) {
                             System.out.println(quizset[j].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[j].getmaxmark());
                             totalscore += quizset[j].getmaxmark();
+                            break;
                         } else {
                             System.out.println(quizset[i].getquestiontext() + "\n" + " Wrong Answer! - Penalty: " + quizset[i].getpenalty());
                             totalscore += quizset[i].getpenalty();
+                            break;
                         }    
                     }
             }
@@ -205,25 +207,6 @@ class Quiz {
         maxmark = mm;
         penalty = pnlty;
     }
-    /* public String getcorchoice(int index, Quiz[] q) {
-         String str = "";
-         String[] crctchoice = new String[choice.length];
-         for (int i = 0; i < q.length-1; i++) {
-             for (int j=0; j < q[i].getchoice().length; j++) {
-                 str += q[i].getchoice();
-               crctchoice[i] = str.split("choice ");
-               System.out.println(str+" str ");
-             }
-         }*/
-    /*for (int i = 0; i < choice.length; i++) {
-        int crctans = q.getcorrectans();
-        if () {
-            str += choice[i];
-            System.out.println(choice[i]+" choice[i]");
-        }
-    }*/
-    /*return str;
-    }*/
     /**
      * { function_description }.
      *
