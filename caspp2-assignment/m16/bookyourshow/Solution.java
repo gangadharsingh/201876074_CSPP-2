@@ -84,11 +84,11 @@ class Patron {
     /**
      * String variable.
      */
-    String Patronname;
+    private String patronname;
     /**
      * String type variable.
      */
-    String Mobilenumber;
+    private String mobilenumber;
     /**
      * Constructs the object.
      *
@@ -96,8 +96,40 @@ class Patron {
      * @param      b     {patron mobile no.}.
      */
     Patron(final String a, final String b) {
-        this.Patronname = a;
-        this.Mobilenumber = b;
+        this.patronname = a;
+        this.mobilenumber = b;
+    }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public String getpatronname() {
+        return patronname;
+    }
+    /**
+     * { function_description }.
+     *
+     * @param      patronname  The patronname.
+     */
+    public void setpatronname(String patronname) {
+        this.patronname = patronname;
+    }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }.
+     */
+    public String getmobilenumber() {
+        return mobilenumber;
+    }
+    /**
+     * { function_description }.
+     *
+     * @param      mobilenumber  The mobilenumber.
+     */
+    public void setmobilenumber(String mobilenumber) {
+        this.mobilenumber = mobilenumber;
     }
 }
 /**
@@ -261,12 +293,12 @@ class BookYourShow {
      */
     public boolean printTicket(final String a, final String b, final String c) {
         for (int i = 0; i < patronsize; i++) {
-            if (c.equals(patronlist[i].Mobilenumber)) {
+            if (c.equals(patronlist[i].getmobilenumber())) {
                 for (int j = 0; j < size; j++) {
                     if (b.equals(movielist[j].gettimedate()) && a.equals(
                                 movielist[j].getmoviename())) {
                         System.out.println(patronlist[
-                                               i].Mobilenumber + " " + a + " " + b);
+                                               i].getmobilenumber() + " " + a + " " + b);
                         return true;
                     }
                 }
