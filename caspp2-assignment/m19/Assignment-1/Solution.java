@@ -74,7 +74,7 @@ public final class Solution {
         }
         String[] tokens = questset.split(":");
         for (String a: tokens) {
-            if (Integer.parseInt(tokens[2]) < 0) {
+            if (Integer.parseInt(tokens[4]) < 0) {
                 System.out.println(a+" tokens ");
             }
         }/*
