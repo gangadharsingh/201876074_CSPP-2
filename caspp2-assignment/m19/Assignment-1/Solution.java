@@ -69,8 +69,8 @@ public final class Solution {
         String questset = "";
         for (int i = 0; i < questionCount; i++) {
             questset += s.nextLine();
-            /*            questset += ":";
-            */
+                        questset += ":";
+            
         }
         String[] tokens = questset.split(":");
         for (String a: tokens) {
