@@ -163,12 +163,14 @@ public final class Solution {
                 choiceans = quizset[i].getchoice();
                     for (int j = 0; j < choiceans.length; j++) {
                         if (choiceans[j].equals(useresponse[i])) {
-                            System.out.println(quizset[j].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[j].getmaxmark());
-                            totalscore += quizset[j].getmaxmark();
+                            System.out.println(choiceans[j]+" choiceans[j]");
+/*                            System.out.println(quizset[j].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[j].getmaxmark());
+*/                            totalscore += quizset[j].getmaxmark();
                             break;
                         } else {
-                            System.out.println(quizset[i].getquestiontext() + "\n" + " Wrong Answer! - Penalty: " + quizset[i].getpenalty());
-                            totalscore += quizset[i].getpenalty();
+                            System.out.println(choiceans[j]+" choiceans[j]");
+/*                            System.out.println(quizset[i].getquestiontext() + "\n" + " Wrong Answer! - Penalty: " + quizset[i].getpenalty());
+*/                            totalscore += quizset[i].getpenalty();
                             break;
                         }    
                     }
