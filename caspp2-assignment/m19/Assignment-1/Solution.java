@@ -73,9 +73,11 @@ public final class Solution {
             
         }
         String[] tokens = questset.split(":");
-        /*for (String a: tokens) {
-            System.out.println(a+" tokens ");
-        }*/
+        for (String a: tokens) {
+            if (Integer.parseInt(tokens[2]) < 0) {
+                System.out.println(a+" tokens ");
+            }
+        }/*
         if (tokens[0].length() < 1 || tokens[4] == "") {
             System.out.println("Error! Malformed question");
             quizsetsize = 0;
@@ -107,7 +109,7 @@ public final class Solution {
                 quizset[quizsetsize++] = q;
             }
             System.out.println(questionCount + " are added to the quiz");
-        }
+        }*/
     }
 
     public static String[] useresponse = new String[100];
