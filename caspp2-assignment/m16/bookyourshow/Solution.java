@@ -7,15 +7,15 @@ class Show {
     /**
      * Show type.
      */
-    String moviename;
+    private String moviename;
     /**
      * timedate of string type.
      */
-    String timedate;
+    private String timedate;
     /**
      * String array seats.
      */
-    String[] seats;
+    private String[] seats;
     /**
      * Constructs the object.
      *
@@ -28,6 +28,27 @@ class Show {
         this.timedate = b;
         this.seats = c;
     }
+     public String getmoviename(){
+      return moviename;
+     }
+     
+     public void setmoviename(String moviename){
+      this.moviename = moviename;
+     }
+     public String gettimedate(){
+      return timedate;
+     }
+     
+     public void settimedate(String timedate){
+      this.timedate = timedate;
+     }
+      public String[] getseats(){
+       return seats;
+      }
+      
+      public void setseats(String[] seats){
+       this.seats = seats;
+      }
 }
 /**
  * Class for patron.
@@ -124,8 +145,8 @@ class BookYourShow {
      */
     public Show getAShow(final String a, final String b) {
         for (int i = 0; i < size; i++) {
-            if ((movielist[i].moviename).equals(a)) {
-                if ((movielist[i].timedate).equals(b)) {
+            if ((movielist[i].getmoviename()).equals(a)) {
+                if ((movielist[i].gettimedate()).equals(b)) {
                     return movielist[i];
                 }
             }
@@ -148,9 +169,9 @@ class BookYourShow {
         } else {
 
             for (int k = 0; k < size; k++) {
-                if (a.equals(movielist[k].moviename)) {
-                    if ((movielist[k].timedate).equals(b)) {
-                        String[] availseats = movielist[k].seats;
+                if (a.equals(movielist[k].getmoviename())) {
+                    if ((movielist[k].gettimedate()).equals(b)) {
+                        String[] availseats = movielist[k].getseats();
                         for (int i = 0; i < d.length; i++) {
                             for (int j = 0; j < availseats.length; j++) {
                                 if (availseats[j].equals(d[i])) {
@@ -187,8 +208,8 @@ class BookYourShow {
         for (int i = 0; i < patronsize; i++) {
             if (c.equals(patronlist[i].Mobilenumber)) {
                 for (int j = 0; j < size; j++) {
-                    if (b.equals(movielist[j].timedate) && a.equals(
-                        movielist[j].moviename)) {
+                    if (b.equals(movielist[j].gettimedate()) && a.equals(
+                        movielist[j].getmoviename())) {
                         System.out.println(patronlist[
                             i].Mobilenumber + " " + a + " " + b);
                         return true;
@@ -206,10 +227,10 @@ class BookYourShow {
         if (movielist.length > 0) {
             for (int i = 0; i < size; i++) {
                 String str = "";
-                str += movielist[i].moviename + ",";
-                str += movielist[i].timedate + ",";
+                str += movielist[i].getmoviename() + ",";
+                str += movielist[i].gettimedate() + ",";
                 String str2 = "[";
-                String[] availseats = movielist[i].seats;
+                String[] availseats = movielist[i].getseats();
                 for (int j = 0; j < availseats.length - 1; j++) {
                     str2 += availseats[j] + ",";
                 }
