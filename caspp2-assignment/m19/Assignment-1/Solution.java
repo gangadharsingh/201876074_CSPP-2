@@ -173,7 +173,7 @@ public final class Solution {
                 System.out.println(crctans + " getcorrectans() i " + i);*/
                     /*choiceans = choicearr[i].split(" ");*/
                     for (int j = 0; j < quizsetsize; j++) {
-                        System.out.println(choicearr[j]+" choicearr[j]");
+                        choiceans += choicearr[j]+" choicearr[j] "+ j;
                     }
                     if (choicearr[i].equals(useresponse[i])) {
                         System.out.println(quizset[i].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[i].getmaxmark());
