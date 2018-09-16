@@ -74,7 +74,7 @@ public final class Solution {
         }
         String[] tokens = questset.split(":");
         int x = Integer.parseInt(tokens[4]);
-        String[]  choice = tokens[1].split(",");
+        int  choiceno = Integer.parseInt(tokens[2]);
         if (tokens[0].length() < 1) {
             System.out.println("Error! Malformed question");
             quizsetsize = 0;
@@ -82,12 +82,15 @@ public final class Solution {
         } else if (x > 0) {
             System.out.println("Invalid penalty for " + tokens[0]);
             quizsetsize = 0;
+            return;
         } else if (Integer.parseInt(tokens[3]) < 0) {
             System.out.println("Invalid max marks for " + tokens[0]);
             quizsetsize = 0;
-        } else if (choice.length < 2) {
+            return;
+        } else if (choiceno < 2) {
             System.out.println(tokens[0] + " does not have enough answer choices");
             quizsetsize = 0;
+            return;
         } else {
             for (int i = 0; i < questionCount; i++) {
                 q = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
