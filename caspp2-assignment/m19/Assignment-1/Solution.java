@@ -80,6 +80,7 @@ public final class Solution {
         }*/
         if (questionCount == 0) {
             System.out.println("Quiz does not have questions");
+            return;
         }
         if (tokens[0].length() < 1 || tokens.length == 4) {
             System.out.println("Error! Malformed question");
