@@ -72,6 +72,7 @@ public final class Solution {
                         questset += ":";
             
         }
+        System.out.println(questset+" bquestset");
         String[] tokens = questset.split(":");
         for (String a: tokens) {
                 System.out.println(a+" tokens ");
