@@ -41,7 +41,7 @@ class Show {
      *
      * @param      moviename  The moviename.
      */
-    public void setmoviename(String moviename) {
+    public void setmoviename(final String moviename) {
         this.moviename = moviename;
     }
     /**
@@ -57,7 +57,7 @@ class Show {
      *
      * @param      timedate  The timedate.
      */
-    public void settimedate(String timedate) {
+    public void settimedate(final String timedate) {
         this.timedate = timedate;
     }
     /**
@@ -73,7 +73,7 @@ class Show {
      *
      * @param      seats  The seats.
      */
-    public void setseats(String[] seats) {
+    public void setseats(final String[] seats) {
         this.seats = seats;
     }
 }
@@ -112,7 +112,7 @@ class Patron {
      *
      * @param      patronname  The patronname.
      */
-    public void setpatronname(String patronname) {
+    public void setpatronname(final String patronname) {
         this.patronname = patronname;
     }
     /**
@@ -128,7 +128,7 @@ class Patron {
      *
      * @param      mobilenumber  The mobilenumber.
      */
-    public void setmobilenumber(String mobilenumber) {
+    public void setmobilenumber(final String mobilenumber) {
         this.mobilenumber = mobilenumber;
     }
 }
@@ -177,7 +177,7 @@ class BookYourShow {
      *
      * @param      size  The size.
      */
-    public void setsize(int size) {
+    public void setsize(final int size) {
         this.size = size;
     }
     /**
@@ -193,7 +193,7 @@ class BookYourShow {
      *
      * @param      patronsize  The patronsize.
      */
-    public void setpatronsize(int patronsize) {
+    public void setpatronsize(final int patronsize) {
         this.patronsize = patronsize;
     }
     /**
@@ -209,7 +209,7 @@ class BookYourShow {
      *
      * @param      patronlist  The patronlist.
      */
-    public void setpatronlist(Patron[] patronlist) {
+    public void setpatronlist(final Patron[] patronlist) {
         for (int i = 0; i < patronlist.length; i++) {
             this.patronlist[patronsize++] = patronlist[i];
         }
