@@ -130,7 +130,7 @@ public final class Solution {
         // read the user responses from the console
         // store the user respones in the quiz object
         if (quizsetsize != 0) {
-            for (int i = 0; i < quizsetsize; i++) {
+            /*for (int i = 0; i < quizsetsize; i++) {
                 System.out.println(quizset[i].getquestiontext() + "(" + answerCount + ")");
                 String str = "";
                 for (int j = 0; j < quizset[i].getchoice().length - 1; j++) {
@@ -145,7 +145,8 @@ public final class Solution {
                 for (int j = 0; j < answerCount; j++) {
                     useresponse[j] = s.nextLine();
                 }
-            }
+            }*/
+            return;
         }
     }
 
