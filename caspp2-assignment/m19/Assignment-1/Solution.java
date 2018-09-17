@@ -163,8 +163,8 @@ public final class Solution {
             for (int i = 0; i < quizsetsize; i++) {
                 choiceans = quizset[i].getchoice();
                 crctans[i] = Integer.parseInt(useresponse[i].substring(7));
-                /*quizans[i] = quizset[i].getcorrectans();
-                System.out.println(quizans[i] + " quizans[i]\n");*/
+                quizans[i] = quizset[i].getcorrectans();
+                System.out.println(quizans[i] + " quizans[i]\n");
 
                 if (choiceans[i].equals(useresponse[i])) {
                     System.out.println(quizset[i].getquestiontext(
