@@ -73,11 +73,8 @@ public final class Solution {
             questset += ":";
 
         }
-        /*        System.out.println(questset+" questset");
-        */        String[] tokens = questset.split(":");
-        /*for (int i = 0; i < tokens.length; i++) {
-                System.out.println(tokens[i]+" tokens i= "+i);
-        }*/
+        String[] tokens = questset.split(":");
+
         if (questionCount == 0) {
             System.out.println("Quiz does not have questions");
             return;
@@ -89,7 +86,11 @@ public final class Solution {
         }
         int x = Integer.parseInt(tokens[4]);
         int  choiceno = tokens[1].split(",").length;
-        int choicecount = Integer.parseInt(tokens[2]);
+        int[] choicecount = new int[questionCount];
+        int j = 0;
+        for (int i = 2; i < tokens.length; i= i+5) {
+            choicecount[j++] = Integer.parseInt(tokens[i]);
+            }    
         if (x > 0) {
             System.out.println("Invalid penalty for " + tokens[0]);
             quizsetsize = 0;
@@ -102,14 +103,13 @@ public final class Solution {
             System.out.println(tokens[0] + " does not have enough answer choices");
             quizsetsize = 0;
             return;
-        } else if (choicecount > choiceno) {
+        } else if (choicecount[0] > choiceno) {
             System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
             quizsetsize = 0;
             return;
         } else {
             for (int i = 0; i < questionCount; i++) {
-                q = new Quiz(tokens[0], tokens[1].split(","), Integer.parseInt(
-                                 tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
+                q = new Quiz(tokens[0], tokens[1].split(","), choicecount[i], Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
                 quizset[quizsetsize++] = q;
             }
             System.out.println(questionCount + " are added to the quiz");
@@ -143,8 +143,7 @@ public final class Solution {
             } else {
                 for (int j = 0; j < answerCount; j++) {
                     useresponse[j] = s.nextLine();
-/*                    System.out.println(useresponse[j]+" useresponse [j] "+j);
-*/                }
+                }
             }
         }
     }
@@ -157,24 +156,31 @@ public final class Solution {
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
         String[] choiceans = new String[100];
+        int[] crctans = new int[10];
+        int[] quizans = new int[10];
         if (quizsetsize != 0) {
             int totalscore = 0;
             for (int i = 0; i < quizsetsize; i++) {
                 choiceans = quizset[i].getchoice();
-                    for (int j = 0; j < choiceans.length; j++) {
-                        if (choiceans[j].equals(useresponse[i])) {
-                            System.out.println(choiceans[j]+" choiceans[j]");
-/*                            System.out.println(quizset[j].getquestiontext() + "\n" + " Correct Answer! - Marks Awarded: " + quizset[j].getmaxmark());
-*/                            totalscore += quizset[j].getmaxmark();
-                            break;
-                        } else {
-                            System.out.println(choiceans[j]+" choiceans[j]");
-/*                            System.out.println(quizset[i].getquestiontext() + "\n" + " Wrong Answer! - Penalty: " + quizset[i].getpenalty());
-*/                            totalscore += quizset[i].getpenalty();
-                            break;
-                        }    
+                crctans[i] = Integer.parseInt(useresponse[i].substring(7));
+                /*quizans[i] = quizset[i].getcorrectans();
+                System.out.println(quizans[i] + " quizans[i]\n");*/
+
+                if (choiceans[i].equals(useresponse[i])) {
+                    System.out.println(quizset[i].getquestiontext(
+                        ) + "\n" + " Correct Answer! - Marks Awarded: "
+                        + quizset[i].getmaxmark());
+                    totalscore += quizset[i].getmaxmark();
+                    break;
+                } else {
+                    System.out.println(quizset[i].getquestiontext(
+                        ) + "\n" + " Wrong Answer! - Penalty: "
+                        + quizset[i].getpenalty());
+                    totalscore += quizset[i].getpenalty();
+                    break;
                     }
-            }
+                }
+            
             System.out.println("Total Score: " + totalscore);
         }
     }
