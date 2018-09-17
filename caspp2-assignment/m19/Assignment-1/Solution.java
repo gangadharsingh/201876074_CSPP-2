@@ -67,53 +67,40 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        String questset = "";
-        for (int i = 0; i < questionCount; i++) {
-            questset += s.nextLine();
-            questset += ":";
-
-        }
-        String[] tokens = questset.split(":");
-
+        /**
+        *taking input.
+        */
+        String[] tokens;
+        //checking if there are no questions.
         if (questionCount == 0) {
             System.out.println("Quiz does not have questions");
             return;
         }
-        if (tokens[0].length() < 1 || tokens.length == 4) {
-            System.out.println("Error! Malformed question");
-            quizsetsize = 0;
-            return;
+
+        for (int k = 0; k < questionCount; k++) {
+            tokens = (s.nextLine()).split(":");
+            /*if (Integer.parseInt(tokens[4]) > 0) {
+                System.out.println("Invalid penalty for " + tokens[k]);
+                quizsetsize = 0;
+                return;
+            } else if (Integer.parseInt(tokens[3]) < 0) {
+                System.out.println("Invalid max marks for " + tokens[k]);
+                quizsetsize = 0;
+                return;
+            } else if (Integer.parseInt(tokens[k]) < 2) {
+                System.out.println(tokens[0] + " does not have enough answer choices");
+                quizsetsize = 0;
+                return;
+            } else if (tokens[1].split(",").length > Integer.parseInt(tokens[k])) {
+                System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
+                quizsetsize = 0;
+                return;
+            } else {*/
+            q = new Quiz(tokens[0], tokens[1].split(","), tokens[2], Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
+            quizset[quizsetsize++] = q;
+            /*}*/
         }
-        int x = Integer.parseInt(tokens[4]);
-        int  choiceno = tokens[1].split(",").length;
-        int[] choicecount = new int[questionCount];
-        int j = 0;
-        for (int i = 2; i < tokens.length; i= i+5) {
-            choicecount[j++] = Integer.parseInt(tokens[i]);
-            }    
-        if (x > 0) {
-            System.out.println("Invalid penalty for " + tokens[0]);
-            quizsetsize = 0;
-            return;
-        } else if (Integer.parseInt(tokens[3]) < 0) {
-            System.out.println("Invalid max marks for " + tokens[0]);
-            quizsetsize = 0;
-            return;
-        } else if (choiceno < 2) {
-            System.out.println(tokens[0] + " does not have enough answer choices");
-            quizsetsize = 0;
-            return;
-        } else if (choicecount[0] > choiceno) {
-            System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
-            quizsetsize = 0;
-            return;
-        } else {
-            for (int i = 0; i < questionCount; i++) {
-                q = new Quiz(tokens[0], tokens[1].split(","), choicecount[i], Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
-                quizset[quizsetsize++] = q;
-            }
-            System.out.println(questionCount + " are added to the quiz");
-        }
+        System.out.println(questionCount + " are added to the quiz");
     }
 
     public static String[] useresponse = new String[100];
@@ -155,32 +142,30 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-        String[] choiceans = new String[100];
-        int[] crctans = new int[10];
-        int[] quizans = new int[10];
+        String[] crctans = new String[10];
+        String[] quizans = new String[10];
         if (quizsetsize != 0) {
             int totalscore = 0;
             for (int i = 0; i < quizsetsize; i++) {
-                choiceans = quizset[i].getchoice();
-                crctans[i] = Integer.parseInt(useresponse[i].substring(7));
+                String[] choiceans = quizset[i].getchoice();
+                /*                crctans[i] = Integer.parseInt(useresponse[i].substring(7));
+                */                
                 quizans[i] = quizset[i].getcorrectans();
-                System.out.println(quizans[i] + " quizans[i]\n");
-
                 if (choiceans[i].equals(useresponse[i])) {
                     System.out.println(quizset[i].getquestiontext(
-                        ) + "\n" + " Correct Answer! - Marks Awarded: "
-                        + quizset[i].getmaxmark());
+                                       ) + "\n" + " Correct Answer! - Marks Awarded: "
+                                       + quizset[i].getmaxmark());
                     totalscore += quizset[i].getmaxmark();
                     break;
                 } else {
                     System.out.println(quizset[i].getquestiontext(
-                        ) + "\n" + " Wrong Answer! - Penalty: "
-                        + quizset[i].getpenalty());
+                                       ) + "\n" + " Wrong Answer! - Penalty: "
+                                       + quizset[i].getpenalty());
                     totalscore += quizset[i].getpenalty();
                     break;
-                    }
                 }
-            
+            }
+
             System.out.println("Total Score: " + totalscore);
         }
     }
@@ -191,7 +176,7 @@ public final class Solution {
 class Quiz {
     private String questtext;
     private String[] choice;
-    private int correctans;
+    private String correctans;
     private int maxmark;
     private int penalty;
     /**
@@ -208,7 +193,7 @@ class Quiz {
      * @param      mm        The millimeters.
      * @param      pnlty     The pnlty.
      */
-    Quiz(final String qustxt, String[] chc, int corctans, int mm, int pnlty) {
+    Quiz(final String qustxt, String[] chc, String corctans, int mm, int pnlty) {
         questtext = qustxt;
         choice = chc;
         correctans = corctans;
@@ -271,7 +256,7 @@ class Quiz {
      *
      * @return     { description_of_the_return_value }.
      */
-    public int getcorrectans() {
+    public String getcorrectans() {
         return correctans;
     }
 
@@ -280,7 +265,7 @@ class Quiz {
      *
      * @param      corans  The corans.
      */
-    public void setcorrectans(int corans) {
+    public void setcorrectans(String corans) {
         correctans = corans;
     }
 }
