@@ -278,13 +278,17 @@ public final class Solution {
      * @param      quiz       The quiz
      * @param      q          The question count
      *
+     * @throws     Exception  { exception handling }.
      */
     public static void loadQuestions(final Scanner scan,
-                                     final Quiz quiz, final int q) throws Exception {
+                                     final Quiz quiz,
+                                     final int q) throws Exception {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        if (q == 0) throw new Exception("Quiz does not have questions");
+        if (q == 0) {
+            throw new Exception("Quiz does not have questions");
+        }
         for (int  i = 0; i < q; i++) {
             String[] tokens = scan.nextLine().split(":");
             for (String token : tokens)
@@ -295,7 +299,8 @@ public final class Solution {
                 throw new Exception("Error! Malformed question");
             }
             if (tokens[1].split(",").length < 2) {
-                throw new Exception(tokens[0] + " does not have enough answer choices");
+                throw new Exception(tokens[0] +
+                    " does not have enough answer choices");
             }
             if (Integer.parseInt(tokens[2]) > tokens[1].split(",").length) {
                 throw new Exception(
