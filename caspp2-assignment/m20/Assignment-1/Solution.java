@@ -1,6 +1,6 @@
 /**
  * Quiz code.
- * @author: gangadharsingh
+ * @author: gangadharsingh.
  */
 import java.util.*;
 /**
@@ -195,10 +195,12 @@ class Quiz {
         for (Question question : getQuestions()) {
             s += question.getquestiontxt() + '\n' + ' ';
             if (question.evaluateResponse(question.getResponse())) {
-                s += "Correct Answer! " + '-' + " Marks Awarded: " + question.getMaxmark();
+                s += "Correct Answer! " + '-' + " Marks Awarded: "
+                + question.getMaxmark();
                 marks += question.getMaxmark();
             } else {
-                s += "Wrong Answer! " + '-' + " Penalty: " + question.getPenalty();
+                s += "Wrong Answer! " + '-' + " Penalty: "
+                + question.getPenalty();
                 marks += question.getPenalty();
             }
             s += '\n';
@@ -286,19 +288,29 @@ public final class Solution {
         for (int  i = 0; i < q; i++) {
             String[] tokens = scan.nextLine().split(":");
             for (String token : tokens)
-                if (token.equals(""))
+                if (token.equals("")) {
                     throw new Exception("Error! Malformed question");
-            if (tokens.length < 5)
+                }
+            if (tokens.length < 5) {
                 throw new Exception("Error! Malformed question");
-            if (tokens[1].split(",").length < 2)
+            }
+            if (tokens[1].split(",").length < 2) {
                 throw new Exception(tokens[0] + " does not have enough answer choices");
-            if (Integer.parseInt(tokens[2]) > tokens[1].split(",").length)
-                throw new Exception("Error! Correct answer choice number is out of range for question text " + (i + 1));
-            if (Integer.parseInt(tokens[3]) < 0)
+            }
+            if (Integer.parseInt(tokens[2]) > tokens[1].split(",").length) {
+                throw new Exception(
+                    "Error! Correct answer choice number is out of range for question text "
+                    + (i + 1));
+            }
+            if (Integer.parseInt(tokens[3]) < 0) {
                 throw new Exception("Invalid max marks for " + tokens[0]);
-            if (Integer.parseInt(tokens[4]) > 0)
+            }
+            if (Integer.parseInt(tokens[4]) > 0) {
                 throw new Exception("Invalid penalty for " + tokens[0]);
-            quiz.addQuestion(new Question(tokens[0], tokens[1].split(","), Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
+            }
+            quiz.addQuestion(new Question(tokens[0], tokens[1].split(
+                ","), Integer.parseInt(tokens[2]), Integer.parseInt(
+                tokens[3]), Integer.parseInt(tokens[4])));
             // System.out.println(i);
         }
         System.out.println(q + " are added to the quiz");
