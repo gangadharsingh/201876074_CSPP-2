@@ -67,9 +67,9 @@ public final class Solution {
     /**
      * Loads questions.
      *
-     * @param      scan       The scan
-     * @param      quiz       The quiz
-     * @param      q          The question count
+     * @param      scan       The scan.
+     * @param      quiz       The quiz.
+     * @param      q          The question count.
      *
      * @throws     Exception  { exception handling }.
      */
@@ -93,11 +93,12 @@ public final class Solution {
             }
             if (tokens[1].split(",").length < 2) {
                 throw new Exception(tokens[0] +
-                    " does not have enough answer choices");
+                                    " does not have enough answer choices");
             }
             if (Integer.parseInt(tokens[2]) > tokens[1].split(",").length) {
                 throw new Exception(
-                    "Error! Correct answer choice number is out of range for question text "
+                    "Error! Correct answer choice number " +
+                    "is out of range for question text "
                     + (i + 1));
             }
             if (Integer.parseInt(tokens[3]) < 0) {
@@ -107,8 +108,8 @@ public final class Solution {
                 throw new Exception("Invalid penalty for " + tokens[0]);
             }
             quiz.addQuestion(new Question(tokens[0], tokens[1].split(
-                ","), Integer.parseInt(tokens[2]), Integer.parseInt(
-                tokens[3]), Integer.parseInt(tokens[4])));
+                                              ","), Integer.parseInt(tokens[2]), Integer.parseInt(
+                                              tokens[3]), Integer.parseInt(tokens[4])));
             // System.out.println(i);
         }
         System.out.println(q + " are added to the quiz");
@@ -118,9 +119,9 @@ public final class Solution {
     /**
      * Starts a quiz.
      *
-     * @param      scan  The scan
-     * @param      quiz  The quiz
-     * @param      q     The answer count
+     * @param      scan  The scan.
+     * @param      quiz  The quiz.
+     * @param      q     The answer count.
      */
     public static void startQuiz(final Scanner scan,
                                  final Quiz quiz, final int q) {
@@ -135,7 +136,7 @@ public final class Solution {
     /**
      * Displays the score report.
      *
-     * @param      quiz     The quiz object
+     * @param      quiz     The quiz object.
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
