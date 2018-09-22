@@ -13,6 +13,16 @@ class Task {
 	private String status;
 	Task() {
 	}
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      ttle          The ttle
+	 * @param      asgnTo        The asgn to
+	 * @param      tmToComplete  The time to complete
+	 * @param      imp           The imp
+	 * @param      urg           The urg
+	 * @param      stat          The stat
+	 */
 	Task(String ttle, String asgnTo,
 	     int tmToComplete, boolean imp,
 	     boolean urg, String stat) {
@@ -37,48 +47,113 @@ class Task {
 			return;
 		}
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public String gettitle() {
 		return title;
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      ttle  The ttle
+	 */
 	public void settitle(String ttle) {
 		title = ttle;
 	}
 
+	/**
+	 * { function_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public String getassignedTo() {
 		return title;
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      assgnTo  The assgn to
+	 */
 	public void setassignedTo(String assgnTo) {
 		assignedTo = assgnTo;
 	}
 
+	/**
+	 * { function_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public int getimeToComplete() {
 		return timeToComplete;
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      tmToComplete  The time to complete
+	 */
 	public void setimeToComplete(int tmToComplete) {
 		timeToComplete = tmToComplete;
 	}
 
+	/**
+	 * { function_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public boolean getimportant() {
 		return important;
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      imp   The imp
+	 */
 	public void setimportant(boolean imp) {
 		important = imp;
 	}
 
+	/**
+	 * { function_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public boolean geturgent() {
 		return urgent;
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      urg   The urg
+	 */
 	public void seturgent(boolean urg) {
 		urgent = urg;
 	}
 
+	/**
+	 * { function_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public String getstatus() {
 		return status;
 	}
 
+	/**
+	 * { function_description }
+	 *
+	 * @param      stat  The stat
+	 */
 	public void setstatus(String stat) {
 		status = stat;
 	}
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		String str = "";
 		if (title == null && timeToComplete < 0) {
@@ -106,23 +181,43 @@ class Task {
 		return str;
 	}
 }
+/**
+ * Class for todoist.
+ */
 class Todoist {
 	private Task[] taskset;
 	private int tasksize;
-	/*Map <String, Task> = new HashMap<String, Task> ();*/
+	/*
+	 * Map <String, Task> = new HashMap<String, Task> ();
+	 */
 	Todoist() {
 		taskset = new Task[20];
 		tasksize = 0;
 	}
+	/**
+	 * Adds a task.
+	 *
+	 * @param      task  The task
+	 */
 	void addTask(Task task) {
 		if (taskset.length == tasksize + 1) {
 			resize();
 		}
 		taskset[tasksize++] = task;
 	}
+	/**
+	 * { function_description }
+	 */
 	void resize() {
 		taskset = Arrays.copyOf(taskset, taskset.length * 2);
 	}
+	/**
+	 * Gets the next task.
+	 *
+	 * @param      personame  The personame
+	 *
+	 * @return     The next task.
+	 */
 	public Task getNextTask(String personame) {
 		for (int i = 0; i < tasksize; i++) {
 			if (taskset[i].getassignedTo() == personame) {
@@ -135,10 +230,23 @@ class Todoist {
 		}
 		return null;
 	}
+	/**
+	 * Gets the next task.
+	 *
+	 * @param      personame  The personame
+	 * @param      t          { parameter_description }
+	 *
+	 * @return     The next task.
+	 */
 	public Task getNextTask(String personame, int t) {
 
 		return null;
 	}
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		String str = "";
 		for (int i = 0; i < tasksize; i++) {
@@ -146,6 +254,11 @@ class Todoist {
 		}
 		return str;
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public int totalTime4Completion() {
 		int time = 0;
 		for (int i = 0; i < tasksize; i++) {
