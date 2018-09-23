@@ -96,6 +96,18 @@ class Plagarise {
  * Class for solution.
  */
 public class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+    }
+    /**
+     * { function_description }.
+     *
+     * @param      args       The arguments
+     *
+     * @throws     Exception  { exception_description }
+     */
     public static void main(final String[] args) throws Exception {
         try {
 
@@ -130,7 +142,8 @@ public class Solution {
             HashMap<String, Integer> freqdata1;
             double percentage = 0;
             ArrayList<Long> resultlist = new ArrayList<Long>();
-            ArrayList<HashMap<String, Integer>> dictlist = new ArrayList<HashMap<String, Integer>>();
+            ArrayList<HashMap<String, Integer>> dictlist =
+                new ArrayList<HashMap<String, Integer>>();
             for (final String b : filestringslist) {
                 // System.out.println(b);
                 k1 = new Frequencydict();
@@ -177,7 +190,8 @@ public class Solution {
                 s += "\n";
             }
             System.out.print(s);
-            System.out.println("Maximum similarity is between " + mp[0] + " and " + mp[1]);
+            System.out.println("Maximum similarity is between " + mp[0]
+                + " and " + mp[1]);
         }
 
         catch (Exception e) {
