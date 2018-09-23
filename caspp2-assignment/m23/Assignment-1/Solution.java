@@ -100,7 +100,7 @@ public class Solution {
                 // System.out.println(b);
                 k1 = new Freqdict();
                 freqd1 = new HashMap<String, Integer>();
-                freqd1 = k1.makedict(cleanstring(b.replace(".", " ")).toLowerCase().split(" "));
+                freqd1 = k1.makedict(cleanstring(b).split(" "));
                 // freqd1 = k1.makedict(b. toLowerCase().split(" "));
                 dictlist.add(freqd1);
                 // System.out.println(freqd1);
@@ -153,7 +153,7 @@ public class Solution {
         // System.out.println(d1);
         Pattern p = Pattern.compile("[^a-z A-Z 0-9]");
         Matcher m = p.matcher(d1);
-        String newstring = m.replaceAll("");
+        String newstring = m.replaceAll("").toLowerCase().replace(".", " ");
         // System.out.println(newstring);
         return newstring;
     }
