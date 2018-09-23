@@ -9,18 +9,30 @@ import java.util.regex.Matcher;
 import java.io.File;
 import java.io.FileReader;
 import java.io.BufferedReader;
-
-class Freqdict {
+/**
+* @author : gangadharsingh.
+ */
+/**
+ * Class for frequencydict..
+ */
+class Frequencydict {
     HashMap<String, Integer> hm;
-    Freqdict() {
+    Frequencydict() {
         hm = new HashMap<String, Integer>();
     }
-    HashMap<String, Integer> makedict(String[] d) {
+    /**
+     * { function_description }.
+     *
+     * @param      d     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    HashMap<String, Integer> makedict(final String[] d) {
         HashSet<String> set = new HashSet<>(Arrays.asList(d));
         int cnt = 0;
-        for (String l : set) {
+        for (final String l : set) {
             cnt = 0;
-            for (String k : d) {
+            for (final String k : d) {
                 if (l.equals(k)) {
                     cnt++;
                 }
@@ -30,24 +42,35 @@ class Freqdict {
         return hm;
     }
 }
+/**
+ * Class for plagarise.
+ */
 class Plagarise {
-    int Dotproduct(HashMap<String, Integer> freqd1, HashMap<String, Integer> freqd2) {
+    int Dotproduct(HashMap<String, Integer> freqdata1, HashMap<String, Integer> freqd2) {
         int dp = 0;
-        HashSet<String> newSet = new HashSet<String>(freqd1.keySet());
+        HashSet<String> newSet = new HashSet<String>(freqdata1.keySet());
 
         newSet.addAll(freqd2.keySet());
 
-        for (String k : newSet) {
-            if (freqd1.get(k) == null) {
-                freqd1.put(k, 0);
+        for (final String k : newSet) {
+            if (freqdata1.get(k) == null) {
+                freqdata1.put(k, 0);
             }
             if (freqd2.get(k) == null) {
                 freqd2.put(k, 0);
             }
-            dp += freqd1.get(k) * freqd2.get(k);
+            dp += freqdata1.get(k) * freqd2.get(k);
         }
         return dp;
     }
+    /**
+     * { function_description }.
+     *
+     * @param      a     { parameter_description }
+     * @param      b     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     double EuclideanNorm(Collection<Integer> a, Collection<Integer> b) {
         int s1 = 0;
         int s2 = 0;
@@ -60,11 +83,14 @@ class Plagarise {
         return Math.sqrt(s1) * Math.sqrt(s2);
     }
 }
+/**
+ * Class for solution.
+ */
 public class Solution {
-    public static void main(String[] args) throws Exception {
+    public static void main(final String[] args) throws Exception {
         try {
 
-            Freqdict k1;
+            Frequencydict k1;
             Plagarise pl;
             Scanner sc = new Scanner(System.in);
             File folder = new File(sc.next());
@@ -92,18 +118,18 @@ public class Solution {
                 b.close();
             }
 
-            HashMap<String, Integer> freqd1;
-            double percent = 0;
+            HashMap<String, Integer> freqdata1;
+            double percentage = 0;
             ArrayList<Long> resultlist = new ArrayList<Long>();
             ArrayList<HashMap<String, Integer>> dictlist = new ArrayList<HashMap<String, Integer>>();
-            for (String b : filestringslist) {
+            for (final String b : filestringslist) {
                 // System.out.println(b);
-                k1 = new Freqdict();
-                freqd1 = new HashMap<String, Integer>();
-                freqd1 = k1.makedict(cleanstring(b).split(" "));
-                // freqd1 = k1.makedict(b. toLowerCase().split(" "));
-                dictlist.add(freqd1);
-                // System.out.println(freqd1);
+                k1 = new Frequencydict();
+                freqdata1 = new HashMap<String, Integer>();
+                freqdata1 = k1.makedict(cleanstring(b).split(" "));
+                // freqdata1 = k1.makedict(b. toLowerCase().split(" "));
+                dictlist.add(freqdata1);
+                // System.out.println(freqdata1);
             }
 
             String[] mp = new String[2];
@@ -117,19 +143,19 @@ public class Solution {
                     pl = new Plagarise();
                     int dp = pl.Dotproduct(k, l);
                     double en = pl.EuclideanNorm(k.values(), l.values());
-                    percent = dp / en * 100;
-                    if (max < Math.round(percent) && Math.round(percent) != 100) {
-                        max = Math.round(percent);
+                    percentage = dp / en * 100;
+                    if (max < Math.round(percentage) && Math.round(percentage) != 100) {
+                        max = Math.round(percentage);
                         mp[0] = filenames[x];
                         mp[1] = filenames[y];
                     }
-                    resultlist.add(Math.round(percent));
+                    resultlist.add(Math.round(percentage));
                 }
                 y = -1;
             }
             x = -1;
             String s = "      " + "\t\t";
-            for (String k : filenames) {
+            for (final String k : filenames) {
                 s += k + "\t";
             }
             int k = 0;
@@ -149,10 +175,19 @@ public class Solution {
             System.out.println("empty directory");
         }
     }
-    public static String cleanstring(String d1) {
-        // System.out.println(d1);
+    /**
+     * { function_description }.
+     *
+     * @param      data1  The data 1
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public static String cleanstring(final String data1) {
+        //
+        // System.out.println(data1);
+        //
         Pattern p = Pattern.compile("[^a-z A-Z 0-9]");
-        Matcher m = p.matcher(d1);
+        Matcher m = p.matcher(data1);
         String newstring = m.replaceAll("").toLowerCase().replace(".", " ");
         // System.out.println(newstring);
         return newstring;
