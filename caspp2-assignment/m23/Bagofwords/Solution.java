@@ -16,7 +16,7 @@ import java.io.BufferedReader;
  * Class for frequencydict..
  */
 class Frequencydict {
-    HashMap<String, Integer> hm;
+    private  HashMap<String, Integer> hm;
     Frequencydict() {
         hm = new HashMap<String, Integer>();
     }
@@ -46,7 +46,16 @@ class Frequencydict {
  * Class for plagarise.
  */
 class Plagarise {
-    int Dotproduct(HashMap<String, Integer> freqdata1, HashMap<String, Integer> freqd2) {
+    /**
+     * { function_description }.
+     *
+     * @param      freqdata1  The freqdata 1
+     * @param      freqd2     The freqd 2
+     *
+     * @return     { description_of_the_return_value }
+     */
+    int dotproduct(HashMap<String, Integer> freqdata1,
+        HashMap<String, Integer> freqd2) {
         int dp = 0;
         HashSet<String> newSet = new HashSet<String>(freqdata1.keySet());
 
@@ -71,7 +80,7 @@ class Plagarise {
      *
      * @return     { description_of_the_return_value }
      */
-    double EuclideanNorm(Collection<Integer> a, Collection<Integer> b) {
+    double euclideanNorm(Collection<Integer> a, Collection<Integer> b) {
         int s1 = 0;
         int s2 = 0;
         for (int c : a) {
@@ -141,8 +150,8 @@ public class Solution {
                 for (HashMap<String, Integer> l : dictlist) {
                     y++;
                     pl = new Plagarise();
-                    int dp = pl.Dotproduct(k, l);
-                    double en = pl.EuclideanNorm(k.values(), l.values());
+                    int dp = pl.dotproduct(k, l);
+                    double en = pl.euclideanNorm(k.values(), l.values());
                     percentage = dp / en * 100;
                     if (max < Math.round(percentage) && Math.round(percentage) != 100) {
                         max = Math.round(percentage);
